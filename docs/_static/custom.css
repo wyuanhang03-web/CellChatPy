@@ -1,0 +1,38 @@
+:root {
+  --cellchat-green: #16745b;
+  --cellchat-coral: #c85748;
+}
+
+.wy-side-nav-search {
+  background: var(--cellchat-green);
+}
+
+.wy-nav-top {
+  background: var(--cellchat-green);
+}
+
+.rst-content a,
+.rst-content a:visited {
+  color: #12634e;
+}
+
+.rst-content a:hover {
+  color: var(--cellchat-coral);
+}
+
+.rst-content img {
+  height: auto;
+  max-width: 100%;
+}
+
+.nboutput .output_area img {
+  height: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .rst-content div[class^="highlight"],
+  .rst-content pre {
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CellChatPy"
+version = "1.1.0"
+description = "Python toolkit for inferring, analyzing, and visualizing cell-cell communication"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+keywords = [
+    "single-cell",
+    "spatial-transcriptomics",
+    "cell-cell-communication",
+    "bioinformatics",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "anndata>=0.8",
+    "h5py>=3.7",
+    "matplotlib>=3.6",
+    "networkx>=2.8",
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "scikit-learn>=1.2",
+    "scipy>=1.9",
+    "seaborn>=0.12",
+    "umap-learn>=0.5",
+]
+
+[project.optional-dependencies]
+tutorial = [
+    "ipykernel>=6",
+    "ipython>=8",
+    "jupyterlab>=4",
+]
+docs = [
+    "sphinx>=7,<9",
+    "sphinx-rtd-theme>=2",
+    "sphinx-copybutton>=0.5",
+    "sphinx-design>=0.6",
+    "myst-parser>=2",
+    "nbsphinx>=0.9",
+    "ipython>=8",
+    "nbconvert>=7",
+]
+sketch = ["geosketch>=1.2"]
+dev = [
+    "build>=1",
+    "pytest>=7",
+    "twine>=5",
+]
+
+[project.urls]
+Homepage = "https://github.com/wyuanhang03-web/CellChatPy"
+Repository = "https://github.com/wyuanhang03-web/CellChatPy"
+Issues = "https://github.com/wyuanhang03-web/CellChatPy/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["CellChatPy*"]
+
+[tool.setuptools.package-data]
+CellChatPy = [
+    "CellChatDB/**/*.csv",
+    "CellChatDB/**/*.mtx",
+]

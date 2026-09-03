@@ -1,0 +1,48 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and local configuration
+.env
+.env.*
+.venv/
+venv/
+env/
+.conda/
+
+# Packaging output
+build/
+dist/
+*.egg-info/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# Generated analysis output not selected for publication
+results/
+tutorial/results_*/
+tutorial/*.pkl
+tutorial/*.h5ad
+
+# Sphinx output
+docs/_build/
+
+# Large tutorial inputs stay local and must never be committed. Published
+# notebook outputs, figures, and interaction CSV files are tracked normally.
+data/*.h5
+data/*.h5ad
+
+# Archives and logs
+*.zip
+*.rar
+*.7z
+*.log
