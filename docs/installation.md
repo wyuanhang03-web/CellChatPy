@@ -2,13 +2,7 @@
 
 CellChatPy requires Python 3.10 or newer.
 
-## Install from PyPI
-
-```bash
-pip install CellChatPy
-```
-
-## Install the development version from GitHub
+## Install from GitHub
 
 ```bash
 pip install "git+https://github.com/wyuanhang03-web/CellChatPy.git"

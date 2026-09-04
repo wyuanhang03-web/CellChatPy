@@ -16,13 +16,7 @@ It uses Python-native data structures and plotting tools.
 
 ## Install
 
-Install the released package from PyPI:
-
-```bash
-python -m pip install CellChatPy
-```
-
-Install the development version from this repository:
+Install CellChatPy directly from this GitHub repository:
 
 ```bash
 python -m pip install "git+https://github.com/wyuanhang03-web/CellChatPy.git"
@@ -111,6 +105,5 @@ See [`LICENSE`](LICENSE).
 
 ## Links
 
-- [PyPI package](https://pypi.org/project/CellChatPy/)
 - [Documentation source](docs/index.md)
 - [Issue tracker](https://github.com/wyuanhang03-web/CellChatPy/issues)

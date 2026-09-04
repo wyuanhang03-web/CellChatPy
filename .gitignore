@@ -17,6 +17,7 @@ env/
 build/
 dist/
 *.egg-info/
+PYPI_README.md
 
 # Editors and operating systems
 .idea/

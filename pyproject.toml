@@ -57,7 +57,6 @@ sketch = ["geosketch>=1.2"]
 dev = [
     "build>=1",
     "pytest>=7",
-    "twine>=5",
 ]
 
 [project.urls]
