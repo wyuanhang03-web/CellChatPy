@@ -25,6 +25,8 @@ html_theme = "sphinx_rtd_theme"
 html_theme_options = {
     "navigation_depth": 4,
     "collapse_navigation": False,
+    "titles_only": True,
+    "includehidden": False,
 }
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
