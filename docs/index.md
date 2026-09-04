@@ -22,4 +22,3 @@ tutorials/index
 
 - [GitHub repository](https://github.com/wyuanhang03-web/CellChatPy)
 - [Issue tracker](https://github.com/wyuanhang03-web/CellChatPy/issues)
-- [CellChat R package](https://github.com/jinworks/CellChat)

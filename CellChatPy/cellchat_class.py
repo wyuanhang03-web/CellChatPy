@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 CellChat Class - Main class for cell-cell communication analysis
-Based on CellChat R package (https://github.com/sqjin/CellChat)
 
 Refactored to inherit from AnnData for native integration with scanpy ecosystem.
 """

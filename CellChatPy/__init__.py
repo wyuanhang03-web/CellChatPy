@@ -3,8 +3,7 @@
 CellChatPy - A comprehensive toolkit for analyzing intercellular communication from single-cell transcriptomics data
 
 This package provides functions for data preprocessing, intercellular communication
-network inference, communication network analysis, and visualization, based on the
-CellChat R package (https://github.com/sqjin/CellChat).
+network inference, communication network analysis, and visualization.
 """
 
 __version__ = "1.1.0"

@@ -2,8 +2,7 @@
 
 CellChatPy is a Python toolkit for inferring, analyzing, and visualizing
 cell-cell communication from single-cell and spatial transcriptomics data.
-The workflow is inspired by the CellChat R package and uses Python-native data
-structures and plotting tools.
+It uses Python-native data structures and plotting tools.
 
 ## What It Provides
 
@@ -95,12 +94,10 @@ CellChatPy/
 `-- README.md
 ```
 
-## Relationship to CellChat
+## About CellChatPy
 
-CellChatPy is an Python implementation and public resources of
-[CellChat](https://github.com/jinworks/CellChat). It is not the official
-CellChat R package. Please cite the original CellChat publications when its
-methods or database resources contribute to your work.
+CellChatPy provides a Python-native workflow for analyzing and visualizing
+cell-cell communication in single-cell and spatial transcriptomics data.
 
 ## License
 
