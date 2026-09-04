@@ -69,7 +69,7 @@ The `docs/` directory contains the Sphinx source for the tutorial website.
 It contains the project documentation and tutorial pages.
 
 Full documentation, tutorials, and API reference:
-https://github.com/wyuanhang03-web/CellChatPy/tree/main/docs
+https://cellchatpy.readthedocs.io/en/latest/
 
 The website can be built with Sphinx and nbsphinx. Notebook execution is
 disabled during documentation builds, so saved outputs are used.
