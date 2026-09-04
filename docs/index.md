@@ -4,10 +4,11 @@ CellChatPy is a Python toolkit for inferring, analyzing, and visualizing
 cell-cell communication from single-cell and spatially resolved transcriptomics
 data.
 
-The tutorials are published from executed Jupyter notebooks. Their Markdown,
-code, tables, and saved figure outputs are rendered directly by `nbsphinx`, in
-the same style as the Spatial-Query documentation. Read the Docs does not rerun
-the analyses during a documentation build.
+This site provides the CellChatPy installation guide, analysis tutorials, and
+API-oriented examples. Tutorial pages are published from executed Jupyter
+notebooks, with their Markdown, code, tables, and saved figure outputs rendered
+by `nbsphinx`. Read the Docs does not rerun the analyses during a documentation
+build.
 
 ```{toctree}
 :maxdepth: 2

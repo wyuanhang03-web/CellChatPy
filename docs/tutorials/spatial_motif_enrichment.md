@@ -1,11 +1,9 @@
-# Spatial Visualization of Motif
+# Spatial Communication Topics
 
-This page is the CellChatPy counterpart of the Spatial-Query example
-“Spatial Visualization of Motif”. In CellChatPy, a communication motif is a
-repeatable spatial communication pattern learned from the spot-level
-ligand–receptor network. The executed psoriasis tutorial identifies these
-patterns with `identify_cell_topics` and displays their spatial weights with
-`plot_spatial_topics`.
+This tutorial explains how CellChatPy learns repeatable spatial communication
+patterns from a spot-level ligand–receptor network. The executed psoriasis
+tutorial identifies these patterns with `identify_cell_topics` and displays
+their spatial weights with `plot_spatial_topics`.
 
 The complete runnable workflow is in
 [`SpatialCellChat_analysis_of_spatial_transcriptomics_data.ipynb`](SpatialCellChat_analysis_of_spatial_transcriptomics_data),
@@ -41,9 +39,7 @@ cellchat = cc.identify_cell_topics(
 )
 ```
 
-## 3. Generate the spatial motif visualization
-
-This is the key operation corresponding to Spatial-Query’s motif visualization:
+## 3. Generate the spatial communication topic map
 
 ```python
 fig = cc.plot_spatial_topics(
@@ -87,11 +83,8 @@ The first compares motif weights across annotated cell groups. The second lists
 the strongest ligand–receptor signals per motif. Always read the spatial map
 together with these two summaries.
 
-## 5. Open the generated page
+## 5. Interpret the result
 
-After publishing with Read the Docs, the page is available at:
-
-`https://YOUR-READTHEDOCS-NAME.readthedocs.io/en/latest/tutorials/spatial_motif_enrichment.html#spatial-visualization-of-motif`
-
-The final fragment (`#spatial-visualization-of-motif`) is created automatically
-from this exact heading, just as in the Spatial-Query documentation.
+Use the spatial topic maps together with the composition and signaling summaries
+to describe which cell groups and ligand–receptor signals contribute to each
+communication pattern.
