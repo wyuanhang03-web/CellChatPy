@@ -4,6 +4,7 @@ CellChatPy - A comprehensive toolkit for analyzing intercellular communication f
 
 This package provides functions for data preprocessing, intercellular communication
 network inference, communication network analysis, and visualization.
+The workflow is a Python reimplementation of the CellChat R package.
 """
 
 __version__ = "1.1.0"

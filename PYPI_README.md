@@ -51,10 +51,15 @@ The large input datasets used by the tutorial notebooks are not included in
 the PyPI package. See the GitHub repository for tutorial information and data
 availability notes.
 
-## About CellChatPy
+## Relationship to CellChat R
 
-CellChatPy provides a Python-native workflow for complete cell-cell
-communication analysis from single-cell and spatial transcriptomics data.
+CellChatPy is a Python reimplementation of the CellChat R package. It
+translates the main cell-cell communication analysis workflow into native
+Python data structures and plotting tools. CellChatPy is an independent
+Python project and is not the official CellChat R package.
+
+See the [CellChat R package](https://github.com/jinworks/CellChat) for the
+original R implementation and publications.
 
 ## License
 
