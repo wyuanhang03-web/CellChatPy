@@ -1,35 +1,70 @@
-# Tutorial data
+# Tutorial Data
 
-The large tutorial inputs are intentionally not included in the GitHub
-repository. This directory contains only this README. Before running a
-notebook locally, place the required files here using the filenames below.
-The repository `.gitignore` prevents these files from being committed.
+The large input datasets used by the tutorial notebooks are not included in
+this GitHub repository. This keeps the source repository lightweight and
+avoids redistributing datasets without their original licenses.
 
-Expected filenames:
+The notebooks can still be read online because their saved figures, tables,
+and other outputs are included in the repository. To run a notebook from the
+beginning, obtain the corresponding datasets from their original data provider
+or from the project maintainer, then place the files in this directory.
+
+## Expected Files
 
 | File | Used by |
 | --- | --- |
 | `data_humanSkin.h5` | Human skin analysis and NL/LS comparison |
 | `mouse_cortex_visium.h5` | Spatial transcriptomics analysis |
 | `mouse_spleen_spatial_multiomics.h5` | Spatial multiomics analysis |
-| `human_intestine_A1.h5` | Multiple spatial datasets analysis |
-| `human_intestine_A2.h5` | Multiple spatial datasets analysis |
-| `mouse_skin_e13.h5ad` | Different cellular compositions analysis |
-| `mouse_skin_e14.h5ad` | Different cellular compositions analysis |
+| `human_intestine_A1.h5` | Multiple spatial transcriptomics datasets |
+| `human_intestine_A2.h5` | Multiple spatial transcriptomics datasets |
+| `mouse_skin_e13.h5ad` | Different cellular composition analysis |
+| `mouse_skin_e14.h5ad` | Different cellular composition analysis |
+| `human_psoriasis.h5` | Advanced SpatialCellChat analysis |
 
-For the current local workspace, the files can be copied from the original
-data directory with PowerShell:
+The expected layout is:
 
-```powershell
-Copy-Item "E:\Jin\cellchat.python_new\data\*.h5" -Destination . -Force
-Copy-Item "E:\Jin\cellchat.python_new\data\*.h5ad" -Destination . -Force
+```text
+CellChatPy/
+|-- CellChatPy/
+|-- data/
+|   |-- data_humanSkin.h5
+|   |-- mouse_cortex_visium.h5
+|   `-- ...
+`-- tutorial/
 ```
 
-The seven datasets total approximately 1.04 GiB and are not needed to build the
-Read the Docs website because the published notebooks already contain their
-saved outputs. For a long-term scientific release, archive the datasets with
-checksums, licenses, and a DOI on Zenodo, Figshare, or OSF, then add the DOI to
-this file.
+Run Jupyter from the repository root:
 
-The human skin notebook can optionally use the tracked `r_permutations.csv`
-file from the repository root for an R/Python comparison.
+```bash
+python -m pip install -e ".[tutorial]"
+jupyter lab
+```
+
+Then open a notebook under `tutorial/`. The notebooks locate the package,
+input data, and output directories relative to the repository root.
+
+## Data Availability
+
+The eight input files referenced by the current published notebooks
+are approximately 1.071 GiB in total (1,150,368,414 bytes). This is a minimum
+for the current tutorial set, not a complete inventory of every data file used
+by all historical CellChatPy workflows. Older notebooks, converted formats,
+and optional R/Python comparison workflows may require additional files.
+
+The files are intentionally kept outside GitHub. This repository currently does
+not redistribute them. Please check the original publication, data provider,
+or project release notes for the appropriate download location and usage terms.
+
+## Troubleshooting
+
+If a notebook reports that an input file is missing, check the filename,
+extension, and location. From the repository root, the following command lists
+the files currently present:
+
+```bash
+python -c "from pathlib import Path; print(*sorted(Path('data').glob('*')), sep='\n')"
+```
+
+The repository ignores local `.h5` and `.h5ad` files, so they will not be
+included by `git add .`.
