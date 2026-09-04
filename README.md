@@ -1,60 +1,37 @@
 # CellChatPy
 
 CellChatPy is a Python toolkit for inferring, analyzing, and visualizing
-cell-cell communication from single-cell and spatially resolved transcriptomics
-data. Its workflow and terminology are based on the CellChat R package, while
-using Python-native data structures and plotting tools.
+cell-cell communication from single-cell and spatial transcriptomics data.
+The workflow is inspired by the CellChat R package and uses Python-native data
+structures and plotting tools.
 
-## Features
+## What It Provides
 
-- Create CellChat objects from matrices, metadata, or AnnData
-- Load ligand-receptor databases for human, mouse, and zebrafish
-- Identify overexpressed genes and ligand-receptor interactions
-- Infer communication probabilities and pathway-level networks
-- Compare communication networks across datasets
-- Analyze centrality, communication patterns, and network similarity
-- Visualize circle, heatmap, bubble, chord, hierarchy, and spatial networks
-- Read and write structured HDF5 inputs for spatial and multiomics workflows
+- CellChat objects from matrices, metadata, or AnnData
+- Human, mouse, and zebrafish ligand-receptor databases
+- Overexpressed gene and ligand-receptor analysis
+- Communication probability and pathway-level network inference
+- Network comparison, centrality, and communication pattern analysis
+- Circle, heatmap, bubble, chord, hierarchy, and spatial visualization
+- Spatial transcriptomics and spatial multiomics workflows
 
-## Installation
+## Install
 
-CellChatPy requires Python 3.10 or newer. Install the latest release from PyPI:
-
-```bash
-pip install CellChatPy
-```
-
-To install the latest development version directly from GitHub:
+Install the released package from PyPI:
 
 ```bash
-pip install "git+https://github.com/wyuanhang03-web/CellChatPy.git"
+python -m pip install CellChatPy
 ```
 
-For local development and tutorials:
+Install the development version from this repository:
 
 ```bash
-git clone https://github.com/wyuanhang03-web/CellChatPy.git
-cd CellChatPy
-python -m venv .venv
+python -m pip install "git+https://github.com/wyuanhang03-web/CellChatPy.git"
 ```
 
-On Windows PowerShell:
+CellChatPy requires Python 3.10 or newer.
 
-```powershell
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install -e ".[tutorial]"
-```
-
-On macOS or Linux:
-
-```bash
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e ".[tutorial]"
-```
-
-## Quick start
+## Quick Example
 
 ```python
 import CellChatPy as cc
@@ -78,70 +55,60 @@ cellchat = cc.aggregate_network(cellchat)
 
 ## Tutorials
 
-Seven executable notebooks and their saved outputs are available in
-[`tutorial/`](tutorial/README.md):
+The `tutorial/` directory contains seven notebooks covering:
 
 - Human skin single-dataset analysis
 - Human skin NL/LS comparison
-- Spatial transcriptomics analysis
-- Spatial multiomics analysis
+- Spatial transcriptomics
+- Spatial multiomics
 - Multiple spatial transcriptomics datasets
-- Comparison with different cellular compositions
-- Advanced SpatialCellChat analysis with hotspot, co-occurrence, and motif maps
+- Different cellular compositions
+- Advanced spatial communication and motif analysis
 
-The large tutorial input datasets are intentionally not stored in this GitHub
-repository. See [`data/README.md`](data/README.md) for the expected filenames
-and copy the inputs into `data/` locally before running a notebook. The saved
-notebook outputs and documentation pages do not require these inputs to render.
+The large input datasets are not stored in this repository. See
+[`data/README.md`](data/README.md) for the required filenames and data policy.
+Saved notebook outputs, figures, and tables are included so the examples can
+be inspected without downloading the original datasets.
 
-The tutorial website is built with Sphinx, MyST, and nbsphinx. Read the Docs
-renders the Markdown, code, tables, section anchors, and saved notebook images
-without rerunning the analyses:
+## Documentation
 
-```bash
-pandoc --version
-python -m pip install -r docs/requirements.txt
-sphinx-build -b html docs docs/_build/html
-```
+The `docs/` directory contains the Sphinx source for the tutorial website.
+It contains the project documentation and tutorial pages.
 
-Pandoc must be available on `PATH` for local builds. Read the Docs installs it
-automatically from `.readthedocs.yaml`.
+Full documentation, tutorials, and API reference:
+https://spatialquery.readthedocs.io/en/latest/
 
-See [`GITHUB_UPLOAD_GUIDE_CN.md`](GITHUB_UPLOAD_GUIDE_CN.md) for the complete
-GitHub, Read the Docs, and PyPI publishing procedure.
+The website can be built with Sphinx and nbsphinx. Notebook execution is
+disabled during documentation builds, so saved outputs are used.
 
-The motif-style spatial visualization is documented at
-[`Spatial Visualization of Motif`](docs/tutorials/spatial_motif_enrichment.md).
-
-## Repository structure
+## Repository Layout
 
 ```text
 CellChatPy/
-|-- CellChatPy/          # Python package and bundled CellChatDB files
-|-- tutorial/            # Seven notebooks, figures, and tabular outputs
-|-- data/                # README only; large tutorial inputs stay local
-|-- docs/                # Sphinx/nbsphinx documentation source
-|-- .readthedocs.yaml    # Read the Docs build configuration
-|-- pyproject.toml       # Package metadata and dependencies
-|-- MANIFEST.in          # Source distribution data rules
-|-- LICENSE              # GPL-3.0 license
+|-- CellChatPy/       Python package and CellChatDB
+|-- data/              Data instructions; large inputs stay outside GitHub
+|-- tutorial/          Seven notebooks and saved outputs
+|-- docs/              Documentation website source
+|-- pyproject.toml     Package metadata and dependencies
+|-- MANIFEST.in        Source distribution file rules
+|-- LICENSE             GPL-3.0 license
 `-- README.md
 ```
 
 ## Relationship to CellChat
 
-CellChatPy is an independent Python implementation inspired by the methods,
-workflow, and public resources of
-[CellChat](https://github.com/jinworks/CellChat). It is not the official CellChat
-R package. Please cite the original CellChat publications when its methods or
-database resources contribute to your work.
+CellChatPy is an Python implementation and public resources of
+[CellChat](https://github.com/jinworks/CellChat). It is not the official
+CellChat R package. Please cite the original CellChat publications when its
+methods or database resources contribute to your work.
 
 ## License
 
-This repository is distributed under the GNU General Public License v3.0. See
-[`LICENSE`](LICENSE).
+This repository is distributed under the GNU General Public License v3.0.
+See [`LICENSE`](LICENSE).
 
-## Contact
+## Links
 
-Please use [GitHub Issues](https://github.com/wyuanhang03-web/CellChatPy/issues)
-for bug reports and feature requests.
+- [PyPI package](https://pypi.org/project/CellChatPy/)
+- [Documentation source](docs/index.md)
+- [Issue tracker](https://github.com/wyuanhang03-web/CellChatPy/issues)
