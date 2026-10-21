@@ -1,0 +1,1342 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="readthedocs-addons-api-version" content="1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CellChatPy analysis of spatial multiomics data &mdash; CellChatPy documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2a36ea79" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=fc837d61"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <script src="../_static/js/versions.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Spatial CellChat analysis of human psoriatic skin" href="SpatialCellChat_analysis_of_spatial_transcriptomics_data.html" />
+    <link rel="prev" title="CellChatPy analysis of spatial transcriptomics data" href="CellChat_analysis_of_spatial_transcriptomics_data.html" /> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="cellchatpy" /><meta name="readthedocs-version-slug" content="latest" /><meta name="readthedocs-resolver-filename" content="/tutorials/CellChat_analysis_of_spatial_multiomics_data.html" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CellChatPy
+          </a>
+              <div class="switch-menus">
+                <div class="version-switch"></div>
+                <div class="language-switch"></div>
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CellChat_humanSkin_LS.html">Inference and Analysis of Cell-Cell Communication using CellChat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellChat_analysis_of_spatial_transcriptomics_data.html">CellChatPy analysis of spatial transcriptomics data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CellChatPy analysis of spatial multiomics data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialCellChat_analysis_of_spatial_transcriptomics_data.html">Spatial CellChat analysis of human psoriatic skin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellChat_comparison_analysis_NL_LS.html">CellChatPy Comparison Analysis of Multiple Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellChat_analysis_of_multiple_spatial_transcriptomics_datasets.html">CellChatPy analysis of multiple spatial transcriptomics datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions.html">Comparison analysis of multiple datasets with different cellular compositions</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CellChatPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">CellChatPy analysis of spatial multiomics data</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/CellChat_analysis_of_spatial_multiomics_data.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="CellChatPy-analysis-of-spatial-multiomics-data">
+<h1>CellChatPy analysis of spatial multiomics data<a class="headerlink" href="#CellChatPy-analysis-of-spatial-multiomics-data" title="Link to this heading"></a></h1>
+<p>This tutorial demonstrates CellChatPy inference and visualization for spatial multi-modal cell-cell communication using a SPOTS mouse spleen dataset. The input contains matched RNA expression, ADT protein abundance, cell labels, and 10X Visium spatial coordinates.</p>
+<p>The workflow preprocesses RNA and ADT together, creates a spatial CellChat object, infers ligand-receptor and pathway communication probabilities, and visualizes the IL16 pathway on both the inferred network and tissue coordinates.</p>
+<section id="Setup-and-imports">
+<h2>Setup and imports<a class="headerlink" href="#Setup-and-imports" title="Link to this heading"></a></h2>
+<p>The setup cell locates the repository from either the project root or <code class="docutils literal notranslate"><span class="pre">tutorial/</span></code>, imports the local <code class="docutils literal notranslate"><span class="pre">CellChatPy</span></code> package, and defines one helper that saves, displays, and closes each Matplotlib figure exactly once.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">"divide by zero encountered in log"</span><span class="p">)</span>
+
+<span class="n">project_root</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">path</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">)</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">"CellChatPy"</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">"data"</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()),</span>
+    <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">if</span> <span class="n">project_root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"Cannot locate a repository containing CellChatPy/ and data/."</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">project_root</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">project_root</span><span class="p">))</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">CellChatPy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cc</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">data_path</span> <span class="o">=</span> <span class="n">project_root</span> <span class="o">/</span> <span class="s2">"data"</span> <span class="o">/</span> <span class="s2">"mouse_spleen_spatial_multiomics.h5"</span>
+<span class="n">figure_dir</span> <span class="o">=</span> <span class="p">(</span><span class="n">project_root</span> <span class="o">/</span> <span class="s2">"tutorial"</span> <span class="o">/</span> <span class="s2">"figures_spatial_multiomics"</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<span class="n">result_dir</span> <span class="o">=</span> <span class="p">(</span><span class="n">project_root</span> <span class="o">/</span> <span class="s2">"results_spots_mouse_spleen"</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<span class="n">figure_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Validate, save, display, and close one Matplotlib figure."""</span>
+    <span class="k">if</span> <span class="n">fig</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  [SKIP] </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> returned None"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">path</span> <span class="o">=</span> <span class="n">figure_dir</span> <span class="o">/</span> <span class="n">name</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">"tight"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Could not save figure to </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2">: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">exc</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">exc</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Saved: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"CellChatPy:"</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Repository:"</span><span class="p">,</span> <span class="n">project_root</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Input:"</span><span class="p">,</span> <span class="n">data_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+c:\anaconda\envs\pytorch\Lib\site-packages\tqdm\auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CellChatPy: 1.1.0
+Repository: E:\Jin\cellchat.python_new
+Input: E:\Jin\cellchat.python_new\data\mouse_spleen_spatial_multiomics.h5
+</pre></div></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="Part-I:-Load-and-validate-spatial-multiomics-inputs">
+<h2>Part I: Load and validate spatial multiomics inputs<a class="headerlink" href="#Part-I:-Load-and-validate-spatial-multiomics-inputs" title="Link to this heading"></a></h2>
+<p>CellChatPy requires matched RNA, ADT, metadata, and full-resolution spatial coordinates. RNA and ADT must both use spots as rows, retain their feature names, and have identical spot identifiers in the same order.</p>
+<p>For 10X Visium, <code class="docutils literal notranslate"><span class="pre">ratio</span></code> converts full-resolution pixels to micrometers and <code class="docutils literal notranslate"><span class="pre">tol</span></code> is usually half the theoretical spot diameter. The validation below makes these contracts explicit before multiomics preprocessing begins.</p>
+<section id="Load-the-canonical-spatial-H5-file">
+<h3>Load the canonical spatial H5 file<a class="headerlink" href="#Load-the-canonical-spatial-H5-file" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ptm</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">read_spatial_h5</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+
+<span class="n">rna_values</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">"expression"</span><span class="p">]</span>
+<span class="n">adt</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">"modalities"</span><span class="p">][</span><span class="s2">"adt"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">"metadata"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">coordinates</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">"coordinates"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">spatial_factors</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">"spatial_factors"</span><span class="p">]</span>
+<span class="n">genes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">gene</span><span class="p">)</span> <span class="k">for</span> <span class="n">gene</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">"genes"</span><span class="p">]]</span>
+<span class="n">spots</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">spot</span><span class="p">)</span> <span class="k">for</span> <span class="n">spot</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">"cells"</span><span class="p">]]</span>
+
+<span class="k">if</span> <span class="n">rna_values</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">spots</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">genes</span><span class="p">)):</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"RNA must have shape (number of spots, number of genes)."</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">spots</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">spots</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">genes</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">genes</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Spot names and RNA gene names must each be unique."</span><span class="p">)</span>
+<span class="n">rna_numeric_values</span> <span class="o">=</span> <span class="n">rna_values</span><span class="o">.</span><span class="n">data</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">rna_values</span><span class="p">,</span> <span class="s2">"data"</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rna_values</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rna_numeric_values</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"RNA expression must contain only finite values."</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">metadata</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">!=</span> <span class="n">spots</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"metadata must be indexed in the same order as RNA."</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">coordinates</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">!=</span> <span class="n">spots</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"coordinates must be indexed in the same order as RNA."</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">adt</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">!=</span> <span class="n">spots</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"ADT must be indexed in the same order as RNA."</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">adt</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">is_unique</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">adt</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"ADT feature names must be unique and values must be finite."</span><span class="p">)</span>
+<span class="n">required_columns</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"cellchat_group"</span><span class="p">,</span> <span class="s2">"cellchat_dataset"</span><span class="p">}</span>
+<span class="n">missing_columns</span> <span class="o">=</span> <span class="n">required_columns</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">missing_columns</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"metadata is missing required columns: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">missing_columns</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">metadata</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">required_columns</span><span class="p">)]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"CellChat grouping and dataset labels cannot contain missing values."</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">coordinates</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Spatial coordinates must contain only finite numeric values."</span><span class="p">)</span>
+<span class="n">dataset_count</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="s2">"cellchat_dataset"</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">factor_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"ratio"</span><span class="p">,</span> <span class="s2">"tol"</span><span class="p">):</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">spatial_factors</span><span class="p">[</span><span class="n">factor_name</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">factor</span><span class="o">.</span><span class="n">size</span> <span class="o">!=</span> <span class="n">dataset_count</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">factor</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"spatial_factors[</span><span class="si">{</span><span class="n">factor_name</span><span class="si">!r}</span><span class="s2">] must contain one finite positive value per dataset."</span>
+        <span class="p">)</span>
+
+<span class="c1"># The H5 RNA matrix is sparse and unlabeled; restore its canonical labels.</span>
+<span class="n">rna</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">from_spmatrix</span><span class="p">(</span><span class="n">rna_values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">spots</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">genes</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"RNA: </span><span class="si">{</span><span class="n">rna</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> spots x </span><span class="si">{</span><span class="n">rna</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> genes"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"ADT: </span><span class="si">{</span><span class="n">adt</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> spots x </span><span class="si">{</span><span class="n">adt</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> proteins"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"1 pixel = </span><span class="si">{</span><span class="n">spatial_factors</span><span class="p">[</span><span class="s1">'ratio'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> um"</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"cellchat_group"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">"spots"</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+RNA: 2,568 spots x 3,023 genes
+ADT: 2,568 spots x 21 proteins
+1 pixel = 2.9967 um
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>spots</th>
+    </tr>
+    <tr>
+      <th>cellchat_group</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>B-cells</th>
+      <td>897</td>
+    </tr>
+    <tr>
+      <th>Mac-1</th>
+      <td>866</td>
+    </tr>
+    <tr>
+      <th>Mac-2</th>
+      <td>467</td>
+    </tr>
+    <tr>
+      <th>T-cells</th>
+      <td>338</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="Integrate-RNA-and-ADT-features">
+<h3>Integrate RNA and ADT features<a class="headerlink" href="#Integrate-RNA-and-ADT-features" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">preprocess_multiomics</span></code> rescales both modalities, thresholds the ADT data, maps antibody names to mouse CellChatDB gene symbols, and keeps ligand-receptor pairs supported by the measured RNA and ADT features. Supplying labeled DataFrames is essential: it preserves real spot and feature names instead of generating placeholder labels.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_mouse</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">load_database</span><span class="p">(</span><span class="s2">"mouse"</span><span class="p">)</span>
+<span class="n">multiomics</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">preprocess_multiomics</span><span class="p">([</span><span class="n">rna</span><span class="p">,</span> <span class="n">adt</span><span class="p">],</span> <span class="n">database</span><span class="o">=</span><span class="n">db_mouse</span><span class="p">)</span>
+<span class="n">data_input</span> <span class="o">=</span> <span class="n">multiomics</span><span class="p">[</span><span class="s2">"expression"</span><span class="p">]</span>
+<span class="n">db_use</span> <span class="o">=</span> <span class="n">multiomics</span><span class="p">[</span><span class="s2">"database"</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">data_input</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">!=</span> <span class="n">spots</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">"Spot names changed during multiomics preprocessing."</span><span class="p">)</span>
+<span class="n">required_features</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Il16"</span><span class="p">,</span> <span class="s2">"CD4"</span><span class="p">]</span>
+<span class="n">missing_features</span> <span class="o">=</span> <span class="p">[</span><span class="n">feature</span> <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">required_features</span> <span class="k">if</span> <span class="n">feature</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data_input</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">missing_features</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Required IL16 features are missing after preprocessing: </span><span class="si">{</span><span class="n">missing_features</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Combined input: </span><span class="si">{</span><span class="n">data_input</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> spots x </span><span class="si">{</span><span class="n">data_input</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> features"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Multiomics database: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">db_use</span><span class="p">[</span><span class="s1">'interaction'</span><span class="p">])</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> interactions"</span><span class="p">)</span>
+<span class="n">il16_database</span> <span class="o">=</span> <span class="n">db_use</span><span class="p">[</span><span class="s2">"interaction"</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="n">db_use</span><span class="p">[</span><span class="s2">"interaction"</span><span class="p">][</span><span class="s2">"pathway_name"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="s2">"IL16"</span><span class="p">),</span>
+    <span class="p">[</span><span class="s2">"interaction_name"</span><span class="p">,</span> <span class="s2">"pathway_name"</span><span class="p">,</span> <span class="s2">"ligand"</span><span class="p">,</span> <span class="s2">"receptor"</span><span class="p">,</span> <span class="s2">"annotation"</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="k">if</span> <span class="n">il16_database</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"The preprocessed multiomics database contains no IL16 interaction."</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">il16_database</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Combined input: 2,568 spots x 3,044 features
+Multiomics database: 29 interactions
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>interaction_name</th>
+      <th>pathway_name</th>
+      <th>ligand</th>
+      <th>receptor</th>
+      <th>annotation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>IL16_CD4</th>
+      <td>IL16_CD4</td>
+      <td>IL16</td>
+      <td>Il16</td>
+      <td>CD4</td>
+      <td>Secreted Signaling</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="Create-the-spatial-CellChat-object">
+<h3>Create the spatial CellChat object<a class="headerlink" href="#Create-the-spatial-CellChat-object" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cellchat</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">create_cellchat</span><span class="p">(</span>
+    <span class="nb">object</span><span class="o">=</span><span class="n">data_input</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span>
+    <span class="n">group_by</span><span class="o">=</span><span class="s2">"cellchat_group"</span><span class="p">,</span>
+    <span class="n">datatype</span><span class="o">=</span><span class="s2">"spatial"</span><span class="p">,</span>
+    <span class="n">coordinates</span><span class="o">=</span><span class="n">coordinates</span><span class="p">,</span>
+    <span class="n">spatial_factors</span><span class="o">=</span><span class="n">spatial_factors</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">if</span> <span class="n">cellchat</span><span class="o">.</span><span class="n">obs_names</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">!=</span> <span class="n">spots</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">"CellChat spot names changed during object creation."</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">cellchat</span><span class="o">.</span><span class="n">var_names</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">!=</span> <span class="n">data_input</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">"CellChat feature names changed during object creation."</span><span class="p">)</span>
+
+<span class="n">cellchat</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">set_database</span><span class="p">(</span><span class="n">cellchat</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">db_use</span><span class="p">)</span>
+
+<span class="n">color_use</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">sc_palette</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cellchat</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">categories</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">plot_spatial_dim</span><span class="p">(</span>
+    <span class="n">cellchat</span><span class="p">,</span>
+    <span class="n">color_use</span><span class="o">=</span><span class="n">color_use</span><span class="p">,</span>
+    <span class="n">title_name</span><span class="o">=</span><span class="s2">"SPOTS mouse spleen annotations"</span><span class="p">,</span>
+    <span class="n">pt_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">fig_size</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+    <span class="n">return_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s2">"00_spatial_annotations.png"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cellchat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Groups:"</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">cellchat</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">categories</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Create a CellChat object from a data matrix
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+c:\anaconda\envs\pytorch\Lib\site-packages\anndata\_core\anndata.py:402: FutureWarning: The dtype argument is deprecated and will be removed in late 2024.
+  warnings.warn(
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Cell groups used for CellChat analysis: [&#39;B-cells&#39;, &#39;Mac-1&#39;, &#39;Mac-2&#39;, &#39;T-cells&#39;]
+Create a CellChat object from spatial transcriptomics data...
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_spatial_multiomics\00_spatial_annotations.png
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_9_3.png" src="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_9_3.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+An object of class CellChat created from a single dataset
+3044 genes, 2568 cells
+CellChat analysis of SPATIAL data!
+The input spatial locations are:
+                         0       1
+AAACACCAATAACTGC-1   928.0  2033.0
+AAACAGAGCGACTCCT-1  2180.0   727.0
+AAACAGCTTTCAGAAG-1   761.0  1568.0
+AAACAGGGTCTATATT-1   828.0  1684.0
+AAACCGGGTAGGTACC-1  1078.0  1539.0
+Groups: [&#39;B-cells&#39;, &#39;Mac-1&#39;, &#39;Mac-2&#39;, &#39;T-cells&#39;]
+</pre></div></div>
+</div>
+</section>
+<section id="Identify-candidate-signaling-interactions">
+<h3>Identify candidate signaling interactions<a class="headerlink" href="#Identify-candidate-signaling-interactions" title="Link to this heading"></a></h3>
+<p>CellChat subsets the signaling features and then identifies over-expressed ligands, receptors, and ligand-receptor pairs. With <code class="docutils literal notranslate"><span class="pre">variable_both=False</span></code>, either member of a ligand-receptor pair can drive the pair into the candidate set.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cellchat</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">subset_signaling_data</span><span class="p">(</span><span class="n">cellchat</span><span class="p">)</span>
+<span class="n">cellchat</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">identify_overexpressed_genes</span><span class="p">(</span><span class="n">cellchat</span><span class="p">)</span>
+<span class="n">cellchat</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">identify_overexpressed_interactions</span><span class="p">(</span><span class="n">cellchat</span><span class="p">,</span> <span class="n">variable_both</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">lr_sig</span> <span class="o">=</span> <span class="n">cellchat</span><span class="o">.</span><span class="n">lr_pairs</span><span class="p">[</span><span class="s2">"significant"</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Candidate over-expressed L-R pairs: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">lr_sig</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">lr_sig</span><span class="p">[[</span><span class="s2">"interaction_name"</span><span class="p">,</span> <span class="s2">"pathway_name"</span><span class="p">,</span> <span class="s2">"ligand"</span><span class="p">,</span> <span class="s2">"receptor"</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The number of highly variable ligand-receptor pairs used for signaling inference is 29
+Candidate over-expressed L-R pairs: 29
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>interaction_name</th>
+      <th>pathway_name</th>
+      <th>ligand</th>
+      <th>receptor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>IL16_CD4</th>
+      <td>IL16_CD4</td>
+      <td>IL16</td>
+      <td>Il16</td>
+      <td>CD4</td>
+    </tr>
+    <tr>
+      <th>LGALS9_CD45</th>
+      <td>LGALS9_B220-CD45R</td>
+      <td>GALECTIN</td>
+      <td>Lgals9</td>
+      <td>B220-CD45R</td>
+    </tr>
+    <tr>
+      <th>LGALS9_IGHM</th>
+      <td>LGALS9_IGM</td>
+      <td>GALECTIN</td>
+      <td>Lgals9</td>
+      <td>IgM</td>
+    </tr>
+    <tr>
+      <th>SELL_MADCAM1</th>
+      <td>SELL_MADCAM1</td>
+      <td>SELL</td>
+      <td>Sell</td>
+      <td>MadCAM1</td>
+    </tr>
+    <tr>
+      <th>PECAM1_PECAM1</th>
+      <td>CD31_CD31</td>
+      <td>PECAM1</td>
+      <td>CD31</td>
+      <td>CD31</td>
+    </tr>
+    <tr>
+      <th>H2-OB_CD4</th>
+      <td>H2-OB_CD4</td>
+      <td>MHC-II</td>
+      <td>H2-Ob</td>
+      <td>CD4</td>
+    </tr>
+    <tr>
+      <th>H2-OA_CD4</th>
+      <td>H2-OA_CD4</td>
+      <td>MHC-II</td>
+      <td>H2-Oa</td>
+      <td>CD4</td>
+    </tr>
+    <tr>
+      <th>H2-DMB2_CD4</th>
+      <td>H2-DMB2_CD4</td>
+      <td>MHC-II</td>
+      <td>H2-DMb2</td>
+      <td>CD4</td>
+    </tr>
+    <tr>
+      <th>H2-DMB1_CD4</th>
+      <td>H2-DMB1_CD4</td>
+      <td>MHC-II</td>
+      <td>H2-DMb1</td>
+      <td>CD4</td>
+    </tr>
+    <tr>
+      <th>H2-DMA_CD4</th>
+      <td>H2-DMA_CD4</td>
+      <td>MHC-II</td>
+      <td>H2-DMa</td>
+      <td>CD4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="Part-II:-Infer-spatial-communication">
+<h2>Part II: Infer spatial communication<a class="headerlink" href="#Part-II:-Infer-spatial-communication" title="Link to this heading"></a></h2>
+<p>This example follows the R spatial multiomics vignette with a 10% truncated mean for group-level expression, spatial distance weighting, a 250 micrometer diffusion range, and a 100 micrometer contact range for low-resolution Visium data.</p>
+<p>The tutorial uses <code class="docutils literal notranslate"><span class="pre">n_boot=20</span></code> for a reasonably quick demonstration. Increase the number of permutations for a final biological analysis when runtime permits.</p>
+<section id="Compute-communication-probabilities">
+<h3>Compute communication probabilities<a class="headerlink" href="#Compute-communication-probabilities" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_boot</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">inference_started</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">cellchat</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">compute_communication_probability</span><span class="p">(</span>
+    <span class="n">cellchat</span><span class="p">,</span>
+    <span class="n">type_method</span><span class="o">=</span><span class="s2">"truncatedMean"</span><span class="p">,</span>
+    <span class="n">trim</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">distance_use</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">interaction_range</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>
+    <span class="n">scale_distance</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+    <span class="n">contact_dependent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">contact_range</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">n_boot</span><span class="o">=</span><span class="n">n_boot</span><span class="p">,</span>
+    <span class="n">seed_use</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">cellchat</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">filter_communication</span><span class="p">(</span><span class="n">cellchat</span><span class="p">,</span> <span class="n">min_cells</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">df_net</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">subset_communication</span><span class="p">(</span><span class="n">cellchat</span><span class="p">,</span> <span class="n">slot_name</span><span class="o">=</span><span class="s2">"network"</span><span class="p">,</span> <span class="n">thresh_pval</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Significant cell-group/L-R communications: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_net</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_net</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+truncatedMean is used for calculating the average gene expression per cell group.
+Pre-computing 20 bootstrap averaged expressions...
+Computing communication probabilities for 29 LR pairs...
+&gt;&gt;&gt; CellChat inference is done.
+Results stored in .network.
+Significant cell-group/L-R communications: 121
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>source</th>
+      <th>target</th>
+      <th>ligand</th>
+      <th>receptor</th>
+      <th>prob</th>
+      <th>pval</th>
+      <th>interaction_name</th>
+      <th>interaction_name_2</th>
+      <th>pathway_name</th>
+      <th>annotation</th>
+      <th>evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>B-cells</td>
+      <td>T-cells</td>
+      <td>Il16</td>
+      <td>CD4</td>
+      <td>0.033580</td>
+      <td>0.0</td>
+      <td>IL16_CD4</td>
+      <td>Il16 - CD4</td>
+      <td>IL16</td>
+      <td>Secreted Signaling</td>
+      <td>KEGG: mmu04060</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mac-1</td>
+      <td>T-cells</td>
+      <td>Il16</td>
+      <td>CD4</td>
+      <td>0.011360</td>
+      <td>0.0</td>
+      <td>IL16_CD4</td>
+      <td>Il16 - CD4</td>
+      <td>IL16</td>
+      <td>Secreted Signaling</td>
+      <td>KEGG: mmu04060</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Mac-2</td>
+      <td>T-cells</td>
+      <td>Il16</td>
+      <td>CD4</td>
+      <td>0.024818</td>
+      <td>0.0</td>
+      <td>IL16_CD4</td>
+      <td>Il16 - CD4</td>
+      <td>IL16</td>
+      <td>Secreted Signaling</td>
+      <td>KEGG: mmu04060</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>T-cells</td>
+      <td>T-cells</td>
+      <td>Il16</td>
+      <td>CD4</td>
+      <td>0.039740</td>
+      <td>0.0</td>
+      <td>IL16_CD4</td>
+      <td>Il16 - CD4</td>
+      <td>IL16</td>
+      <td>Secreted Signaling</td>
+      <td>KEGG: mmu04060</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>B-cells</td>
+      <td>B-cells</td>
+      <td>Lgals9</td>
+      <td>B220-CD45R</td>
+      <td>0.015953</td>
+      <td>0.0</td>
+      <td>LGALS9_B220-CD45R</td>
+      <td>Lgals9 - B220-CD45R</td>
+      <td>GALECTIN</td>
+      <td>Secreted Signaling</td>
+      <td>PMID: 30120235</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Mac-1</td>
+      <td>B-cells</td>
+      <td>Lgals9</td>
+      <td>B220-CD45R</td>
+      <td>0.009067</td>
+      <td>0.0</td>
+      <td>LGALS9_B220-CD45R</td>
+      <td>Lgals9 - B220-CD45R</td>
+      <td>GALECTIN</td>
+      <td>Secreted Signaling</td>
+      <td>PMID: 30120235</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Mac-2</td>
+      <td>B-cells</td>
+      <td>Lgals9</td>
+      <td>B220-CD45R</td>
+      <td>0.015540</td>
+      <td>0.0</td>
+      <td>LGALS9_B220-CD45R</td>
+      <td>Lgals9 - B220-CD45R</td>
+      <td>GALECTIN</td>
+      <td>Secreted Signaling</td>
+      <td>PMID: 30120235</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>T-cells</td>
+      <td>B-cells</td>
+      <td>Lgals9</td>
+      <td>B220-CD45R</td>
+      <td>0.014563</td>
+      <td>0.0</td>
+      <td>LGALS9_B220-CD45R</td>
+      <td>Lgals9 - B220-CD45R</td>
+      <td>GALECTIN</td>
+      <td>Secreted Signaling</td>
+      <td>PMID: 30120235</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>B-cells</td>
+      <td>B-cells</td>
+      <td>Lgals9</td>
+      <td>IgM</td>
+      <td>0.000477</td>
+      <td>0.0</td>
+      <td>LGALS9_IGM</td>
+      <td>Lgals9 - IgM</td>
+      <td>GALECTIN</td>
+      <td>Secreted Signaling</td>
+      <td>PMID: 30120235</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>B-cells</td>
+      <td>Mac-2</td>
+      <td>Lgals9</td>
+      <td>IgM</td>
+      <td>0.002141</td>
+      <td>0.0</td>
+      <td>LGALS9_IGM</td>
+      <td>Lgals9 - IgM</td>
+      <td>GALECTIN</td>
+      <td>Secreted Signaling</td>
+      <td>PMID: 30120235</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="Infer-pathway-level-communication">
+<h3>Infer pathway-level communication<a class="headerlink" href="#Infer-pathway-level-communication" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cellchat</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">compute_pathway_probability</span><span class="p">(</span><span class="n">cellchat</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">cellchat</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">aggregate_network</span><span class="p">(</span><span class="n">cellchat</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="n">pathways</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cellchat</span><span class="o">.</span><span class="n">pathway_network</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"prob"</span><span class="p">,</span> <span class="p">{}))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Significant pathways (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">pathways</span><span class="p">)</span><span class="si">}</span><span class="s2">):"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pathways</span><span class="p">))</span>
+
+<span class="n">df_pathway</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">subset_communication</span><span class="p">(</span>
+    <span class="n">cellchat</span><span class="p">,</span> <span class="n">slot_name</span><span class="o">=</span><span class="s2">"pathway_network"</span><span class="p">,</span> <span class="n">thresh_pval</span><span class="o">=</span><span class="mf">0.05</span>
+<span class="p">)</span>
+<span class="n">df_il16</span> <span class="o">=</span> <span class="n">df_pathway</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_pathway</span><span class="p">[</span><span class="s2">"pathway_name"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="s2">"IL16"</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">df_il16</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"IL16 was not significant at the pathway level."</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Inference elapsed: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">inference_started</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_il16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Pathway-level results stored in .pathway_network.
+Significant pathways (9):
+MHC-II, MHC-I, PECAM2, PECAM1, CD45, IL16, GALECTIN, SN, SELL
+Inference elapsed: 1.7 seconds
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>source</th>
+      <th>target</th>
+      <th>pathway_name</th>
+      <th>prob</th>
+      <th>pval</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>21</th>
+      <td>B-cells</td>
+      <td>T-cells</td>
+      <td>IL16</td>
+      <td>0.033580</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Mac-1</td>
+      <td>T-cells</td>
+      <td>IL16</td>
+      <td>0.011360</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Mac-2</td>
+      <td>T-cells</td>
+      <td>IL16</td>
+      <td>0.024818</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>T-cells</td>
+      <td>T-cells</td>
+      <td>IL16</td>
+      <td>0.039740</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="Part-III:-Visualize-the-communication-network">
+<h2>Part III: Visualize the communication network<a class="headerlink" href="#Part-III:-Visualize-the-communication-network" title="Link to this heading"></a></h2>
+<p>The R spatial multiomics vignette highlights IL16 signaling. The chord plot summarizes the inferred pathway-level network, while the spatial plot places the same signaling pathway back on the tissue coordinates.</p>
+<section id="Visualize-IL16-communication">
+<h3>Visualize IL16 communication<a class="headerlink" href="#Visualize-IL16-communication" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pathway_show</span> <span class="o">=</span> <span class="s2">"IL16"</span>
+<span class="k">if</span> <span class="n">pathway_show</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pathways</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">pathway_show</span><span class="si">!r}</span><span class="s2"> was not inferred. Available pathways: </span><span class="si">{</span><span class="n">pathways</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">plot_network_aggregate</span><span class="p">(</span>
+    <span class="n">cellchat</span><span class="p">,</span>
+    <span class="n">signaling</span><span class="o">=</span><span class="n">pathway_show</span><span class="p">,</span>
+    <span class="n">layout</span><span class="o">=</span><span class="s2">"chord"</span><span class="p">,</span>
+    <span class="n">title_name</span><span class="o">=</span><span class="s2">"IL16 signaling pathway network"</span><span class="p">,</span>
+    <span class="n">fig_size</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+    <span class="n">return_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s2">"01_IL16_chord.png"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_spatial_multiomics\01_IL16_chord.png
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+c:\anaconda\envs\pytorch\Lib\site-packages\mpl_chord_diagram\utilities.py:167: RuntimeWarning: invalid value encountered in divide
+  return (mat[i, :] / x[i]) * (end - start)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_19_2.png" src="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_19_2.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">plot_network_spatial</span><span class="p">(</span>
+    <span class="n">cellchat</span><span class="p">,</span>
+    <span class="n">signaling</span><span class="o">=</span><span class="n">pathway_show</span><span class="p">,</span>
+    <span class="n">title_name</span><span class="o">=</span><span class="s2">"IL16 signaling in spatial coordinates"</span><span class="p">,</span>
+    <span class="n">return_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s2">"02_IL16_spatial_network.png"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_spatial_multiomics\02_IL16_spatial_network.png
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_20_1.png" src="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_20_1.png" />
+</div>
+</div>
+</section>
+<section id="Compute-signaling-role-centrality">
+<h3>Compute signaling-role centrality<a class="headerlink" href="#Compute-signaling-role-centrality" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cellchat</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">compute_network_centrality</span><span class="p">(</span><span class="n">cellchat</span><span class="p">,</span> <span class="n">slot_name</span><span class="o">=</span><span class="s2">"pathway_network"</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">net_analysis_signaling_role_network</span><span class="p">(</span>
+    <span class="n">cellchat</span><span class="p">,</span>
+    <span class="n">signaling</span><span class="o">=</span><span class="n">pathway_show</span><span class="p">,</span>
+    <span class="n">slot_name</span><span class="o">=</span><span class="s2">"pathway_network"</span><span class="p">,</span>
+    <span class="n">font_size</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
+    <span class="n">fig_size</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span>
+    <span class="n">return_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s2">"03_IL16_signaling_roles.png"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_spatial_multiomics\03_IL16_signaling_roles.png
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_22_1.png" src="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_22_1.png" />
+</div>
+</div>
+</section>
+<section id="Plot-RNA-and-ADT-abundance-on-tissue">
+<h3>Plot RNA and ADT abundance on tissue<a class="headerlink" href="#Plot-RNA-and-ADT-abundance-on-tissue" title="Link to this heading"></a></h3>
+<p>The combined CellChat matrix retains <code class="docutils literal notranslate"><span class="pre">Il16</span></code> as an RNA feature and <code class="docutils literal notranslate"><span class="pre">CD4</span></code> as the mapped ADT feature. Separate panels use independent color scales, matching the R vignette’s distinction between ligand RNA expression and receptor protein abundance.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">feature</span><span class="p">,</span> <span class="n">color_bar</span><span class="p">,</span> <span class="n">filename</span> <span class="ow">in</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"Il16"</span><span class="p">,</span> <span class="s2">"Reds"</span><span class="p">,</span> <span class="s2">"04_spatial_RNA_Il16.png"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"CD4"</span><span class="p">,</span> <span class="s2">"Blues"</span><span class="p">,</span> <span class="s2">"04_spatial_ADT_CD4.png"</span><span class="p">),</span>
+<span class="p">]:</span>
+    <span class="k">if</span> <span class="n">feature</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cellchat</span><span class="o">.</span><span class="n">var_names</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Required spatial feature is missing: </span><span class="si">{</span><span class="n">feature</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">plot_spatial_feature</span><span class="p">(</span>
+        <span class="n">cellchat</span><span class="p">,</span>
+        <span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="n">feature</span><span class="p">],</span>
+        <span class="n">color_bar</span><span class="o">=</span><span class="n">color_bar</span><span class="p">,</span>
+        <span class="n">pt_size</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+        <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">fig_size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+        <span class="n">return_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">plot_spatial_feature</span><span class="p">(</span>
+    <span class="n">cellchat</span><span class="p">,</span>
+    <span class="n">signaling</span><span class="o">=</span><span class="n">pathway_show</span><span class="p">,</span>
+    <span class="n">color_bar</span><span class="o">=</span><span class="s2">"Reds"</span><span class="p">,</span>
+    <span class="n">pt_size</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+    <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">fig_size</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="n">return_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s2">"05_spatial_IL16_features.png"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_spatial_multiomics\04_spatial_RNA_Il16.png
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_24_1.png" src="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_24_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_spatial_multiomics\04_spatial_ADT_CD4.png
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_24_3.png" src="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_24_3.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_spatial_multiomics\05_spatial_IL16_features.png
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_24_5.png" src="../_images/tutorials_CellChat_analysis_of_spatial_multiomics_data_24_5.png" />
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="Part-IV:-Save-results">
+<h2>Part IV: Save results<a class="headerlink" href="#Part-IV:-Save-results" title="Link to this heading"></a></h2>
+<p>Communication tables are convenient for downstream analysis, while pickle preserves the full Python <code class="docutils literal notranslate"><span class="pre">CellChat</span></code> object. Export is opt-in so running the tutorial does not unexpectedly overwrite result files; set <code class="docutils literal notranslate"><span class="pre">export_results</span> <span class="pre">=</span> <span class="pre">True</span></code> when these artifacts are needed.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">export_results</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"spots"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">metadata</span><span class="p">),</span>
+        <span class="s2">"cell_groups"</span><span class="p">:</span> <span class="n">metadata</span><span class="p">[</span><span class="s2">"cellchat_group"</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">(),</span>
+        <span class="s2">"database_interactions"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">db_use</span><span class="p">[</span><span class="s2">"interaction"</span><span class="p">]),</span>
+        <span class="s2">"candidate_lr_pairs"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">lr_sig</span><span class="p">),</span>
+        <span class="s2">"significant_lr_communications"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_net</span><span class="p">),</span>
+        <span class="s2">"significant_pathways"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">pathways</span><span class="p">),</span>
+        <span class="s2">"pixel_to_um"</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">spatial_factors</span><span class="p">[</span><span class="s2">"ratio"</span><span class="p">][</span><span class="mi">0</span><span class="p">]),</span>
+        <span class="s2">"analysis_seconds"</span><span class="p">:</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">ptm</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"value"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="n">export_results</span><span class="p">:</span>
+    <span class="n">result_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">lr_path</span> <span class="o">=</span> <span class="n">result_dir</span> <span class="o">/</span> <span class="s2">"inferred_ligand_receptor_communications.csv"</span>
+    <span class="n">pathway_path</span> <span class="o">=</span> <span class="n">result_dir</span> <span class="o">/</span> <span class="s2">"inferred_pathway_communications.csv"</span>
+    <span class="n">summary_path</span> <span class="o">=</span> <span class="n">result_dir</span> <span class="o">/</span> <span class="s2">"analysis_summary.csv"</span>
+    <span class="n">object_path</span> <span class="o">=</span> <span class="n">result_dir</span> <span class="o">/</span> <span class="s2">"cellchat_SPOTS_mouse_spleen.pkl"</span>
+
+    <span class="n">df_net</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">lr_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">df_pathway</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">pathway_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">summary</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">summary_path</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">object_path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">cellchat</span><span class="p">,</span> <span class="n">handle</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">HIGHEST_PROTOCOL</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"L-R table:"</span><span class="p">,</span> <span class="n">lr_path</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Pathway table:"</span><span class="p">,</span> <span class="n">pathway_path</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Summary:"</span><span class="p">,</span> <span class="n">summary_path</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"CellChat object:"</span><span class="p">,</span> <span class="n">object_path</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Set export_results=True to write communication tables and the CellChat object."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>spots</th>
+      <td>2568.000000</td>
+    </tr>
+    <tr>
+      <th>cell_groups</th>
+      <td>4.000000</td>
+    </tr>
+    <tr>
+      <th>database_interactions</th>
+      <td>29.000000</td>
+    </tr>
+    <tr>
+      <th>candidate_lr_pairs</th>
+      <td>29.000000</td>
+    </tr>
+    <tr>
+      <th>significant_lr_communications</th>
+      <td>121.000000</td>
+    </tr>
+    <tr>
+      <th>significant_pathways</th>
+      <td>9.000000</td>
+    </tr>
+    <tr>
+      <th>pixel_to_um</th>
+      <td>2.996668</td>
+    </tr>
+    <tr>
+      <th>analysis_seconds</th>
+      <td>6.067772</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Set export_results=True to write communication tables and the CellChat object.
+</pre></div></div>
+</div>
+</section>
+<section id="Workflow-summary">
+<h2>Workflow summary<a class="headerlink" href="#Workflow-summary" title="Link to this heading"></a></h2>
+<p>The complete CellChatPy workflow used in this notebook is:</p>
+<ol class="arabic simple">
+<li><p>Load matched RNA, ADT, metadata, coordinates, and spatial factors with <code class="docutils literal notranslate"><span class="pre">read_spatial_h5</span></code>.</p></li>
+<li><p>Restore labels on the sparse RNA matrix and integrate RNA with ADT using <code class="docutils literal notranslate"><span class="pre">preprocess_multiomics</span></code>.</p></li>
+<li><p>Create a spatial <code class="docutils literal notranslate"><span class="pre">CellChat</span></code> object and identify candidate signaling interactions.</p></li>
+<li><p>Infer spatially constrained ligand-receptor and pathway communication.</p></li>
+<li><p>Analyze IL16 signaling and distinguish RNA expression from ADT protein abundance in tissue plots.</p></li>
+</ol>
+<p>For another spatial multiomics platform, preserve modality labels and spot alignment, then derive <code class="docutils literal notranslate"><span class="pre">ratio</span></code>, <code class="docutils literal notranslate"><span class="pre">tol</span></code>, interaction range, and contact range from that platform’s physical geometry.</p>
+<section id="Session-information">
+<h3>Session information<a class="headerlink" href="#Session-information" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Python: </span><span class="si">{</span><span class="n">platform</span><span class="o">.</span><span class="n">python_version</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"CellChatPy: </span><span class="si">{</span><span class="n">cc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"pandas: </span><span class="si">{</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Python: 3.11.13
+CellChatPy: 1.1.0
+pandas: 3.0.3
+</pre></div></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CellChat_analysis_of_spatial_transcriptomics_data.html" class="btn btn-neutral float-left" title="CellChatPy analysis of spatial transcriptomics data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SpatialCellChat_analysis_of_spatial_transcriptomics_data.html" class="btn btn-neutral float-right" title="Spatial CellChat analysis of human psoriatic skin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, CellChatPy contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

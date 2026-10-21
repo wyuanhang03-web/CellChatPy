@@ -1,0 +1,14 @@
+{
+  "all_original_cells_completed": true,
+  "package_file": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream\\CellChatPy\\__init__.py",
+  "final_objects": [
+    "cellchat_all",
+    "cellchat_NL",
+    "cellchat_LS",
+    "cellchat_merged",
+    "cellchat_NL_grouped",
+    "cellchat_LS_grouped",
+    "cellchat_grouped"
+  ],
+  "inference_call_count": 2
+}

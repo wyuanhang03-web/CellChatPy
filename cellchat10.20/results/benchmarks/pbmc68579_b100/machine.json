@@ -1,0 +1,11 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "logical_cpus": 20,
+  "python": "3.11.13 | packaged by Anaconda, Inc. | (main, Jun  5 2025, 13:03:15) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "scipy": "1.16.3",
+  "ram_bytes": 16869548032,
+  "available_ram_bytes_at_start": 2407170048,
+  "executable": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\.venv\\Scripts\\python.exe"
+}

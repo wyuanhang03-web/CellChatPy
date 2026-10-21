@@ -1,0 +1,15 @@
+[
+  {
+    "call_index": 0,
+    "elapsed_seconds": 182.6047165999771,
+    "kwargs": {
+      "type_method": "'triMean'",
+      "permutation_use": "array(shape=(5011, 100))"
+    },
+    "shape": [
+      5011,
+      17328
+    ],
+    "groups": 12
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "filename": "fresh_68k_pbmc_donor_a_filtered_gene_bc_matrices.tar.gz",
+    "bytes": 124442812,
+    "sha256": "3f35f37ff344bc9b32f97cd003ac986ebb9b5d7f31006c53dff4cb38da267931",
+    "url": "https://cf.10xgenomics.com/samples/cell-exp/1.1.0/fresh_68k_pbmc_donor_a/fresh_68k_pbmc_donor_a_filtered_gene_bc_matrices.tar.gz"
+  },
+  {
+    "filename": "fresh_68k_pbmc_donor_a_analysis.tar.gz",
+    "bytes": 24380463,
+    "sha256": "4b199ceacfd936cfad0eb6b38898f8cb30fb8ab373447ec728eaa531a214bfbb",
+    "url": "https://cf.10xgenomics.com/samples/cell-exp/1.1.0/fresh_68k_pbmc_donor_a/fresh_68k_pbmc_donor_a_analysis.tar.gz"
+  }
+]

@@ -1,0 +1,163 @@
+{
+  "machine": {
+    "physical_ram_bytes": 16869548032,
+    "logical_cpu": 20,
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel"
+  },
+  "local_data": [
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\cellchat_humanSkin_LS.h5",
+      "bytes": 95776608,
+      "shape": [
+        17328,
+        5011
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\cellchat_humanSkin_NL.h5",
+      "bytes": 54707952,
+      "shape": [
+        17328,
+        2552
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\data_humanSkin.h5",
+      "bytes": 18091900,
+      "shape": [
+        17328,
+        7563
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\data_human_intestine_A1.h5",
+      "bytes": 9308553,
+      "shape": [
+        15882,
+        2649
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\data_human_intestine_A2.h5",
+      "bytes": 12654076,
+      "shape": [
+        16514,
+        2316
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\data_mouseCortex_visium.h5",
+      "bytes": 170340159,
+      "shape": [
+        433,
+        1073
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\data_mouseSkin_E13.h5",
+      "bytes": 622463433,
+      "shape": [
+        18322,
+        12951
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\data_mouseSkin_E14.h5",
+      "bytes": 578496500,
+      "shape": [
+        18227,
+        12179
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\human_intestine_A1.h5",
+      "bytes": 41769456,
+      "shape": [
+        2649,
+        15882
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\human_intestine_A2.h5",
+      "bytes": 58059748,
+      "shape": [
+        2316,
+        16514
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\human_psoriasis.h5",
+      "bytes": 33711114,
+      "shape": [
+        905,
+        33538
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\human_skin.h5ad",
+      "bytes": 71742646,
+      "shape": [
+        7563,
+        17328
+      ],
+      "orientation": "cells_by_genes"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\mouse_cortex_visium.h5",
+      "bytes": 1478924,
+      "shape": [
+        1073,
+        433
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\mouse_skin_e13.h5ad",
+      "bytes": 467634542,
+      "shape": [
+        12951,
+        18322
+      ],
+      "orientation": "cells_by_genes"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\mouse_skin_e14.h5ad",
+      "bytes": 434692390,
+      "shape": [
+        12179,
+        18227
+      ],
+      "orientation": "cells_by_genes"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\mouse_spleen_spatial_multiomics.h5",
+      "bytes": 94930340,
+      "shape": [
+        2568,
+        3023
+      ],
+      "orientation": "genes_by_cells"
+    },
+    {
+      "path": "E:\\Jin\\cellchat.python_new\\data\\visium_human_psoriasis.h5",
+      "bytes": 33478662,
+      "shape": [
+        33538,
+        905
+      ],
+      "orientation": "genes_by_cells"
+    }
+  ],
+  "finding": "Largest existing independent single sample is mouse E13 12,951 cells. No existing >=100k-cell real atlas found. Acquiring complete official 68,579-cell PBMC dataset."
+}

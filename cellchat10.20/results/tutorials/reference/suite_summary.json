@@ -1,0 +1,154 @@
+[
+  {
+    "name": "CellChat_humanSkin_LS",
+    "label": "reference",
+    "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream",
+    "package_python_source_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+    "source_sha256": "6aba9a7c6e4e6566c6b3d2e211ce12723c2d61e93343ea7f7963ba9763513342",
+    "threads": 2,
+    "original_code_cell_count": 23,
+    "original_cells_unchanged": true,
+    "tutorial_compatibility_patches": [],
+    "executed_code_sha256": "d7f6e959043d52e3b41230bd37be888cdc723b1394b3805d2082a1d6c4529c6e",
+    "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\01_human_skin",
+    "status": "passed",
+    "resource_observations": {
+      "kernel_tree_peak_rss_bytes": 1083686912,
+      "system_min_available_bytes": 1100890112,
+      "sampling_interval_seconds": 0.25
+    },
+    "elapsed_seconds": 298.94950859999517,
+    "executed_original_code_cells": 23,
+    "figures": 44
+  },
+  {
+    "name": "CellChat_comparison_analysis_NL_LS",
+    "label": "reference",
+    "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream",
+    "package_python_source_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+    "source_sha256": "63d79489db286a2ec8f099aeb2b2409922ad1313e4f21852fddcb5414f6ea2a9",
+    "threads": 2,
+    "original_code_cell_count": 28,
+    "original_cells_unchanged": true,
+    "tutorial_compatibility_patches": [],
+    "executed_code_sha256": "0ba863588066f1f867dadc27ffb4d103f3a49166a0001d070a1f51fc8d0e80c1",
+    "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\02_nl_ls",
+    "status": "passed",
+    "resource_observations": {
+      "kernel_tree_peak_rss_bytes": 1262964736,
+      "system_min_available_bytes": 2153873408,
+      "sampling_interval_seconds": 0.25
+    },
+    "elapsed_seconds": 423.35624379996443,
+    "executed_original_code_cells": 28,
+    "figures": 46
+  },
+  {
+    "name": "Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions",
+    "label": "reference",
+    "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream",
+    "package_python_source_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+    "source_sha256": "c37050d1509e83aa2de49a3d22e7cfbaaf498119513f088ace90a358ec03003b",
+    "threads": 2,
+    "original_code_cell_count": 13,
+    "original_cells_unchanged": true,
+    "tutorial_compatibility_patches": [],
+    "executed_code_sha256": "d185486a84696327f0e311e2549cac166c38634b7094e84b545cb6b29522a519",
+    "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\03_embryonic",
+    "status": "passed",
+    "resource_observations": {
+      "kernel_tree_peak_rss_bytes": 2776363008,
+      "system_min_available_bytes": 542126080,
+      "sampling_interval_seconds": 0.25
+    },
+    "elapsed_seconds": 585.480063199997,
+    "executed_original_code_cells": 13,
+    "figures": 8
+  },
+  {
+    "name": "CellChat_analysis_of_spatial_transcriptomics_data",
+    "label": "reference",
+    "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream",
+    "package_python_source_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+    "source_sha256": "fbff2d01fd95fcae42b1da4417359beb2b2eb8cdff4d9a06076b33aaaf19abbe",
+    "threads": 2,
+    "original_code_cell_count": 14,
+    "original_cells_unchanged": false,
+    "tutorial_compatibility_patches": [
+      {
+        "name": "CellChat_analysis_of_spatial_transcriptomics_data",
+        "original_cell_index": 15,
+        "old": "significant_prob[lr_pval > 0.05] = 0.0",
+        "new": "significant_prob[lr_pval >= 0.05] = 0.0",
+        "original_cell_sha256": "55ce889885328c8f8d34c3295fed9d7c8ea8c46517258e4ba5180587d0b91269",
+        "adapted_cell_sha256": "0a37e911970ca28dbd29f063c2704769138069321bc915a81904ba6444218425",
+        "reason": "The unchanged upstream aggregate_network uses strict pval < thresh (modeling.py:897-898); the tutorial manual assertion incorrectly retained pval == 0.05. This fixes only its independent check, never inference/filter parameters.",
+        "applied_to_both_engines": true
+      }
+    ],
+    "executed_code_sha256": "dbeb023d81b7987dbd214bb52d05386eff50f516f48cbedc5797942dfbc31b6f",
+    "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\04_visium",
+    "status": "passed",
+    "elapsed_seconds": 68.63598219997948,
+    "executed_original_code_cells": 14,
+    "figures": 11
+  },
+  {
+    "name": "CellChat_analysis_of_multiple_spatial_transcriptomics_datasets",
+    "label": "reference",
+    "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream",
+    "source_sha256": "6edbed657346775ac6a44fb9960b2b11beb4d47ae11254a72ccf8bcaf213b7df",
+    "threads": 2,
+    "original_code_cell_count": 16,
+    "original_cells_unchanged": true,
+    "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\05_multi_spatial",
+    "status": "passed",
+    "elapsed_seconds": 468.8972491999739,
+    "executed_original_code_cells": 16,
+    "figures": 12
+  },
+  {
+    "name": "CellChat_analysis_of_spatial_multiomics_data",
+    "label": "reference",
+    "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream",
+    "package_python_source_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+    "source_sha256": "bd87ead6fac24316df0d0483b4f9c2582eec152244c35d57173cd32e55c5f997",
+    "threads": 2,
+    "original_code_cell_count": 13,
+    "original_cells_unchanged": true,
+    "tutorial_compatibility_patches": [],
+    "executed_code_sha256": "515a2adf4b025b8f885f4f0326293065048f500499bf937bee9065f95fe1e0f2",
+    "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\06_multiomics",
+    "status": "passed",
+    "resource_observations": {
+      "kernel_tree_peak_rss_bytes": 1211400192,
+      "system_min_available_bytes": 2983432192,
+      "sampling_interval_seconds": 0.25
+    },
+    "elapsed_seconds": 42.17686509998748,
+    "executed_original_code_cells": 13,
+    "figures": 7
+  },
+  {
+    "name": "SpatialCellChat_analysis_of_spatial_transcriptomics_data",
+    "label": "reference",
+    "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream",
+    "package_python_source_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+    "source_sha256": "949a2484d96c37c8b42c2251a30684fc5454eaa4ac105c53b3e96fbf113b66dc",
+    "threads": 2,
+    "original_code_cell_count": 16,
+    "original_cells_unchanged": true,
+    "tutorial_compatibility_patches": [],
+    "executed_code_sha256": "84b7c394302c085830af438353bada7de31cda2536cf994041890c92e9e9fb8b",
+    "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\07_psoriasis",
+    "status": "passed",
+    "resource_observations": {
+      "kernel_tree_peak_rss_bytes": 1137696768,
+      "system_min_available_bytes": 3003617280,
+      "sampling_interval_seconds": 0.25
+    },
+    "elapsed_seconds": 118.83178469998529,
+    "executed_original_code_cells": 16,
+    "figures": 20
+  }
+]

@@ -1,0 +1,121 @@
+[
+  {
+    "repo": "RyanYip-Kat/PyCellChat",
+    "branch": "main",
+    "license": null,
+    "description": "实现R包CellChat的Python移植，功能基本和CellChat的一致",
+    "readme_url": "https://github.com/RyanYip-Kat/PyCellChat/blob/main/README.md",
+    "relevant_paths": [
+      "compare_r/cellchat_ref.R",
+      "data/CellChatDB.human.pkl",
+      "data/CellChatDB.mouse.pkl",
+      "data/CellChatDB.zebrafish.pkl",
+      "src/pycellchat/__init__.py",
+      "src/pycellchat/__pycache__/__init__.cpython-312.pyc",
+      "src/pycellchat/__pycache__/analysis.cpython-312.pyc",
+      "src/pycellchat/__pycache__/database.cpython-312.pyc",
+      "src/pycellchat/__pycache__/merged.cpython-312.pyc",
+      "src/pycellchat/__pycache__/modeling.cpython-312.pyc",
+      "src/pycellchat/__pycache__/object.cpython-312.pyc",
+      "src/pycellchat/__pycache__/preprocessing.cpython-312.pyc",
+      "src/pycellchat/__pycache__/utils.cpython-312.pyc",
+      "src/pycellchat/__pycache__/visualization.cpython-312.pyc",
+      "src/pycellchat/analysis.py",
+      "src/pycellchat/database.py",
+      "src/pycellchat/merged.py",
+      "src/pycellchat/modeling.py",
+      "src/pycellchat/object.py",
+      "src/pycellchat/preprocessing.py",
+      "src/pycellchat/utils.py",
+      "src/pycellchat/visualization.py"
+    ]
+  },
+  {
+    "repo": "cheneyyu/pyccc",
+    "branch": "main",
+    "license": "MIT",
+    "description": "AnnData-native, CellChat-compatible CCC with faster regular-mode scaling and DB-free LR prediction.",
+    "readme_url": "https://github.com/cheneyyu/pyccc/blob/main/README.md",
+    "relevant_paths": [
+      "docs/_static/plotting/report_save_cellchat_report.png",
+      "docs/_static/reports/cellchat_report.pdf",
+      "docs/cellchat_visual_coverage.md",
+      "examples/cellchat_official_plotnine_demo.py",
+      "examples/cellchat_plot_comparison.py",
+      "examples/cellchat_reference_comparison.py",
+      "examples/cellxgene_blood_lung_benchmark.py",
+      "examples/three_way_runtime_benchmark.py",
+      "inst/r/pyccc_to_cellchat.R",
+      "inst/r/pyccc_to_merged_cellchat.R",
+      "src/pyccc/cellchat_bridge.py",
+      "src/pyccc/r/pyccc_to_cellchat.R",
+      "src/pyccc/r/pyccc_to_merged_cellchat.R"
+    ]
+  },
+  {
+    "repo": "saezlab/liana-py",
+    "branch": "main",
+    "license": "BSD-3-Clause",
+    "description": "LIANA+: an all-in-one framework for cell-cell communication",
+    "readme_url": "https://github.com/scverse/liana/blob/main/README.md",
+    "relevant_paths": [
+      "src/liana/method/sc/_cellchat.py"
+    ]
+  },
+  {
+    "repo": "Starlitnightly/omicverse",
+    "branch": "master",
+    "license": "GPL-3.0",
+    "description": "A python library for multi omics included bulk, single cell and spatial RNA-seq analysis.",
+    "readme_url": "https://github.com/omicverse/omicverse/blob/master/README.md",
+    "relevant_paths": [
+      "omicverse/datasets/data_files/TF/cellchat_interactions_and_tfs_human.csv",
+      "omicverse/datasets/data_files/TF/cellchat_interactions_and_tfs_mouse.csv",
+      "omicverse/external/cellchat/__init__.py",
+      "omicverse/external/cellchat/_db.py",
+      "omicverse/external/cellchat/_engine.py",
+      "omicverse/external/cellchat/_pipeline.py",
+      "omicverse/external/cellchat/data/NOTICE",
+      "omicverse/external/cellchat/data/human_cofactor.csv.gz",
+      "omicverse/external/cellchat/data/human_complex.csv.gz",
+      "omicverse/external/cellchat/data/human_interaction.csv.gz",
+      "omicverse/external/cellchat/data/mouse_cofactor.csv.gz",
+      "omicverse/external/cellchat/data/mouse_complex.csv.gz",
+      "omicverse/external/cellchat/data/mouse_interaction.csv.gz",
+      "omicverse/external/cellchat/data/zebrafish_cofactor.csv.gz",
+      "omicverse/external/cellchat/data/zebrafish_complex.csv.gz",
+      "omicverse/external/cellchat/data/zebrafish_interaction.csv.gz",
+      "omicverse/external/commot/preprocessing/_data/LRdatabase/CellChat/CellChatDB.ligrec.human.csv",
+      "omicverse/external/commot/preprocessing/_data/LRdatabase/CellChat/CellChatDB.ligrec.mouse.csv",
+      "omicverse/external/commot/preprocessing/_data/LRdatabase/CellChat/CellChatDB.ligrec.zebrafish.csv",
+      "omicverse/single/_cellchat.py",
+      "tests/jarvis/test_jarvis_parity_closure.py",
+      "tests/single/data/cellchat_r_reference.R",
+      "tests/single/data/cellchat_r_reference.npz",
+      "tests/single/test_cellchat.py",
+      "tests/single/test_milo_pyedger_parity.py",
+      "tests/test_metabol_r_parity.py"
+    ]
+  },
+  {
+    "repo": "ventolab/CellphoneDB",
+    "branch": "master",
+    "license": "MIT",
+    "description": "CellPhoneDB can be used to search for a particular ligand/receptor, or interrogate your own HUMAN single-cell transcriptomics data.",
+    "readme_url": "https://github.com/ventolab/CellphoneDB/blob/master/README.md"
+  },
+  {
+    "repo": "zcang/COMMOT",
+    "branch": "main",
+    "license": "MIT",
+    "description": null,
+    "readme_url": "https://github.com/zcang/COMMOT/blob/main/README.md"
+  },
+  {
+    "repo": "earmingol/cell2cell",
+    "branch": "master",
+    "license": "BSD-3-Clause",
+    "description": "User-friendly tool to infer cell-cell interactions and communication from gene expression of interacting proteins",
+    "readme_url": "https://github.com/earmingol/cell2cell/blob/master/README.md"
+  }
+]

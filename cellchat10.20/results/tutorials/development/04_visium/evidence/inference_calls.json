@@ -1,0 +1,23 @@
+[
+  {
+    "call_index": 0,
+    "elapsed_seconds": 1.6692051999852993,
+    "kwargs": {
+      "type_method": "'truncatedMean'",
+      "trim": "0.1",
+      "distance_use": "True",
+      "interaction_range": "250",
+      "scale_distance": "0.01",
+      "k_min": "10",
+      "contact_dependent": "True",
+      "contact_range": "100",
+      "n_boot": "20",
+      "seed_use": "1"
+    },
+    "shape": [
+      1073,
+      433
+    ],
+    "groups": 8
+  }
+]

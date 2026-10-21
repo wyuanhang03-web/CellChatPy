@@ -1,0 +1,10 @@
+Create a CellChat object from a data matrix
+C:\anaconda\envs\pytorch\Lib\site-packages\anndata\_core\anndata.py:402: FutureWarning: The dtype argument is deprecated and will be removed in late 2024.
+  warnings.warn(
+E:\Jin\cellchat.python_new\cellchat10.20\development\CellChatPy\cellchat_class.py:512: UserWarning: Adding 'cellchat_dataset' column to metadata. All cells assigned to 'sample1'
+  warnings.warn(
+Cell groups used for CellChat analysis: ['benchmark_cluster_0', 'benchmark_cluster_1', 'benchmark_cluster_2', 'benchmark_cluster_3', 'benchmark_cluster_4', 'benchmark_cluster_5', 'benchmark_cluster_6', 'benchmark_cluster_7', 'benchmark_cluster_8', 'benchmark_cluster_9']
+triMean is used for calculating the average gene expression per cell group.
+>>> CellChat inference is done.
+Results stored in .network.
+{"engine": "streaming", "cells": 68579, "genes": 1404, "pairs": 3072, "inference_seconds": 5.758868100005202, "inference_peak_rss_bytes": 825122816}

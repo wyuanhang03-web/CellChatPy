@@ -1,0 +1,362 @@
+{
+  "reference_label": "reference",
+  "candidate_label": "development",
+  "exact_array_equality_definition": "numpy.array_equal on finite values (legacy bitwise_equal field name); PNG equality uses SHA-256 byte hashes",
+  "absolute_tolerance": 1e-12,
+  "relative_tolerance": 1e-12,
+  "requested_tutorials": [
+    "CellChat_humanSkin_LS"
+  ],
+  "tutorials": [
+    {
+      "name": "CellChat_humanSkin_LS",
+      "directory": "01_human_skin",
+      "comparisons": [
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\01_human_skin\\evidence\\final_cellchat.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\01_human_skin\\evidence\\final_cellchat.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                688,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                688,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            },
+            {
+              "key": "count",
+              "shape": [
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "weight",
+              "shape": [
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 198432,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\01_human_skin\\evidence\\inference_0.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\01_human_skin\\evidence\\inference_0.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                688,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                688,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 198144,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        }
+      ],
+      "reference_status": "passed",
+      "candidate_status": "passed",
+      "reference_package_python_source_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+      "candidate_package_python_source_sha256": "8b4db0a0fb311b6a7f92412ea6a1a1570c3697fe1fcd606ab58ccee5f2794d1d",
+      "original_source_equal": true,
+      "reference_seconds": 298.94950859999517,
+      "candidate_seconds": 106.91396430000896,
+      "reference_figures": 44,
+      "candidate_figures": 44,
+      "figure_paths_equal": true,
+      "figure_comparisons": [
+        {
+          "figure": "tutorial/figures_vignette/00_database_category.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/01_circle_count.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_APOEplus_FIB_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_CD40LGplus_TC_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_cDC1_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_cDC2_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_COL11A1plus_FIB_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_FBN1plus_FIB_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_Inflam._DC_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_Inflam._FIB_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_Inflam._TC_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_LC_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_NKT_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_TC_out.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/02_circle_weight.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/03_chord_cell_CXCL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/03_circle_CXCL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/03_heatmap_CXCL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/04_contribution_CXCL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/05_individual_CXCL_chord.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/05_individual_CXCL_circle.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/06_bubble_CCL_CXCL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/06_bubble_CCL_CXCL_FGF.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/06_bubble_src4_tgt5to11.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/07_chord_gene_CCL_CXCL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/07_chord_gene_from_InflamFIB.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/07_chord_gene_pathway_network.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/07_chord_gene_to_InflamDC.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/08_geneExpr_CXCL_violin.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/09_centrality_network_CXCL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/10_role_scatter_all.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/10_role_scatter_subset.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/11_role_heatmap_incoming.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/11_role_heatmap_outgoing.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/12a_selectK_incoming.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/12a_selectK_outgoing.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/12b_pattern_heatmap_outgoing.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/12b_river_outgoing.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/12c_dot_outgoing.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/12d_river_incoming.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/12e_dot_incoming.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/13_embedding_functional.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/14_embedding_structural.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_vignette/14_embedding_structural_zoomin.png",
+          "exists": true,
+          "sha256_equal": true
+        }
+      ],
+      "all_figure_files_identical": true,
+      "evidence_names_equal": true,
+      "passed": true,
+      "nonempty_numerical_snapshots": 2,
+      "core_comparison_scope": "Group network prob/pval/count/weight and labels when present; empty snapshots contain metadata only",
+      "saved_object_audit_required_for_full_suite": true,
+      "saved_object_audit": {
+        "report": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\validation\\tutorial_saved_objects_01_human_skin.json",
+        "passed": true,
+        "current_execution_provenance_matches": true,
+        "nonempty_spot_probability_arrays": 0,
+        "numeric_arrays": 3033
+      }
+    }
+  ],
+  "complete_suite": false,
+  "requested_scope_complete": true,
+  "passed": true
+}

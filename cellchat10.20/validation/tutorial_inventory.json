@@ -1,0 +1,194 @@
+{
+  "recorded_utc": "2026-10-20T15:07:37.941911+00:00",
+  "readthedocs_url": "https://cellchatpy.readthedocs.io/en/latest/",
+  "source_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream",
+  "cache_policy": "Recompute all original code cells; no persisted inference results are reused.",
+  "adaptations": [
+    "Original inference parameters and all original cells are retained. The explicit Visium manual-check correction (> to >= at p=0.05) is recorded in tutorial_compatibility_patches.json and applied identically to both engines; all other original sources are unchanged.",
+    "Each notebook executes in a fresh isolated project-shaped directory under results/tutorials.",
+    "Original raw inputs are copied once and linked from task-local copies into each execution directory.",
+    "CellChatPy imports are explicitly resolved from the selected package root and asserted.",
+    "The R-exported permutations are an original input, not an inferred-result cache.",
+    "Jupyter, IPython, Numba and Matplotlib caches are confined to this task.",
+    "A call-recording wrapper saves probability/P-value arrays without altering numerical arguments."
+  ],
+  "tutorials": [
+    {
+      "name": "CellChat_humanSkin_LS",
+      "source_notebook": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream\\docs\\tutorials\\CellChat_humanSkin_LS.ipynb",
+      "url": "https://cellchatpy.readthedocs.io/en/latest/tutorials/CellChat_humanSkin_LS.html",
+      "notebook_sha256": "6aba9a7c6e4e6566c6b3d2e211ce12723c2d61e93343ea7f7963ba9763513342",
+      "code_cells": 23,
+      "total_cells": 31,
+      "inputs": [
+        {
+          "path": "E:\\Jin\\cellchat.python_new\\data\\data_humanSkin.h5",
+          "exists": true,
+          "size_bytes": 18091900,
+          "sha256": "841935ac47f147728119408406e4d68ca742971093590a9ebebb1c82d85bf1c3"
+        }
+      ],
+      "permutations": {
+        "path": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream\\r_permutations.csv",
+        "exists": true,
+        "sha256": "e1471bd4fe1ba1786353334e856e0cbf2d13d718742c3dafef07af4a5b581616"
+      },
+      "web_status": 200,
+      "published_notebook_downloads": [
+        "https://cellchatpy.readthedocs.io/en/latest/_sources/tutorials/CellChat_humanSkin_LS.ipynb.txt"
+      ],
+      "published_code_matches_github": true
+    },
+    {
+      "name": "CellChat_comparison_analysis_NL_LS",
+      "source_notebook": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream\\docs\\tutorials\\CellChat_comparison_analysis_NL_LS.ipynb",
+      "url": "https://cellchatpy.readthedocs.io/en/latest/tutorials/CellChat_comparison_analysis_NL_LS.html",
+      "notebook_sha256": "63d79489db286a2ec8f099aeb2b2409922ad1313e4f21852fddcb5414f6ea2a9",
+      "code_cells": 28,
+      "total_cells": 59,
+      "inputs": [
+        {
+          "path": "E:\\Jin\\cellchat.python_new\\data\\data_humanSkin.h5",
+          "exists": true,
+          "size_bytes": 18091900,
+          "sha256": "841935ac47f147728119408406e4d68ca742971093590a9ebebb1c82d85bf1c3"
+        }
+      ],
+      "web_status": 200,
+      "published_notebook_downloads": [
+        "https://cellchatpy.readthedocs.io/en/latest/_sources/tutorials/CellChat_comparison_analysis_NL_LS.ipynb.txt"
+      ],
+      "published_code_matches_github": true
+    },
+    {
+      "name": "Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions",
+      "source_notebook": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream\\docs\\tutorials\\Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions.ipynb",
+      "url": "https://cellchatpy.readthedocs.io/en/latest/tutorials/Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions.html",
+      "notebook_sha256": "c37050d1509e83aa2de49a3d22e7cfbaaf498119513f088ace90a358ec03003b",
+      "code_cells": 13,
+      "total_cells": 27,
+      "inputs": [
+        {
+          "path": "E:\\Jin\\cellchat.python_new\\data\\mouse_skin_e13.h5ad",
+          "exists": true,
+          "size_bytes": 467634542,
+          "sha256": "208e2824df19e97e5bdf03c31c5bcb5634922ab2f43adb3547caa1ecb28bf2bb"
+        },
+        {
+          "path": "E:\\Jin\\cellchat.python_new\\data\\mouse_skin_e14.h5ad",
+          "exists": true,
+          "size_bytes": 434692390,
+          "sha256": "5871a983324084c0e1988dbdff53ac83510bb99c66d4e60f56faa00bb68f5df0"
+        }
+      ],
+      "web_status": 200,
+      "published_notebook_downloads": [
+        "https://cellchatpy.readthedocs.io/en/latest/_sources/tutorials/Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions.ipynb.txt"
+      ],
+      "published_code_matches_github": true
+    },
+    {
+      "name": "CellChat_analysis_of_spatial_transcriptomics_data",
+      "source_notebook": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream\\docs\\tutorials\\CellChat_analysis_of_spatial_transcriptomics_data.ipynb",
+      "url": "https://cellchatpy.readthedocs.io/en/latest/tutorials/CellChat_analysis_of_spatial_transcriptomics_data.html",
+      "notebook_sha256": "fbff2d01fd95fcae42b1da4417359beb2b2eb8cdff4d9a06076b33aaaf19abbe",
+      "code_cells": 14,
+      "total_cells": 28,
+      "inputs": [
+        {
+          "path": "E:\\Jin\\cellchat.python_new\\data\\mouse_cortex_visium.h5",
+          "exists": true,
+          "size_bytes": 1478924,
+          "sha256": "a8a243c8701a77f8363905e1a20178a509e588ce680ff4ca200ce8227be4f9f8"
+        }
+      ],
+      "web_status": 200,
+      "published_notebook_downloads": [
+        "https://cellchatpy.readthedocs.io/en/latest/_sources/tutorials/CellChat_analysis_of_spatial_transcriptomics_data.ipynb.txt"
+      ],
+      "published_code_matches_github": true
+    },
+    {
+      "name": "CellChat_analysis_of_multiple_spatial_transcriptomics_datasets",
+      "source_notebook": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream\\docs\\tutorials\\CellChat_analysis_of_multiple_spatial_transcriptomics_datasets.ipynb",
+      "url": "https://cellchatpy.readthedocs.io/en/latest/tutorials/CellChat_analysis_of_multiple_spatial_transcriptomics_datasets.html",
+      "notebook_sha256": "6edbed657346775ac6a44fb9960b2b11beb4d47ae11254a72ccf8bcaf213b7df",
+      "code_cells": 16,
+      "total_cells": 28,
+      "inputs": [
+        {
+          "path": "E:\\Jin\\cellchat.python_new\\data\\human_intestine_A1.h5",
+          "exists": true,
+          "size_bytes": 41769456,
+          "sha256": "4b9486312ffe064d2e1840e624c14e13e128dad0d036b3b947c4970302b475ce"
+        },
+        {
+          "path": "E:\\Jin\\cellchat.python_new\\data\\human_intestine_A2.h5",
+          "exists": true,
+          "size_bytes": 58059748,
+          "sha256": "62be8a1667d0e78bcbec5f02c174894b9bda9bf7ce13feae401d69007b957cab"
+        }
+      ],
+      "web_status": 200,
+      "published_notebook_downloads": [
+        "https://cellchatpy.readthedocs.io/en/latest/_sources/tutorials/CellChat_analysis_of_multiple_spatial_transcriptomics_datasets.ipynb.txt"
+      ],
+      "published_code_matches_github": true
+    },
+    {
+      "name": "CellChat_analysis_of_spatial_multiomics_data",
+      "source_notebook": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream\\docs\\tutorials\\CellChat_analysis_of_spatial_multiomics_data.ipynb",
+      "url": "https://cellchatpy.readthedocs.io/en/latest/tutorials/CellChat_analysis_of_spatial_multiomics_data.html",
+      "notebook_sha256": "bd87ead6fac24316df0d0483b4f9c2582eec152244c35d57173cd32e55c5f997",
+      "code_cells": 13,
+      "total_cells": 29,
+      "inputs": [
+        {
+          "path": "E:\\Jin\\cellchat.python_new\\data\\mouse_spleen_spatial_multiomics.h5",
+          "exists": true,
+          "size_bytes": 94930340,
+          "sha256": "7fa85d9fbdf0177837d39843125ed675a604972a26b6095ddd35a9ecd32b1730"
+        }
+      ],
+      "web_status": 200,
+      "published_notebook_downloads": [
+        "https://cellchatpy.readthedocs.io/en/latest/_sources/tutorials/CellChat_analysis_of_spatial_multiomics_data.ipynb.txt"
+      ],
+      "published_code_matches_github": true
+    },
+    {
+      "name": "SpatialCellChat_analysis_of_spatial_transcriptomics_data",
+      "source_notebook": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream\\docs\\tutorials\\SpatialCellChat_analysis_of_spatial_transcriptomics_data.ipynb",
+      "url": "https://cellchatpy.readthedocs.io/en/latest/tutorials/SpatialCellChat_analysis_of_spatial_transcriptomics_data.html",
+      "notebook_sha256": "949a2484d96c37c8b42c2251a30684fc5454eaa4ac105c53b3e96fbf113b66dc",
+      "code_cells": 16,
+      "total_cells": 36,
+      "inputs": [
+        {
+          "path": "E:\\Jin\\cellchat.python_new\\data\\human_psoriasis.h5",
+          "exists": true,
+          "size_bytes": 33711114,
+          "sha256": "3df0f4d083955e8c8a7478f6bdd9bbd5fb8191ffd7913f4c1bd1f0261087bb94"
+        }
+      ],
+      "web_status": 200,
+      "published_notebook_downloads": [
+        "https://cellchatpy.readthedocs.io/en/latest/_sources/tutorials/SpatialCellChat_analysis_of_spatial_transcriptomics_data.ipynb.txt"
+      ],
+      "published_code_matches_github": true
+    }
+  ],
+  "published_links": [
+    "tutorials/CellChat_analysis_of_multiple_spatial_transcriptomics_datasets.html",
+    "tutorials/CellChat_analysis_of_spatial_multiomics_data.html",
+    "tutorials/CellChat_analysis_of_spatial_transcriptomics_data.html",
+    "tutorials/CellChat_comparison_analysis_NL_LS.html",
+    "tutorials/CellChat_humanSkin_LS.html",
+    "tutorials/Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions.html",
+    "tutorials/SpatialCellChat_analysis_of_spatial_transcriptomics_data.html",
+    "tutorials/index.html"
+  ],
+  "readthedocs_status": 200,
+  "execution_compatibility_patch_manifest": "tutorial_compatibility_patches.json",
+  "published_source_comparison": "The published_code_matches_github flags compare unmodified sources, before execution overlays."
+}

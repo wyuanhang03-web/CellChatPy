@@ -1,0 +1,1231 @@
+--- a/CellChatPy/__init__.py
++++ b/CellChatPy/__init__.py
+@@ -7,7 +7,7 @@
+ The workflow is a Python reimplementation of the CellChat R package.
+ """
+ 
+-__version__ = "1.1.0"
++__version__ = "1.1.0+streaming.20261020"
+ __author__ = "CellChatPy Team"
+ __email__ = "cellchat@example.com"
+ 
+--- a/CellChatPy/_sparse_quantiles.py
++++ b/CellChatPy/_sparse_quantiles.py
+@@ -0,0 +1,180 @@
++"""Reusable sparse order statistics for label-permutation inference.
++
++Values are sorted once per gene. A changed group assignment only changes which
++ordered subsequence each cell contributes to; it does not require sorting the
++expression again. Implicit zeros occupy a virtual interval between negative
++and positive values. Optional Numba compilation accelerates the exact same
++linear traversal, without fast-math or reordered floating-point reductions.
++"""
++
++from __future__ import annotations
++
++import numpy as np
++import pandas as pd
++from scipy import sparse
++
++try:
++    from numba import njit
++except ImportError:  # Correctness does not depend on the optional compiler.
++    njit = None
++
++
++def _ordered_sparse_statistics(values, cells, indptr, codes, group_sizes, median):
++    n_genes = len(indptr) - 1
++    n_groups = len(group_sizes)
++    output = np.zeros((n_genes, n_groups), dtype=np.float64)
++    for gene in range(n_genes):
++        start, stop = indptr[gene], indptr[gene + 1]
++        stored = np.zeros(n_groups, dtype=np.int64)
++        nonnan = np.zeros(n_groups, dtype=np.int64)
++        for offset in range(start, stop):
++            group = codes[cells[offset]]
++            if group < 0:
++                continue
++            value = values[offset]
++            stored[group] += 1
++            if not np.isnan(value):
++                nonnan[group] += 1
++
++        sizes = group_sizes - stored + nonnan
++        zeros = group_sizes - stored
++        ranks = np.full((n_groups, 6), -1, dtype=np.int64)
++        weights = np.zeros((n_groups, 3), dtype=np.float64)
++        endpoints = np.zeros((n_groups, 6), dtype=np.float64)
++        for group in range(n_groups):
++            size = sizes[group]
++            if size <= 0:
++                if median:
++                    output[gene, group] = np.nan
++                continue
++            if median:
++                ranks[group, 0] = (size - 1) // 2
++                ranks[group, 1] = size // 2
++            else:
++                for quantile in range(3):
++                    position = (size - 1) * ((quantile + 1) * 0.25)
++                    lower = int(np.floor(position))
++                    upper = min(lower + 1, size - 1)
++                    ranks[group, 2 * quantile] = lower
++                    ranks[group, 2 * quantile + 1] = upper
++                    weights[group, quantile] = position - lower
++
++        seen = np.zeros(n_groups, dtype=np.int64)
++        for offset in range(start, stop):
++            value = values[offset]
++            if np.isnan(value):
++                continue
++            group = codes[cells[offset]]
++            if group < 0:
++                continue
++            rank = seen[group]
++            if value >= 0:
++                rank += zeros[group]
++            seen[group] += 1
++            number_of_ranks = 2 if median else 6
++            for slot in range(number_of_ranks):
++                if rank == ranks[group, slot]:
++                    endpoints[group, slot] = value
++
++        for group in range(n_groups):
++            if sizes[group] <= 0:
++                continue
++            if median:
++                # np.nanmedian uses np.mean on one/two selected middle values.
++                # An odd middle value must not be doubled (overflow matters).
++                if sizes[group] % 2:
++                    output[gene, group] = endpoints[group, 0]
++                else:
++                    output[gene, group] = (endpoints[group, 0] + endpoints[group, 1]) / 2.0
++            else:
++                quantiles = np.zeros(3, dtype=np.float64)
++                for quantile in range(3):
++                    lower = endpoints[group, 2 * quantile]
++                    upper = endpoints[group, 2 * quantile + 1]
++                    weight = weights[group, quantile]
++                    difference = upper - lower
++                    # This branch is NumPy's _lerp, not just an algebraically
++                    # equivalent interpolation; permutation ties are strict.
++                    if weight >= 0.5:
++                        quantiles[quantile] = upper - difference * (1.0 - weight)
++                    else:
++                        quantiles[quantile] = lower + difference * weight
++                output[gene, group] = (quantiles[0] + 2.0 * quantiles[1] + quantiles[2]) / 4.0
++    return output
++
++
++_compiled_sparse_statistics = (
++    njit(cache=True, fastmath=False)(_ordered_sparse_statistics)
++    if njit is not None else None
++)
++
++
++class SparseQuantilePlan:
++    """Pre-sort a genes-by-cells sparse matrix for reusable exact summaries.
++
++    Parameters
++    ----------
++    data
++        A SciPy sparse matrix in genes-by-cells orientation. Duplicate indices
++        are summed, stored zeros removed, and the input is never modified.
++        Explicit NaNs are omitted per gene/group, matching upstream reducers.
++    use_numba
++        Compile the linear traversal when Numba is available. The first call
++        may include JIT compilation time; report that separately in benchmarks.
++
++    Notes
++    -----
++    Preprocessing costs one expression sort per gene. Every subsequent average
++    uses O(nnz + genes * groups + cells) work and O(genes * groups + cells)
++    additional memory, with a constant of six ranks for triMean. The persistent
++    plan stores O(nnz + genes) values and cell indices.
++    """
++
++    def __init__(self, data, *, use_numba=True):
++        if not sparse.issparse(data):
++            raise TypeError("SparseQuantilePlan requires a SciPy sparse matrix")
++        matrix = data.astype(np.float64, copy=True).tocsr()
++        matrix.sum_duplicates()
++        matrix.eliminate_zeros()
++        self.shape = matrix.shape
++        self.indptr = np.asarray(matrix.indptr, dtype=np.int64).copy()
++        self.values = np.empty(matrix.nnz, dtype=np.float64)
++        self.cells = np.empty(matrix.nnz, dtype=np.int64)
++        for gene in range(matrix.shape[0]):
++            start, stop = matrix.indptr[gene:gene + 2]
++            order = np.argsort(matrix.data[start:stop], kind="stable")
++            self.values[start:stop] = matrix.data[start:stop][order]
++            self.cells[start:stop] = matrix.indices[start:stop][order]
++        self._kernel = (_compiled_sparse_statistics if use_numba and
++                        _compiled_sparse_statistics is not None else
++                        _ordered_sparse_statistics)
++        self.backend = "numba" if self._kernel is _compiled_sparse_statistics else "python"
++        self._categories = None
++        self._category_index = None
++
++    def average(self, labels, categories, type_method="triMean"):
++        if type_method not in {"triMean", "median"}:
++            raise ValueError("SparseQuantilePlan supports only triMean and median")
++        labels = np.asarray(labels)
++        if labels.ndim != 1 or len(labels) != self.shape[1]:
++            raise ValueError("labels must contain one group per expression column")
++        categories = tuple(categories)
++        if categories != self._categories:
++            index = pd.Index(categories)
++            if not index.is_unique:
++                raise ValueError("categories must be unique")
++            self._categories = categories
++            self._category_index = index
++        codes = np.asarray(self._category_index.get_indexer(labels), dtype=np.int64)
++        # The reference ignores missing labels in each group's summary but
++        # keeps their cells in the complete label-permutation population.
++        missing = codes < 0
++        if np.any(missing):
++            if not np.all(pd.isna(labels[missing])):
++                raise ValueError("every label must occur in categories")
++            counted_codes = codes[~missing]
++        else:
++            counted_codes = codes
++        group_sizes = np.bincount(counted_codes, minlength=len(categories)).astype(np.int64)
++        return self._kernel(self.values, self.cells, self.indptr, codes,
++                            group_sizes, type_method == "median")
+--- a/CellChatPy/_streaming.py
++++ b/CellChatPy/_streaming.py
+@@ -0,0 +1,263 @@
++"""Memory-bounded execution of the published CellChatPy group-level model.
++
++The statistic, permutation distribution, strict exceedance test and operation
++ordering are unchanged. Only execution and storage are reorganized.
++"""
++from __future__ import annotations
++
++import numpy as np
++import pandas as pd
++from scipy import sparse, stats
++
++
++def expression_matrix(cellchat, raw_use=True):
++    """Return genes x cells without the upstream sparse->pandas->dense path."""
++    layer = 'signaling' if raw_use else 'smoothed'
++    matrix = getattr(cellchat, layer)
++    if matrix is None:
++        raise ValueError(f"Expression layer {layer!r} is not available.")
++    if matrix.shape != cellchat.shape:
++        raise ValueError(f"Expression layer {layer!r} must have cells x genes shape {cellchat.shape}; got {matrix.shape}.")
++    mask = np.ones(cellchat.n_vars, dtype=bool)
++    if raw_use and 'is_signaling' in cellchat.var:
++        mask = cellchat.var['is_signaling'].fillna(False).to_numpy(dtype=bool)
++    names = list(cellchat.var_names[mask].astype(str))
++    matrix = matrix[:, mask]
++    if sparse.issparse(matrix):
++        matrix = sparse.csr_matrix(matrix.T, dtype=np.float64)
++        matrix.sum_duplicates()
++        matrix.sort_indices()
++    else:
++        matrix = np.asarray(matrix, dtype=np.float64).T
++    return matrix, names
++
++
++def required_gene_indices(names, pairs, complexes, cofactors):
++    """Static dependency closure, applied AFTER the global normalization max."""
++    index = {g: i for i, g in enumerate(names)}
++    required = set()
++    subcols = [c for c in complexes.columns if c.startswith('subunit')]
++    cocols = [c for c in cofactors.columns if 'cofactor' in c.lower()]
++    for column in ('ligand', 'receptor'):
++        for name in pairs[column].astype(str):
++            if name in index:
++                required.add(index[name])
++            elif name in complexes.index:
++                required.update(index[g] for g in complexes.loc[name, subcols]
++                                if isinstance(g, str) and g in index)
++    for column in ('co_A_receptor', 'co_I_receptor', 'agonist', 'antagonist'):
++        if column not in pairs:
++            continue
++        for name in pairs[column]:
++            if pd.notna(name) and name != '' and name in cofactors.index:
++                required.update(index[g] for g in cofactors.loc[name, cocols]
++                                if isinstance(g, str) and g in index)
++    return np.array(sorted(required), dtype=np.intp)
++
++
++class GroupAverager:
++    """Reuse immutable sparse order statistics across label permutations."""
++    def __init__(self, data, categories, type_method, trim=0.1, gene_batch_size=64):
++        self.data = data
++        self.categories = list(categories)
++        self.type_method = type_method
++        self.trim = trim
++        self.gene_batch_size = gene_batch_size
++        self.plan = None
++        if sparse.issparse(data) and type_method not in {'truncatedMean', 'thresholdedMean'}:
++            from ._sparse_quantiles import SparseQuantilePlan
++            self.plan = SparseQuantilePlan(data)
++
++    def __call__(self, labels):
++        if self.plan is not None:
++            method = 'median' if self.type_method == 'median' else 'triMean'
++            return self.plan.average(labels, self.categories, type_method=method)
++        return _batched_group_average(self.data, labels, self.categories,
++                                      self.type_method, self.trim, self.gene_batch_size)
++
++
++def group_average(data, labels, clusters, type_method, trim=0.1, gene_batch_size=64):
++    return GroupAverager(data, clusters, type_method, trim, gene_batch_size)(labels)
++
++
++def _batched_group_average(data, labels, clusters, type_method, trim, gene_batch_size):
++    """Bound dense scratch space; preserve scalar reduction for mean methods."""
++    labels = np.asarray(labels)
++    out = np.zeros((data.shape[0], len(clusters)), dtype=np.float64)
++    for ci, cluster in enumerate(clusters):
++        positions = np.flatnonzero(labels == cluster)
++        if not len(positions):
++            if type_method == 'median':
++                out[:, ci] = np.nan
++            continue
++        for start in range(0, data.shape[0], gene_batch_size):
++            stop = min(start + gene_batch_size, data.shape[0])
++            values = data[start:stop, :][:, positions]
++            if sparse.issparse(values):
++                values = values.toarray()
++            values = np.ascontiguousarray(values, dtype=np.float64)
++            if type_method in {'truncatedMean', 'thresholdedMean'}:
++                # The scalar partition/reduction order matters at P_boot=P_obs.
++                for j, row in enumerate(values):
++                    row = row[~np.isnan(row)]
++                    if len(row) == 0:
++                        continue
++                    if type_method == 'truncatedMean':
++                        out[start + j, ci] = stats.trim_mean(row, trim)
++                    elif np.count_nonzero(row) / len(row) >= trim:
++                        out[start + j, ci] = np.mean(row)
++            elif type_method == 'median':
++                out[start:stop, ci] = np.nanmedian(values, axis=1)
++            else:
++                quantiles = np.nanquantile(values, (0.25, 0.5, 0.75), axis=1)
++                result = (quantiles[0] + 2 * quantiles[1] + quantiles[2]) / 4.0
++                result[np.all(np.isnan(values), axis=1)] = 0.0
++                out[start:stop, ci] = result
++    return out
++
++
++class InteractionPlan:
++    """Compile DB lookups once and reuse unique complex/cofactor expressions."""
++    def __init__(self, names, pairs, complexes, cofactors, kh, n, use_agan):
++        index = {g: i for i, g in enumerate(names)}
++        subcols = [c for c in complexes.columns if c.startswith('subunit')]
++        cocols = [c for c in cofactors.columns if 'cofactor' in c.lower()]
++        unique = list(dict.fromkeys(list(pairs['ligand'].astype(str)) + list(pairs['receptor'].astype(str))))
++        uindex = {g: i for i, g in enumerate(unique)}
++        self.entities = []
++        for name in unique:
++            if name in index:
++                self.entities.append(('gene', [index[name]]))
++            elif name in complexes.index:
++                ids = [index[g] for g in complexes.loc[name, subcols]
++                       if isinstance(g, str) and g != '' and g in index]
++                self.entities.append(('complex', ids))
++            else:
++                self.entities.append(('missing', []))
++        self.ligands = np.array([uindex[g] for g in pairs['ligand'].astype(str)], dtype=np.intp)
++        self.receptors = np.array([uindex[g] for g in pairs['receptor'].astype(str)], dtype=np.intp)
++        self.cofactors = {}
++        self.co_maps = {}
++        for column in ('co_A_receptor', 'co_I_receptor', 'agonist', 'antagonist'):
++            mapping = []
++            for name in pairs.get(column, pd.Series([''] * len(pairs))):
++                ids = ()
++                if pd.notna(name) and name != '' and name in cofactors.index:
++                    ids = tuple(index[g] for g in cofactors.loc[name, cocols]
++                                if isinstance(g, str) and g != '' and g in index)
++                mapping.append(ids)
++            self.co_maps[column] = mapping
++        self.kh, self.n, self.use_agan = kh, n, use_agan
++
++    def resolve(self, avg):
++        k = avg.shape[1]
++        values = np.zeros((len(self.entities), k))
++        for i, (kind, ids) in enumerate(self.entities):
++            if kind == 'gene':
++                values[i] = avg[ids[0]]
++            elif ids:
++                x = avg[ids]
++                with np.errstate(divide='ignore', invalid='ignore'):
++                    logs = np.where(np.isnan(x), np.nan, np.log(x))
++                    values[i] = np.exp(np.nanmean(logs, axis=0))
++        ligand = values[self.ligands]
++        receptor = values[self.receptors]
++        effects = {}
++        for column, mapping in self.co_maps.items():
++            result = np.ones((len(mapping), k))
++            if column in {'agonist', 'antagonist'} and not self.use_agan:
++                effects[column] = result
++                continue
++            cache = {}
++            for i, ids in enumerate(mapping):
++                if not ids:
++                    continue
++                if ids not in cache:
++                    product = np.ones(k)
++                    for j in ids:
++                        row = avg[j]
++                        if column == 'agonist':
++                            value = 1.0 + row**self.n / (self.kh**self.n + row**self.n)
++                        elif column == 'antagonist':
++                            value = self.kh**self.n / (self.kh**self.n + row**self.n)
++                        else:
++                            value = 1 + row
++                        product = product * value
++                    cache[ids] = product
++                result[i] = cache[ids]
++            effects[column] = result
++        inhib = effects['co_I_receptor']
++        inhib[inhib == 0] = 1.0
++        receptor = receptor * effects['co_A_receptor'] / inhib
++        return ligand, receptor, effects['agonist'], effects['antagonist']
++
++
++def _probability_block(resolved, start, stop, kh, n, population, spatial, contact, contact_mask):
++    ligand, receptor, agonist, antagonist = [x[start:stop] for x in resolved]
++    lr = ligand[:, :, None] * receptor[:, None, :]
++    p1 = lr**n / (kh**n + lr**n)
++    p2 = agonist[:, :, None] * agonist[:, None, :]
++    p3 = antagonist[:, :, None] * antagonist[:, None, :]
++    weight = np.where(contact_mask[start:stop, None, None], (spatial * contact)[None], spatial[None])
++    # Preserve the published left-associative multiplication sequence.
++    probability = p1 * p2 * p3 * population * weight
++    active = np.sum(p1 * weight, axis=(1, 2)) != 0
++    return probability, active
++
++
++def infer_streaming(data, averager, labels, categories, pairs, complexes, cofactors,
++                    names, observed_average, *, n_boot, seed, permutation_use,
++                    kh, n, use_agan, population_size, spatial, contact,
++                    contact_mask, lr_batch_size):
++    """Accumulate only exceedance counts; no N*B or B*genes*groups storage."""
++    nc, k, m = data.shape[1], len(categories), len(pairs)
++    supplied = None
++    if permutation_use is not None:
++        supplied = np.asarray(permutation_use)
++        if supplied.ndim != 2 or supplied.shape[0] != nc or supplied.shape[1] == 0:
++            raise ValueError('permutation_use must have shape (n_cells, n_boot), with n_boot > 0')
++        n_boot = supplied.shape[1]
++    elif not isinstance(n_boot, (int, np.integer)) or n_boot <= 0:
++        raise ValueError('n_boot must be a positive integer')
++    plan = InteractionPlan(names, pairs, complexes, cofactors, kh, n, use_agan)
++    fractions = np.array([np.sum(labels == c) / nc for c in categories])
++    population = np.outer(fractions, fractions) if population_size else np.ones((k, k))
++    observed = np.zeros((m, k, k))
++    exceedances = np.zeros((m, k, k), dtype=np.int64)
++    active = np.ones(m, dtype=bool)
++    resolved = plan.resolve(observed_average)
++    for start in range(0, m, lr_batch_size):
++        stop = min(start + lr_batch_size, m)
++        value, enabled = _probability_block(resolved, start, stop, kh, n, population, spatial, contact, contact_mask)
++        value[~enabled] = 0.0
++        observed[start:stop] = value
++        active[start:stop] = enabled
++    # Deliberately use the same global RNG as upstream: subsequent tutorial
++    # computations may depend on its post-inference state as well as the draws.
++    for b in range(n_boot):
++        if supplied is None:
++            order = np.random.permutation(nc)
++        else:
++            column = supplied[:, b]
++            if np.issubdtype(column.dtype, np.integer):
++                order = column.astype(np.intp, copy=False)
++            else:
++                # Validate one column at a time, including integer-valued
++                # float inputs, without N*n_boot conversion or boolean masks.
++                if not np.all(np.isfinite(column)):
++                    raise ValueError('permutation_use must contain integer indices')
++                order = column.astype(np.intp)
++                if not np.all(column == order):
++                    raise ValueError('permutation_use must contain integer indices')
++            if np.any(order < 0) or np.any(order >= nc) or np.unique(order).size != nc:
++                raise ValueError('every permutation_use column must be a permutation of all cell indices')
++        avg = averager(labels[order])
++        resolved = plan.resolve(avg)
++        for start in range(0, m, lr_batch_size):
++            stop = min(start + lr_batch_size, m)
++            value, _ = _probability_block(resolved, start, stop, kh, n, population, spatial, contact, contact_mask)
++            exceedances[start:stop] += (value - observed[start:stop]) > 0
++    pval = exceedances / n_boot
++    pval[~active] = 1.0
++    pval[observed == 0] = 1.0
++    return np.moveaxis(observed, 0, 2), np.moveaxis(pval, 0, 2), n_boot
+--- a/CellChatPy/modeling.py
++++ b/CellChatPy/modeling.py
+@@ -275,6 +275,9 @@
+     use_agan: bool = True,
+     tol: Optional[float] = None,
+     permutation_use=None,
++    engine: str = "streaming",
++    gene_batch_size: int = 64,
++    lr_batch_size: int = 64,
+     **kwargs
+ ):
+     """
+@@ -286,12 +289,25 @@
+         Pre-computed permutation matrix of shape (n_cells, n_boot), 0-based integer indices.
+         When provided, overrides seed_use and n_boot (n_boot is inferred from columns).
+         Pass R-exported permutations (converted to 0-based) for exact cross-language reproducibility.
++    engine : {"streaming", "legacy"}, default "streaming"
++        Memory-bounded, dependency-pruned execution, or the published GitHub
++        implementation retained as a reference. Both preserve the same model,
++        permutation sequence, and strict exceedance definition.
++    gene_batch_size : int, default 64
++        Maximum genes per dense scratch block for fallback summary methods.
++    lr_batch_size : int, default 64
++        Maximum interactions per temporary probability tensor.
+     """
+     if 'type' in kwargs:
+         type_method = kwargs.pop('type')
+     if kwargs:
+         unknown = ', '.join(sorted(kwargs))
+         raise TypeError(f"compute_communication_probability() got unexpected keyword argument(s): {unknown}")
++    if engine not in {'streaming', 'legacy'}:
++        raise ValueError("engine must be 'streaming' or 'legacy'")
++    for name, value in [('gene_batch_size', gene_batch_size), ('lr_batch_size', lr_batch_size)]:
++        if isinstance(value, bool) or not isinstance(value, (int, np.integer)) or value < 1:
++            raise ValueError(f'{name} must be a positive integer')
+ 
+     print(f"{type_method} is used for calculating the average gene expression per cell group.")
+ 
+@@ -310,24 +326,22 @@
+         fun_mean = _tri_mean
+ 
+     # ----- Get expression data -----
+-    if raw_use:
+-        data = _feature_by_cell_frame(cellchat, 'signaling')
++    if engine == 'streaming':
++        from ._streaming import expression_matrix, required_gene_indices, GroupAverager, infer_streaming
++        data_matrix, gene_names = expression_matrix(cellchat, raw_use)
+     else:
+-        data = _feature_by_cell_frame(cellchat, 'smoothed')
+-
+-    if data is None:
+-        raise ValueError("No signaling expression data available. Run subset_signaling_data first.")
+-
+-    if any(isinstance(dtype, pd.SparseDtype) for dtype in data.dtypes):
+-        if any(
+-            isinstance(dtype, pd.SparseDtype)
+-            and pd.isna(dtype.fill_value)
+-            for dtype in data.dtypes
+-        ):
+-            data = data.fillna(0)
+-        data = data.sparse.to_dense()
+-
+-    gene_names = list(data.index)
++        if raw_use:
++            data = _feature_by_cell_frame(cellchat, 'signaling')
++        else:
++            data = _feature_by_cell_frame(cellchat, 'smoothed')
++        if data is None:
++            raise ValueError("No signaling expression data available. Run subset_signaling_data first.")
++        if any(isinstance(dtype, pd.SparseDtype) for dtype in data.dtypes):
++            if any(isinstance(dtype, pd.SparseDtype) and pd.isna(dtype.fill_value) for dtype in data.dtypes):
++                data = data.fillna(0)
++            data = data.sparse.to_dense()
++        gene_names = list(data.index)
++        data_matrix = data.values.astype(float)
+     n_genes = len(gene_names)
+ 
+     # ----- LR pairs -----
+@@ -350,26 +364,45 @@
+     groups = cellchat.groups
+     unique_clusters = list(groups.categories)
+     n_clusters = len(unique_clusters)
+-    n_C = data.shape[1]   # total cells
++    n_C = data_matrix.shape[1]   # total cells
+ 
+     # ----- Normalize data: data.use <- data / max(data)  (R line 111) -----
+-    data_matrix = data.values.astype(float)
+     max_val = data_matrix.max()
+     if max_val > 0:
+-        data_use = data_matrix / max_val
++        if engine == 'streaming' and sparse.issparse(data_matrix):
++            # scipy sparse / scalar multiplies by a reciprocal. Direct divide
++            # is necessary to reproduce dense NumPy rounding at strict ties.
++            data_use = data_matrix.copy()
++            data_use.data /= max_val
++        else:
++            data_use = data_matrix / max_val
+     else:
+         data_use = data_matrix.copy()
++
++    signaling_gene_count = n_genes
++    if engine == 'streaming':
++        # The global max above must include ALL signaling genes, including
++        # genes that do not participate in the selected interactions.
++        required = required_gene_indices(gene_names, pair_lr_sig, complex_input, cofactor_input)
++        gene_names = [gene_names[i] for i in required]
++        data_use = data_use[required, :]
++        n_genes = len(gene_names)
++        del data_matrix
++        averager = GroupAverager(data_use, unique_clusters, type_method, trim, gene_batch_size)
+ 
+     # ----- Compute average expression per group -----
+     # R: data.use.avg <- aggregate(t(data.use), list(group), FUN = FunMean)
+     # Result shape: (n_genes, n_clusters)
+     data_use_avg = np.zeros((n_genes, n_clusters))
+     group_values = np.array(groups)
+-    for ci, cluster in enumerate(unique_clusters):
+-        mask = (group_values == cluster)
+-        cluster_data = data_use[:, mask]   # (n_genes, n_cells_in_cluster)
+-        for gi in range(n_genes):
+-            data_use_avg[gi, ci] = fun_mean(cluster_data[gi, :])
++    if engine == 'streaming':
++        data_use_avg = averager(group_values)
++    else:
++        for ci, cluster in enumerate(unique_clusters):
++            mask = (group_values == cluster)
++            cluster_data = data_use[:, mask]   # (n_genes, n_cells_in_cluster)
++            for gi in range(n_genes):
++                data_use_avg[gi, ci] = fun_mean(cluster_data[gi, :])
+ 
+     # ----- Compute ligand / receptor average expression -----
+     gene_L = list(pair_lr_sig['ligand'].astype(str))
+@@ -513,170 +546,185 @@
+     elif not contact_dependent:
+         contact_mask[:] = False
+ 
+-    # ----- Bootstrap permutations -----
+-    # R: set.seed(seed.use); permutation <- replicate(nboot, sample.int(nC, size = nC))
+-    if permutation_use is not None:
+-        permutation = np.asarray(permutation_use, dtype=int)
+-        if permutation.shape[0] != n_C:
+-            raise ValueError(
+-                f"permutation_use has {permutation.shape[0]} rows but n_cells={n_C}"
+-            )
+-        n_boot = permutation.shape[1]
+-        print(f"Using externally supplied permutation matrix ({n_C} x {n_boot}).")
++    if engine == 'streaming':
++        Prob, Pval, n_boot = infer_streaming(
++            data_use, averager, group_values, unique_clusters,
++            pair_lr_sig, complex_input, cofactor_input, gene_names,
++            data_use_avg, n_boot=n_boot, seed=seed_use,
++            permutation_use=permutation_use, kh=kh, n=n_param,
++            use_agan=use_agan, population_size=population_size,
++            spatial=P_spatial, contact=adj_contact,
++            contact_mask=contact_mask, lr_batch_size=lr_batch_size,
++        )
+     else:
+-        permutation = np.zeros((n_C, n_boot), dtype=int)
+-        for b in range(n_boot):
+-            permutation[:, b] = np.random.permutation(n_C)
+-
+-    # Pre-compute bootstrapped averaged expressions
+-    group_values = np.array(groups)   # categorical group labels
+-
+-    def _avg_boot(perm_idx):
+-        """Compute data_use_avg for a permuted group assignment."""
+-        shuffled = group_values[perm_idx]
+-        avg_b = np.zeros((n_genes, n_clusters))
+-        for ci, cluster in enumerate(unique_clusters):
+-            mask = (shuffled == cluster)
+-            if not np.any(mask):
++        # ----- Bootstrap permutations -----
++        # R: set.seed(seed.use); permutation <- replicate(nboot, sample.int(nC, size = nC))
++        if permutation_use is not None:
++            permutation = np.asarray(permutation_use, dtype=int)
++            if permutation.shape[0] != n_C:
++                raise ValueError(
++                    f"permutation_use has {permutation.shape[0]} rows but n_cells={n_C}"
++                )
++            n_boot = permutation.shape[1]
++            print(f"Using externally supplied permutation matrix ({n_C} x {n_boot}).")
++        else:
++            permutation = np.zeros((n_C, n_boot), dtype=int)
++            for b in range(n_boot):
++                permutation[:, b] = np.random.permutation(n_C)
++
++        # Pre-compute bootstrapped averaged expressions
++        group_values = np.array(groups)   # categorical group labels
++
++        def _avg_boot(perm_idx):
++            """Compute data_use_avg for a permuted group assignment."""
++            shuffled = group_values[perm_idx]
++            avg_b = np.zeros((n_genes, n_clusters))
++            for ci, cluster in enumerate(unique_clusters):
++                mask = (shuffled == cluster)
++                if not np.any(mask):
++                    continue
++                cluster_data = data_use[:, mask]
++                for gi in range(n_genes):
++                    avg_b[gi, ci] = fun_mean(cluster_data[gi, :])
++            return avg_b
++
++        print(f"Pre-computing {n_boot} bootstrap averaged expressions...")
++        data_use_avg_boot = [_avg_boot(permutation[:, b]) for b in range(n_boot)]
++
++        # ----- Main inference loop -----
++        Prob = np.zeros((n_clusters, n_clusters, n_LR))
++        Pval = np.zeros((n_clusters, n_clusters, n_LR))
++
++        print(f"Computing communication probabilities for {n_LR} LR pairs...")
++
++        for i in range(n_LR):
++            P_spatial_i = P_spatial * adj_contact if contact_mask[i] else P_spatial
++            # Ligand x Receptor outer product -> (nCluster, nCluster) matrix
++            dataLR = np.outer(data_L_avg[i, :], data_R_avg[i, :])   # [source, target]
++
++            # Hill function
++            P1 = dataLR**n_param / (kh**n_param + dataLR**n_param)
++            P1_Pspatial = P1 * P_spatial_i
++
++            if np.sum(P1_Pspatial) == 0:
++                Prob[:, :, i] = 0.0
++                Pval[:, :, i] = 1.0
+                 continue
+-            cluster_data = data_use[:, mask]
+-            for gi in range(n_genes):
+-                avg_b[gi, ci] = fun_mean(cluster_data[gi, :])
+-        return avg_b
+-
+-    print(f"Pre-computing {n_boot} bootstrap averaged expressions...")
+-    data_use_avg_boot = [_avg_boot(permutation[:, b]) for b in range(n_boot)]
+-
+-    # ----- Main inference loop -----
+-    Prob = np.zeros((n_clusters, n_clusters, n_LR))
+-    Pval = np.zeros((n_clusters, n_clusters, n_LR))
+-
+-    print(f"Computing communication probabilities for {n_LR} LR pairs...")
+-
+-    for i in range(n_LR):
+-        P_spatial_i = P_spatial * adj_contact if contact_mask[i] else P_spatial
+-        # Ligand x Receptor outer product -> (nCluster, nCluster) matrix
+-        dataLR = np.outer(data_L_avg[i, :], data_R_avg[i, :])   # [source, target]
+-
+-        # Hill function
+-        P1 = dataLR**n_param / (kh**n_param + dataLR**n_param)
+-        P1_Pspatial = P1 * P_spatial_i
+-
+-        if np.sum(P1_Pspatial) == 0:
+-            Prob[:, :, i] = 0.0
+-            Pval[:, :, i] = 1.0
+-            continue
+-
+-        # Agonist / antagonist
+-        if i in index_agonist:
+-            data_agonist = _compute_expr_agonist(
+-                data_use_avg, gene_names, pair_lr_sig, cofactor_input, i, kh, n_param)
+-            P2 = np.outer(data_agonist, data_agonist)
+-        else:
+-            P2 = np.ones((n_clusters, n_clusters))
+-
+-        if i in index_antagonist:
+-            data_antagonist = _compute_expr_antagonist(
+-                data_use_avg, gene_names, pair_lr_sig, cofactor_input, i, kh, n_param)
+-            P3 = np.outer(data_antagonist, data_antagonist)
+-        else:
+-            P3 = np.ones((n_clusters, n_clusters))
+-
+-        # Population size
+-        if population_size:
+-            P4 = np.outer(data_L_avg2[i, :], data_R_avg2[i, :])
+-        else:
+-            P4 = np.ones((n_clusters, n_clusters))
+-
+-        Pnull = P1 * P2 * P3 * P4 * P_spatial_i
+-        Prob[:, :, i] = Pnull
+-
+-        # ----- Bootstrap p-values -----
+-        Pnull_vec = Pnull.ravel()  # length n_clusters^2
+-
+-        Pboot_mat = np.zeros((n_clusters * n_clusters, n_boot))
+-        for b in range(n_boot):
+-            avg_b = data_use_avg_boot[b]
+-            dL_b = _compute_expr_lr([gene_L[i]], avg_b, gene_names, complex_input)  # (1, nC)
+-            dR_b = _compute_expr_lr([gene_R[i]], avg_b, gene_names, complex_input)
+-
+-            # co-receptor
+-            dR_coA_b = _compute_expr_coreceptor(cofactor_input, avg_b, gene_names, pair_lr_sig.iloc[[i]].reset_index(drop=True), 'A')
+-            dR_coI_b = _compute_expr_coreceptor(cofactor_input, avg_b, gene_names, pair_lr_sig.iloc[[i]].reset_index(drop=True), 'I')
+-            dR_coI_b[dR_coI_b == 0] = 1.0
+-            dR_b = dR_b * dR_coA_b / dR_coI_b
+-
+-            dLR_b = np.outer(dL_b[0, :], dR_b[0, :])
+-            P1_b = dLR_b**n_param / (kh**n_param + dLR_b**n_param)
+-
++
++            # Agonist / antagonist
+             if i in index_agonist:
+-                da_b = _compute_expr_agonist(avg_b, gene_names, pair_lr_sig, cofactor_input, i, kh, n_param)
+-                P2_b = np.outer(da_b, da_b)
++                data_agonist = _compute_expr_agonist(
++                    data_use_avg, gene_names, pair_lr_sig, cofactor_input, i, kh, n_param)
++                P2 = np.outer(data_agonist, data_agonist)
+             else:
+-                P2_b = np.ones((n_clusters, n_clusters))
++                P2 = np.ones((n_clusters, n_clusters))
+ 
+             if i in index_antagonist:
+-                dan_b = _compute_expr_antagonist(avg_b, gene_names, pair_lr_sig, cofactor_input, i, kh, n_param)
+-                P3_b = np.outer(dan_b, dan_b)
++                data_antagonist = _compute_expr_antagonist(
++                    data_use_avg, gene_names, pair_lr_sig, cofactor_input, i, kh, n_param)
++                P3 = np.outer(data_antagonist, data_antagonist)
+             else:
+-                P3_b = np.ones((n_clusters, n_clusters))
+-
++                P3 = np.ones((n_clusters, n_clusters))
++
++            # Population size
+             if population_size:
+-                shuffled = group_values[permutation[:, b]]
+-                frac_b = np.array([np.sum(shuffled == cl) / n_C for cl in unique_clusters])
+-                P4_b = np.outer(frac_b, frac_b)
++                P4 = np.outer(data_L_avg2[i, :], data_R_avg2[i, :])
+             else:
+-                P4_b = np.ones((n_clusters, n_clusters))
+-
+-            Pboot_b = P1_b * P2_b * P3_b * P4_b * P_spatial_i
+-            Pboot_mat[:, b] = Pboot_b.ravel()
+-
+-        # nReject = rowSums(Pboot - Pnull > 0)
+-        n_reject = np.sum(Pboot_mat - Pnull_vec[:, np.newaxis] > 0, axis=1)
+-        p = n_reject / n_boot
+-        Pval[:, :, i] = p.reshape(n_clusters, n_clusters)
++                P4 = np.ones((n_clusters, n_clusters))
++
++            Pnull = P1 * P2 * P3 * P4 * P_spatial_i
++            Prob[:, :, i] = Pnull
++
++            # ----- Bootstrap p-values -----
++            Pnull_vec = Pnull.ravel()  # length n_clusters^2
++
++            Pboot_mat = np.zeros((n_clusters * n_clusters, n_boot))
++            for b in range(n_boot):
++                avg_b = data_use_avg_boot[b]
++                dL_b = _compute_expr_lr([gene_L[i]], avg_b, gene_names, complex_input)  # (1, nC)
++                dR_b = _compute_expr_lr([gene_R[i]], avg_b, gene_names, complex_input)
++
++                # co-receptor
++                dR_coA_b = _compute_expr_coreceptor(cofactor_input, avg_b, gene_names, pair_lr_sig.iloc[[i]].reset_index(drop=True), 'A')
++                dR_coI_b = _compute_expr_coreceptor(cofactor_input, avg_b, gene_names, pair_lr_sig.iloc[[i]].reset_index(drop=True), 'I')
++                dR_coI_b[dR_coI_b == 0] = 1.0
++                dR_b = dR_b * dR_coA_b / dR_coI_b
++
++                dLR_b = np.outer(dL_b[0, :], dR_b[0, :])
++                P1_b = dLR_b**n_param / (kh**n_param + dLR_b**n_param)
++
++                if i in index_agonist:
++                    da_b = _compute_expr_agonist(avg_b, gene_names, pair_lr_sig, cofactor_input, i, kh, n_param)
++                    P2_b = np.outer(da_b, da_b)
++                else:
++                    P2_b = np.ones((n_clusters, n_clusters))
++
++                if i in index_antagonist:
++                    dan_b = _compute_expr_antagonist(avg_b, gene_names, pair_lr_sig, cofactor_input, i, kh, n_param)
++                    P3_b = np.outer(dan_b, dan_b)
++                else:
++                    P3_b = np.ones((n_clusters, n_clusters))
++
++                if population_size:
++                    shuffled = group_values[permutation[:, b]]
++                    frac_b = np.array([np.sum(shuffled == cl) / n_C for cl in unique_clusters])
++                    P4_b = np.outer(frac_b, frac_b)
++                else:
++                    P4_b = np.ones((n_clusters, n_clusters))
++
++                Pboot_b = P1_b * P2_b * P3_b * P4_b * P_spatial_i
++                Pboot_mat[:, b] = Pboot_b.ravel()
++
++            # nReject = rowSums(Pboot - Pnull > 0)
++            n_reject = np.sum(Pboot_mat - Pnull_vec[:, np.newaxis] > 0, axis=1)
++            p = n_reject / n_boot
++            Pval[:, :, i] = p.reshape(n_clusters, n_clusters)
+ 
+     # R: Pval[Prob == 0] <- 1
+     Pval[Prob == 0] = 1.0
+ 
+-    # ----- Build long-format communication table -----
+-    results = []
+-    for lr_idx in range(n_LR):
+-        ligand = gene_L[lr_idx]
+-        receptor = gene_R[lr_idx]
+-
+-        # Get metadata from pair_lr_sig
+-        if lr_idx < len(pair_lr_sig):
+-            row = pair_lr_sig.iloc[lr_idx]
+-            interaction_name = row.get('interaction_name', f'{ligand}_{receptor}')
+-            pathway_name = row.get('pathway_name', 'Unknown')
+-            annotation = row.get('annotation', 'Secreted Signaling')
+-        else:
+-            interaction_name = f'{ligand}_{receptor}'
+-            pathway_name = 'Unknown'
+-            annotation = 'Secreted Signaling'
+-
+-        for src_idx in range(n_clusters):
+-            for tgt_idx in range(n_clusters):
+-                prob_val = float(Prob[src_idx, tgt_idx, lr_idx])
+-                pval_val = float(Pval[src_idx, tgt_idx, lr_idx])
+-
+-                # Store all entries (filtering happens in downstream functions)
+-                results.append({
+-                    'source': unique_clusters[src_idx],
+-                    'target': unique_clusters[tgt_idx],
+-                    'ligand_complex': ligand,
+-                    'receptor_complex': receptor,
+-                    'interaction_name': interaction_name,
+-                    'pathway_name': pathway_name,
+-                    'annotation': annotation,
+-                    'prob': prob_val,
+-                    'pval': pval_val,
+-                    'ligand_mean_expr': float(data_L_avg[lr_idx, src_idx]),
+-                    'receptor_mean_expr': float(data_R_avg[lr_idx, tgt_idx])
+-                })
+-
+-    communication = pd.DataFrame(results)
++    # The published implementation builds a long table here but never stores or
++    # returns it. Keep that work in the reference branch only; public network
++    # storage and lazy interaction-table access are unchanged.
++    if engine == 'legacy':
++        # ----- Build long-format communication table -----
++        results = []
++        for lr_idx in range(n_LR):
++            ligand = gene_L[lr_idx]
++            receptor = gene_R[lr_idx]
++
++            # Get metadata from pair_lr_sig
++            if lr_idx < len(pair_lr_sig):
++                row = pair_lr_sig.iloc[lr_idx]
++                interaction_name = row.get('interaction_name', f'{ligand}_{receptor}')
++                pathway_name = row.get('pathway_name', 'Unknown')
++                annotation = row.get('annotation', 'Secreted Signaling')
++            else:
++                interaction_name = f'{ligand}_{receptor}'
++                pathway_name = 'Unknown'
++                annotation = 'Secreted Signaling'
++
++            for src_idx in range(n_clusters):
++                for tgt_idx in range(n_clusters):
++                    prob_val = float(Prob[src_idx, tgt_idx, lr_idx])
++                    pval_val = float(Pval[src_idx, tgt_idx, lr_idx])
++
++                    # Store all entries (filtering happens in downstream functions)
++                    results.append({
++                        'source': unique_clusters[src_idx],
++                        'target': unique_clusters[tgt_idx],
++                        'ligand_complex': ligand,
++                        'receptor_complex': receptor,
++                        'interaction_name': interaction_name,
++                        'pathway_name': pathway_name,
++                        'annotation': annotation,
++                        'prob': prob_val,
++                        'pval': pval_val,
++                        'ligand_mean_expr': float(data_L_avg[lr_idx, src_idx]),
++                        'receptor_mean_expr': float(data_R_avg[lr_idx, tgt_idx])
++                    })
++
++        communication = pd.DataFrame(results)
+ 
+     lr_names = list(pair_lr_sig.index.astype(str)) if pair_lr_sig.index.dtype != object else list(pair_lr_sig.index)
+     if 'interaction_name' in pair_lr_sig.columns:
+@@ -708,6 +756,15 @@
+         'contact_knn_k': contact_knn_k if is_spatial else None,
+         'contact_dependent_forced': contact_dependent_forced,
+     }
++    cellchat.settings['execution'] = {
++        'engine': engine,
++        'gene_batch_size': gene_batch_size,
++        'lr_batch_size': lr_batch_size,
++        'signaling_genes': signaling_gene_count,
++        'evaluated_genes': n_genes,
++        'sparse_input': bool(sparse.issparse(data_use)),
++        'upstream_commit': '986bf7ef909f1e15059aad8a9a9ee31ac675ffc3',
++    }
+ 
+     print(">>> CellChat inference is done.")
+     print("Results stored in .network.")
+@@ -784,6 +841,7 @@
+         # Persist pathway networks in the same sparse dictionary form as LR networks.
+         pathway_network = dict(cellchat.pathway_network)
+         pathway_network.update({
++            'matrix_order': pathways_sig,
+             'prob': matrix_dict_from_array(
+                 prob_pathways_sig, pathways_sig, sparse_output=True
+             ),
+--- a/CellChatPy/network_storage.py
++++ b/CellChatPy/network_storage.py
+@@ -17,6 +17,7 @@
+     "similarity",
+     "pattern",
+     "pairwise_rank",
++    "matrix_order",
+ }
+ _REQUIRED_NETWORK_FIELDS = {"groups", "prob", "pval"}
+ _NETWORK_SLOT_NAMES = {"network", "pathway_network"}
+@@ -62,6 +63,16 @@
+     """Return the ordered communication names stored by one network."""
+     value = net.get(key) if isinstance(net, Mapping) else None
+     if isinstance(value, Mapping):
++        saved_order = net.get('matrix_order')
++        if saved_order is not None:
++            names = [str(name) for name in saved_order]
++            if len(names) == len(value) and set(names) == set(value):
++                return names
++        interactions = net.get('interactions')
++        if hasattr(interactions, 'columns') and 'interaction_name' in interactions.columns:
++            names = _unique_names(interactions['interaction_name'])
++            if len(names) == len(value) and set(names) == set(value):
++                return names
+         return list(value.keys())
+     return []
+ 
+@@ -160,7 +171,11 @@
+ 
+     result = dict(net)
+     result["prob"] = _csr_dict(result["prob"], "prob", context)
+-    names = list(result["prob"])
++    # HDF5 does not preserve Python dictionary insertion order. Persist a
++    # separate axis order, recovering old LR files from their metadata table.
++    names = network_names(result)
++    result['prob'] = {name: result['prob'][name] for name in names}
++    result['matrix_order'] = names
+     pval_dict = _dense_dict(result["pval"], "pval", context)
+     if set(pval_dict) != set(names):
+         raise ValueError(f"{context}['prob'] and {context}['pval'] names must match exactly")
+@@ -287,10 +302,11 @@
+     if not hasattr(interactions, "columns") or "interaction_name" not in interactions.columns:
+         raise TypeError(f"{context}['interactions'] must be a DataFrame with interaction_name")
+     interaction_names = interactions["interaction_name"].astype(str).tolist()
+-    if interaction_names != list(probabilities):
++    if len(interaction_names) != len(probabilities) or set(interaction_names) != set(probabilities):
+         raise ValueError(
+             f"{context} interaction rows and probability names must have the same order"
+         )
++    probabilities = {name: probabilities[name] for name in interaction_names}
+     if not isinstance(value["parameters"], Mapping):
+         raise TypeError(f"{context}['parameters'] must be a dictionary")
+ 
+--- a/docs/index.md
++++ b/docs/index.md
+@@ -15,6 +15,7 @@
+ :caption: Documentation
+ 
+ installation
++streaming_engine
+ tutorials/index
+ ```
+ 
+--- a/docs/streaming_engine.md
++++ b/docs/streaming_engine.md
+@@ -0,0 +1,88 @@
++# Streaming inference
++
++The experimental `1.1.0+streaming.20261020` build accelerates **group-level**
++communication inference while retaining the model implemented by upstream
++commit `986bf7ef909f1e15059aad8a9a9ee31ac675ffc3`. It does not change the LR
++database, averaging statistic, permutation count, or significance definition.
++
++## Installation and use
++
++From this source directory:
++
++```bash
++python -m pip install ".[accelerate]"
++```
++
++The `accelerate` extra enables Numba compilation of the sparse order-statistic
++scan. The same scan has a pure Python fallback; large inputs will be slower
++without the compiler. A first call can include compilation or cache loading.
++
++The existing tutorials select the new engine by default:
++
++```python
++cellchat = cc.compute_communication_probability(
++    cellchat,
++    engine="streaming",
++    n_boot=100,
++    seed_use=1,
++    gene_batch_size=64,
++    lr_batch_size=64,
++)
++```
++
++`engine="legacy"` runs the published implementation retained for diagnosis.
++The new execution settings are available in `cellchat.settings["execution"]`.
++
++## How execution changes
++
++1. Normalize with the maximum over the complete signaling layer, then calculate
++   only genes needed by the selected LR complexes and all relevant cofactors.
++2. For sparse triMean/median input, sort each gene's nonzero expression once.
++   Label permutations select ordered subsequences of that same sequence.
++   Count implicit zeros and resolve the required ranks without densifying the
++   expression matrix or sorting it again for every permutation.
++3. Compile interaction and cofactor lookups once, reuse identical expressions,
++   and calculate LR probabilities in bounded batches.
++4. Generate one permutation at a time and retain exceedance counts, rather
++   than retaining all permutations and their averaged expression matrices.
++
++Dense inputs and truncated/thresholded means use bounded gene blocks. Their
++scalar reduction order is retained where floating-point ties could matter.
++
++The probability outputs still occupy space proportional to the number of LR
++pairs times the square of the number of cell groups. This is not a
++constant-memory algorithm, and backed AnnData/out-of-core input is not claimed.
++
++## Compatibility
++
++The engine preserves the original `count(P_boot - P_observed > 0) / n_boot`
++definition, including zero P values and the original rule for zero observed
++probabilities. There is no adaptive stopping or sampling of cells. The global
++NumPy random state follows the same seeded permutation sequence as upstream.
++External permutation matrices remain supported.
++
++Regression checks load the frozen upstream code independently and exercise
++complexes, all cofactor types, population effects, spatial/contact effects,
++dense and sparse storage, missing/zero subunits, and strict permutation ties.
++The seven original tutorial workflows and larger data experiments have separate
++execution records in the enclosing research workspace; consult their actual
++reports for tested datasets, dimensions, performance and limitations.
++
++## Persistence and tutorial correction
++
++Network dictionaries now retain an explicit `matrix_order`, so H5AD key sorting
++does not misalign LR matrices and their metadata after reload. Old LR networks
++can recover order from their interaction table. This fix does not change the
++inference probabilities.
++
++The Visium tutorial's manual aggregation check now removes `p >= 0.05`, matching
++the package's existing strict `p < 0.05` rule. The previous notebook used
++`p > 0.05` in that assertion. Analysis parameters are unchanged.
++
++## Scope of performance claims
++
++Inference-kernel timings exclude installation, imports, input preparation,
++differential gene selection, plotting, and downstream network analyses unless
++explicitly stated otherwise. Real-data and synthetic scale experiments must be
++reported separately. The spot-level spatial inference implementation is not
++accelerated by this group-level engine.
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -4,7 +4,7 @@
+ 
+ [project]
+ name = "CellChatPy"
+-version = "1.1.0"
++version = "1.1.0+streaming.20261020"
+ description = "Python toolkit for inferring, analyzing, and visualizing cell-cell communication"
+ readme = "README.md"
+ license = {file = "LICENSE"}
+@@ -38,6 +38,7 @@
+ ]
+ 
+ [project.optional-dependencies]
++accelerate = ["numba>=0.59"]
+ tutorial = [
+     "ipykernel>=6",
+     "ipython>=8",
+--- a/README.md
++++ b/README.md
+@@ -1,4 +1,10 @@
+ # CellChatPy
++
++This local research build (`1.1.0+streaming.20261020`) adds an exact,
++memory-bounded group-level inference engine on top of upstream commit
++`986bf7ef909f1e15059aad8a9a9ee31ac675ffc3`.
++See [streaming inference](docs/streaming_engine.md) for its scope, compatibility
++contract, and installation. This build has not been published to GitHub or PyPI.
+ 
+ CellChatPy is a Python toolkit for inferring, analyzing, and visualizing
+ cell-cell communication from single-cell and spatial transcriptomics data.
+@@ -15,6 +21,12 @@
+ - Spatial transcriptomics and spatial multiomics workflows
+ 
+ ## Install
++
++For this research build, install from its local source directory:
++
++```bash
++python -m pip install ".[accelerate]"
++```
+ 
+ Install CellChatPy directly from this GitHub repository:
+ 
+--- a/tests/test_network_and_modeling.py
++++ b/tests/test_network_and_modeling.py
+@@ -1,7 +1,6 @@
+ """Numerical primitives, canonical network storage, and inference workflow tests."""
+ 
+ import copy
+-import inspect
+ 
+ import numpy as np
+ import pandas as pd
+@@ -137,9 +136,6 @@
+ 
+ 
+ def test_accelerated_inference_matches_reference_path() -> None:
+-    if "accelerate" not in inspect.signature(cc.compute_communication_probability).parameters:
+-        pytest.skip("accelerated inference is not available in this revision")
+-
+     cellchat = _inference_cellchat()
+     rng = np.random.RandomState(23)
+     permutations = np.column_stack([rng.permutation(cellchat.n_obs) for _ in range(7)])
+@@ -147,22 +143,25 @@
+     reference = cc.compute_communication_probability(
+         copy.deepcopy(cellchat),
+         permutation_use=permutations,
+-        accelerate=False,
++        engine="legacy",
+     )
+     accelerated = cc.compute_communication_probability(
+         copy.deepcopy(cellchat),
+         permutation_use=permutations,
+-        accelerate=True,
+-        bootstrap_batch_size=1,
++        engine="streaming",
++        lr_batch_size=1,
+     )
+ 
+-    for field in ("prob", "pval"):
+-        np.testing.assert_allclose(
+-            stack_network_field(accelerated.network, field),
+-            stack_network_field(reference.network, field),
+-            rtol=1e-13,
+-            atol=1e-15,
+-        )
++    np.testing.assert_allclose(
++        stack_network_field(accelerated.network, "prob"),
++        stack_network_field(reference.network, "prob"),
++        rtol=1e-13,
++        atol=1e-15,
++    )
++    np.testing.assert_array_equal(
++        stack_network_field(accelerated.network, "pval"),
++        stack_network_field(reference.network, "pval"),
++    )
+ 
+ 
+ def test_small_inference_pipeline_produces_finite_labeled_outputs() -> None:
+--- a/tests/test_public_api.py
++++ b/tests/test_public_api.py
+@@ -1,6 +1,8 @@
+ """Public import surface and packaged-resource smoke tests."""
+ 
+ from importlib.resources import files
++from pathlib import Path
++import re
+ 
+ import CellChatPy
+ 
+@@ -11,7 +13,10 @@
+ 
+ 
+ def test_package_version_matches_release_metadata() -> None:
+-    assert CellChatPy.__version__ == "1.1.0"
++    metadata = (Path(__file__).resolve().parents[1] / "pyproject.toml").read_text(encoding="utf-8")
++    version = re.search(r'^version\s*=\s*"([^"]+)"\s*$', metadata, flags=re.MULTILINE)
++    assert version is not None, "Project metadata must declare a version"
++    assert CellChatPy.__version__ == version.group(1)
+ 
+ 
+ def test_bundled_database_resources_are_present() -> None:

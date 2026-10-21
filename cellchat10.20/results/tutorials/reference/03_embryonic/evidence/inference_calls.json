@@ -1,0 +1,30 @@
+[
+  {
+    "call_index": 0,
+    "elapsed_seconds": 222.4661960999947,
+    "kwargs": {
+      "type_method": "'triMean'",
+      "n_boot": "100",
+      "seed_use": "1"
+    },
+    "shape": [
+      12951,
+      18322
+    ],
+    "groups": 11
+  },
+  {
+    "call_index": 1,
+    "elapsed_seconds": 269.74852409999585,
+    "kwargs": {
+      "type_method": "'triMean'",
+      "n_boot": "100",
+      "seed_use": "1"
+    },
+    "shape": [
+      12179,
+      18227
+    ],
+    "groups": 13
+  }
+]

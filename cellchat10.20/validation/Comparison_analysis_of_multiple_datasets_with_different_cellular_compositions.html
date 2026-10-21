@@ -1,0 +1,975 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="readthedocs-addons-api-version" content="1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparison analysis of multiple datasets with different cellular compositions &mdash; CellChatPy documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2a36ea79" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=fc837d61"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <script src="../_static/js/versions.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="CellChatPy analysis of multiple spatial transcriptomics datasets" href="CellChat_analysis_of_multiple_spatial_transcriptomics_datasets.html" /> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="cellchatpy" /><meta name="readthedocs-version-slug" content="latest" /><meta name="readthedocs-resolver-filename" content="/tutorials/Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions.html" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CellChatPy
+          </a>
+              <div class="switch-menus">
+                <div class="version-switch"></div>
+                <div class="language-switch"></div>
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CellChat_humanSkin_LS.html">Inference and Analysis of Cell-Cell Communication using CellChat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellChat_analysis_of_spatial_transcriptomics_data.html">CellChatPy analysis of spatial transcriptomics data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellChat_analysis_of_spatial_multiomics_data.html">CellChatPy analysis of spatial multiomics data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialCellChat_analysis_of_spatial_transcriptomics_data.html">Spatial CellChat analysis of human psoriatic skin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellChat_comparison_analysis_NL_LS.html">CellChatPy Comparison Analysis of Multiple Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellChat_analysis_of_multiple_spatial_transcriptomics_datasets.html">CellChatPy analysis of multiple spatial transcriptomics datasets</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Comparison analysis of multiple datasets with different cellular compositions</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CellChatPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">Comparison analysis of multiple datasets with different cellular compositions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Comparison-analysis-of-multiple-datasets-with-different-cellular-compositions">
+<h1>Comparison analysis of multiple datasets with different cellular compositions<a class="headerlink" href="#Comparison-analysis-of-multiple-datasets-with-different-cellular-compositions" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><strong>Python package:</strong> <code class="docutils literal notranslate"><span class="pre">CellChatPy</span></code></div>
+<div class="line"><strong>Datasets:</strong> embryonic mouse skin at E13.5 and E14.5</div>
+<div class="line"><strong>Input format:</strong> AnnData (<code class="docutils literal notranslate"><span class="pre">.h5ad</span></code>)</div>
+</div>
+<p>This tutorial demonstrates how to compare cell-cell communication networks when the datasets have related but non-identical cell populations. E13.5 and E14.5 share 11 populations, while <code class="docutils literal notranslate"><span class="pre">DC</span></code> and <code class="docutils literal notranslate"><span class="pre">Pericyte</span></code> occur only at E14.5. We infer each network independently, lift E13.5 to the complete E14.5 group set, merge the objects, and compare WNT signaling on a common visual scale.</p>
+<p>The workflow follows the R CellChat vignette <em>Comparison analysis of multiple datasets with different cellular compositions</em>, using the current CellChatPy snake_case API and cells-by-genes data structure.</p>
+<section id="Setup-and-imports">
+<h2>Setup and imports<a class="headerlink" href="#Setup-and-imports" title="Link to this heading"></a></h2>
+<p>The setup cell locates the repository from either the project root or the <code class="docutils literal notranslate"><span class="pre">tutorial</span></code> directory. Input and output paths are absolute <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> objects, so later cells do not depend on the notebook kernel’s working directory.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">anndata</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ad</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+
+<span class="n">current_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<span class="n">project_root</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">path</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="p">(</span><span class="n">current_dir</span><span class="p">,</span> <span class="o">*</span><span class="n">current_dir</span><span class="o">.</span><span class="n">parents</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">"CellChatPy"</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()),</span>
+    <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">if</span> <span class="n">project_root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+        <span class="s2">"Could not locate the project root containing the CellChatPy package."</span>
+    <span class="p">)</span>
+<span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">project_root</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">project_root</span><span class="p">))</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">CellChatPy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cc</span>
+
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="p">(</span><span class="n">project_root</span> <span class="o">/</span> <span class="s2">"data"</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<span class="n">OUT_DIR</span> <span class="o">=</span> <span class="p">(</span><span class="n">project_root</span> <span class="o">/</span> <span class="s2">"tutorial"</span> <span class="o">/</span> <span class="s2">"figures_different_cellular_compositions"</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<span class="n">OUT_DIR</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">E13_PATH</span> <span class="o">=</span> <span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">"mouse_skin_e13.h5ad"</span>
+<span class="n">E14_PATH</span> <span class="o">=</span> <span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">"mouse_skin_e14.h5ad"</span>
+<span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="n">project_root</span> <span class="o">/</span> <span class="s2">"tutorial"</span> <span class="o">/</span> <span class="s2">"cellchat_mouseSkin_E13_E14_from_h5.pkl"</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Validate, save, display, and close one Matplotlib figure."""</span>
+    <span class="k">if</span> <span class="n">fig</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  [SKIP] </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> returned None"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">path</span> <span class="o">=</span> <span class="n">OUT_DIR</span> <span class="o">/</span> <span class="n">name</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">"tight"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Could not save figure to </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2">: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">exc</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">exc</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Saved: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Using CellChatPy from: </span><span class="si">{</span><span class="n">cc</span><span class="o">.</span><span class="vm">__file__</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"CellChatPy version: </span><span class="si">{</span><span class="nb">getattr</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span><span class="w"> </span><span class="s1">'__version__'</span><span class="p">,</span><span class="w"> </span><span class="s1">'dev'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"E13.5 input: </span><span class="si">{</span><span class="n">E13_PATH</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"E14.5 input: </span><span class="si">{</span><span class="n">E14_PATH</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Figures will be saved to: </span><span class="si">{</span><span class="n">OUT_DIR</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using CellChatPy from: E:\Jin\cellchat.python_new\CellChatPy\__init__.py
+CellChatPy version: 1.1.0
+E13.5 input: E:\Jin\cellchat.python_new\data\mouse_skin_e13.h5ad
+E14.5 input: E:\Jin\cellchat.python_new\data\mouse_skin_e14.h5ad
+Figures will be saved to: E:\Jin\cellchat.python_new\tutorial\figures_different_cellular_compositions
+</pre></div></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="Part-I:-Prepare-the-two-datasets">
+<h2>Part I: Prepare the two datasets<a class="headerlink" href="#Part-I:-Prepare-the-two-datasets" title="Link to this heading"></a></h2>
+<section id="Load-the-AnnData-inputs">
+<h3>Load the AnnData inputs<a class="headerlink" href="#Load-the-AnnData-inputs" title="Link to this heading"></a></h3>
+<p>The two AnnData files contain normalized expression, cell names, gene names, and cell metadata in CellChatPy’s standard <strong>cells x genes</strong> layout. The <code class="docutils literal notranslate"><span class="pre">cellchat_group</span></code> column supplies the biological cell-group identities.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ptm_total</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">input_path</span> <span class="ow">in</span> <span class="p">(</span><span class="n">E13_PATH</span><span class="p">,</span> <span class="n">E14_PATH</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">input_path</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Input AnnData file not found: </span><span class="si">{</span><span class="n">input_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">adata_e13</span> <span class="o">=</span> <span class="n">ad</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="n">E13_PATH</span><span class="p">)</span>
+<span class="n">adata_e14</span> <span class="o">=</span> <span class="n">ad</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="n">E14_PATH</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">dataset_name</span><span class="p">,</span> <span class="n">adata</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">"E13.5"</span><span class="p">:</span> <span class="n">adata_e13</span><span class="p">,</span> <span class="s2">"E14.5"</span><span class="p">:</span> <span class="n">adata_e14</span><span class="p">}</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s2">"cellchat_group"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">adata</span><span class="o">.</span><span class="n">obs</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s2"> is missing adata.obs['cellchat_group']."</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">adata</span><span class="o">.</span><span class="n">obs_names</span><span class="o">.</span><span class="n">is_unique</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s2"> contains duplicate cell names."</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">adata</span><span class="o">.</span><span class="n">var_names</span><span class="o">.</span><span class="n">is_unique</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s2"> contains duplicate gene names."</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"E13.5: </span><span class="si">{</span><span class="n">adata_e13</span><span class="o">.</span><span class="n">n_obs</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> cells x </span><span class="si">{</span><span class="n">adata_e13</span><span class="o">.</span><span class="n">n_vars</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> genes"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"E14.5: </span><span class="si">{</span><span class="n">adata_e14</span><span class="o">.</span><span class="n">n_obs</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> cells x </span><span class="si">{</span><span class="n">adata_e14</span><span class="o">.</span><span class="n">n_vars</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> genes"</span><span class="p">)</span>
+
+<span class="n">group_counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"E13.5"</span><span class="p">:</span> <span class="n">adata_e13</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="s2">"cellchat_group"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(),</span>
+        <span class="s2">"E14.5"</span><span class="p">:</span> <span class="n">adata_e14</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="s2">"cellchat_group"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(),</span>
+    <span class="p">},</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">group_counts</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+E13.5: 12,951 cells x 18,322 genes
+E14.5: 12,179 cells x 18,227 genes
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>E13.5</th>
+      <th>E14.5</th>
+    </tr>
+    <tr>
+      <th>cellchat_group</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>FIB-A</th>
+      <td>4663</td>
+      <td>1944</td>
+    </tr>
+    <tr>
+      <th>FIB-P</th>
+      <td>2396</td>
+      <td>1805</td>
+    </tr>
+    <tr>
+      <th>FIB-B</th>
+      <td>1756</td>
+      <td>2221</td>
+    </tr>
+    <tr>
+      <th>Basal</th>
+      <td>1203</td>
+      <td>1385</td>
+    </tr>
+    <tr>
+      <th>Basal-P</th>
+      <td>937</td>
+      <td>1304</td>
+    </tr>
+    <tr>
+      <th>Muscle</th>
+      <td>896</td>
+      <td>654</td>
+    </tr>
+    <tr>
+      <th>MELA</th>
+      <td>433</td>
+      <td>311</td>
+    </tr>
+    <tr>
+      <th>MYL</th>
+      <td>274</td>
+      <td>320</td>
+    </tr>
+    <tr>
+      <th>Spinious</th>
+      <td>188</td>
+      <td>1396</td>
+    </tr>
+    <tr>
+      <th>ENDO</th>
+      <td>111</td>
+      <td>117</td>
+    </tr>
+    <tr>
+      <th>Immune</th>
+      <td>94</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>DC</th>
+      <td>0</td>
+      <td>277</td>
+    </tr>
+    <tr>
+      <th>Pericyte</th>
+      <td>0</td>
+      <td>195</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="Create-CellChat-objects-and-set-cell-group-order">
+<h3>Create CellChat objects and set cell-group order<a class="headerlink" href="#Create-CellChat-objects-and-set-cell-group-order" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">create_cellchat</span></code> preserves the AnnData cell names, gene names, and metadata. The explicit identity levels reproduce the biological order used in the source vignette; this order also controls node placement in later figures.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cellchat_e13</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">create_cellchat</span><span class="p">(</span><span class="n">adata_e13</span><span class="p">,</span> <span class="n">group_by</span><span class="o">=</span><span class="s2">"cellchat_group"</span><span class="p">)</span>
+<span class="n">cellchat_e14</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">create_cellchat</span><span class="p">(</span><span class="n">adata_e14</span><span class="p">,</span> <span class="n">group_by</span><span class="o">=</span><span class="s2">"cellchat_group"</span><span class="p">)</span>
+
+<span class="n">e13_levels</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"FIB-A"</span><span class="p">,</span> <span class="s2">"FIB-B"</span><span class="p">,</span> <span class="s2">"FIB-P"</span><span class="p">,</span> <span class="s2">"MYL"</span><span class="p">,</span> <span class="s2">"Immune"</span><span class="p">,</span> <span class="s2">"ENDO"</span><span class="p">,</span> <span class="s2">"Muscle"</span><span class="p">,</span>
+    <span class="s2">"MELA"</span><span class="p">,</span> <span class="s2">"Basal-P"</span><span class="p">,</span> <span class="s2">"Basal"</span><span class="p">,</span> <span class="s2">"Spinious"</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">e14_levels</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"FIB-A"</span><span class="p">,</span> <span class="s2">"FIB-B"</span><span class="p">,</span> <span class="s2">"FIB-P"</span><span class="p">,</span> <span class="s2">"DC"</span><span class="p">,</span> <span class="s2">"Pericyte"</span><span class="p">,</span> <span class="s2">"MYL"</span><span class="p">,</span> <span class="s2">"Immune"</span><span class="p">,</span>
+    <span class="s2">"ENDO"</span><span class="p">,</span> <span class="s2">"Muscle"</span><span class="p">,</span> <span class="s2">"MELA"</span><span class="p">,</span> <span class="s2">"Basal-P"</span><span class="p">,</span> <span class="s2">"Basal"</span><span class="p">,</span> <span class="s2">"Spinious"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">dataset_name</span><span class="p">,</span> <span class="n">adata</span><span class="p">,</span> <span class="n">expected_levels</span> <span class="ow">in</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">"E13.5"</span><span class="p">,</span> <span class="n">adata_e13</span><span class="p">,</span> <span class="n">e13_levels</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"E14.5"</span><span class="p">,</span> <span class="n">adata_e14</span><span class="p">,</span> <span class="n">e14_levels</span><span class="p">),</span>
+<span class="p">):</span>
+    <span class="n">observed</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="s2">"cellchat_group"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">expected_levels</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">observed</span> <span class="o">!=</span> <span class="n">expected</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s2"> cell groups do not match the tutorial levels. "</span>
+            <span class="sa">f</span><span class="s2">"Missing: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">expected</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">observed</span><span class="p">)</span><span class="si">}</span><span class="s2">; unexpected: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">observed</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">expected</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+
+<span class="n">cellchat_e13</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">set_identity</span><span class="p">(</span><span class="n">cellchat_e13</span><span class="p">,</span> <span class="n">group_by</span><span class="o">=</span><span class="s2">"cellchat_group"</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">e13_levels</span><span class="p">)</span>
+<span class="n">cellchat_e14</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">set_identity</span><span class="p">(</span><span class="n">cellchat_e14</span><span class="p">,</span> <span class="n">group_by</span><span class="o">=</span><span class="s2">"cellchat_group"</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">e14_levels</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"E13.5 cell groups:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cellchat_e13</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">categories</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">E14.5 cell groups:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cellchat_e14</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">categories</span><span class="p">))</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Create a CellChat object from an AnnData object
+Using AnnData.obs as cell metadata
+Cell groups used for CellChat analysis: [&#39;Basal&#39;, &#39;Basal-P&#39;, &#39;ENDO&#39;, &#39;FIB-A&#39;, &#39;FIB-B&#39;, &#39;FIB-P&#39;, &#39;Immune&#39;, &#39;MELA&#39;, &#39;MYL&#39;, &#39;Muscle&#39;, &#39;Spinious&#39;]
+Create a CellChat object from an AnnData object
+Using AnnData.obs as cell metadata
+Cell groups used for CellChat analysis: [&#39;Basal&#39;, &#39;Basal-P&#39;, &#39;DC&#39;, &#39;ENDO&#39;, &#39;FIB-A&#39;, &#39;FIB-B&#39;, &#39;FIB-P&#39;, &#39;Immune&#39;, &#39;MELA&#39;, &#39;MYL&#39;, &#39;Muscle&#39;, &#39;Pericyte&#39;, &#39;Spinious&#39;]
+E13.5 cell groups:
+[&#39;FIB-A&#39;, &#39;FIB-B&#39;, &#39;FIB-P&#39;, &#39;MYL&#39;, &#39;Immune&#39;, &#39;ENDO&#39;, &#39;Muscle&#39;, &#39;MELA&#39;, &#39;Basal-P&#39;, &#39;Basal&#39;, &#39;Spinious&#39;]
+
+E14.5 cell groups:
+[&#39;FIB-A&#39;, &#39;FIB-B&#39;, &#39;FIB-P&#39;, &#39;DC&#39;, &#39;Pericyte&#39;, &#39;MYL&#39;, &#39;Immune&#39;, &#39;ENDO&#39;, &#39;Muscle&#39;, &#39;MELA&#39;, &#39;Basal-P&#39;, &#39;Basal&#39;, &#39;Spinious&#39;]
+</pre></div></div>
+</div>
+</section>
+<section id="Select-the-CellChat-database">
+<h3>Select the CellChat database<a class="headerlink" href="#Select-the-CellChat-database" title="Link to this heading"></a></h3>
+<p>Use the mouse database and restrict the analysis to secreted signaling interactions. The same database subset must be assigned to both objects before their networks are inferred.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_full</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">load_database</span><span class="p">(</span><span class="n">species</span><span class="o">=</span><span class="s2">"mouse"</span><span class="p">)</span>
+<span class="n">db_use</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">subset_database</span><span class="p">(</span><span class="n">db_full</span><span class="p">,</span> <span class="n">search</span><span class="o">=</span><span class="s2">"Secreted Signaling"</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">"annotation"</span><span class="p">)</span>
+
+<span class="n">cellchat_e13</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">set_database</span><span class="p">(</span><span class="n">cellchat_e13</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">db_use</span><span class="p">)</span>
+<span class="n">cellchat_e14</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">set_database</span><span class="p">(</span><span class="n">cellchat_e14</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">db_use</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mouse DB interactions used: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">db_use</span><span class="p">[</span><span class="s1">'interaction'</span><span class="p">])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Mouse DB interactions used: 1280
+</pre></div></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="Part-II:-Infer-communication-networks-independently">
+<h2>Part II: Infer communication networks independently<a class="headerlink" href="#Part-II:-Infer-communication-networks-independently" title="Link to this heading"></a></h2>
+<p>Each dataset is processed separately before any comparison is attempted. The standard CellChatPy workflow subsets signaling genes, identifies overexpressed genes and ligand-receptor interactions, estimates communication probabilities, filters small cell populations, and aggregates interactions by pathway.</p>
+<p><code class="docutils literal notranslate"><span class="pre">n_boot=100</span></code> follows the full inference workflow and can take some time. Keep the same random seed for both datasets to make the analysis reproducible.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_boot</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">inferred_objects</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">"E13.5"</span><span class="p">:</span> <span class="n">cellchat_e13</span><span class="p">,</span> <span class="s2">"E14.5"</span><span class="p">:</span> <span class="n">cellchat_e14</span><span class="p">}</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">dataset_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Running CellChatPy workflow for </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">subset_signaling_data</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">identify_overexpressed_genes</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">identify_overexpressed_interactions</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">compute_communication_probability</span><span class="p">(</span>
+        <span class="n">obj</span><span class="p">,</span> <span class="n">type_method</span><span class="o">=</span><span class="s2">"triMean"</span><span class="p">,</span> <span class="n">n_boot</span><span class="o">=</span><span class="n">n_boot</span><span class="p">,</span> <span class="n">seed_use</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">filter_communication</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">min_cells</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">compute_pathway_probability</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">aggregate_network</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="n">inferred_objects</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Completed </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">dataset_start</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
+
+<span class="n">cellchat_e13</span> <span class="o">=</span> <span class="n">inferred_objects</span><span class="p">[</span><span class="s2">"E13.5"</span><span class="p">]</span>
+<span class="n">cellchat_e14</span> <span class="o">=</span> <span class="n">inferred_objects</span><span class="p">[</span><span class="s2">"E14.5"</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">E13.5 pathways:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cellchat_e13</span><span class="o">.</span><span class="n">pathway_network</span><span class="p">[</span><span class="s2">"prob"</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">E14.5 pathways:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cellchat_e14</span><span class="o">.</span><span class="n">pathway_network</span><span class="p">[</span><span class="s2">"prob"</span><span class="p">]))</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+Running CellChatPy workflow for E13.5
+The number of highly variable ligand-receptor pairs used for signaling inference is 846
+triMean is used for calculating the average gene expression per cell group.
+Pre-computing 100 bootstrap averaged expressions...
+Computing communication probabilities for 846 LR pairs...
+&gt;&gt;&gt; CellChat inference is done.
+Results stored in .network.
+Pathway-level results stored in .pathway_network.
+Completed E13.5 in 139.7 seconds
+
+Running CellChatPy workflow for E14.5
+The number of highly variable ligand-receptor pairs used for signaling inference is 871
+triMean is used for calculating the average gene expression per cell group.
+Pre-computing 100 bootstrap averaged expressions...
+Computing communication probabilities for 871 LR pairs...
+&gt;&gt;&gt; CellChat inference is done.
+Results stored in .network.
+Pathway-level results stored in .pathway_network.
+Completed E14.5 in 165.2 seconds
+
+E13.5 pathways:
+[&#39;MK&#39;, &#39;PTN&#39;, &#39;GALECTIN&#39;, &#39;WNT&#39;, &#39;ncWNT&#39;, &#39;ANGPTL&#39;, &#39;PDGF&#39;, &#39;IGF&#39;, &#39;TGFb&#39;, &#39;KLK&#39;, &#39;IGFBP&#39;, &#39;SEMA3&#39;, &#39;FGF&#39;, &#39;CCL&#39;, &#39;GAS&#39;, &#39;NGF&#39;, &#39;NT&#39;, &#39;SLITRK&#39;, &#39;BMP&#39;, &#39;KIT&#39;, &#39;EDN&#39;, &#39;VEGF&#39;, &#39;VISFATIN&#39;, &#39;PROS&#39;, &#39;APJ&#39;, &#39;SLIT&#39;, &#39;APELIN&#39;, &#39;EGF&#39;, &#39;IL4&#39;, &#39;TWEAK&#39;]
+
+E14.5 pathways:
+[&#39;MK&#39;, &#39;PTN&#39;, &#39;IGF&#39;, &#39;GALECTIN&#39;, &#39;ncWNT&#39;, &#39;ANGPTL&#39;, &#39;WNT&#39;, &#39;SEMA3&#39;, &#39;PDGF&#39;, &#39;MIF&#39;, &#39;FGF&#39;, &#39;BMP&#39;, &#39;KIT&#39;, &#39;EDN&#39;, &#39;SLITRK&#39;, &#39;PERIOSTIN&#39;, &#39;CCL&#39;, &#39;VEGF&#39;, &#39;IGFBP&#39;, &#39;GAS&#39;, &#39;KLK&#39;, &#39;TGFb&#39;, &#39;NT&#39;, &#39;NGF&#39;, &#39;VISFATIN&#39;, &#39;PROS&#39;, &#39;SLIT&#39;, &#39;TNF&#39;, &#39;APJ&#39;, &#39;EGF&#39;, &#39;LIFR&#39;, &#39;OSM&#39;, &#39;IL4&#39;, &#39;APELIN&#39;, &#39;ANGPT&#39;]
+</pre></div></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="Part-III:-Lift-and-merge-the-CellChat-objects">
+<h2>Part III: Lift and merge the CellChat objects<a class="headerlink" href="#Part-III:-Lift-and-merge-the-CellChat-objects" title="Link to this heading"></a></h2>
+<p>Comparative visualizations require a common sender-receiver axis. Because E14.5 contains every E13.5 group plus <code class="docutils literal notranslate"><span class="pre">DC</span></code> and <code class="docutils literal notranslate"><span class="pre">Pericyte</span></code>, its ordered levels define the common group set. <code class="docutils literal notranslate"><span class="pre">lift_cellchat</span></code> adds zero-valued rows and columns for the two groups absent from E13.5 without inventing expression or interactions.</p>
+<blockquote>
+<div><p>The order of <code class="docutils literal notranslate"><span class="pre">group_new</span></code> determines the cell-group order in comparative plots. If different datasets each contain unique groups, construct an ordered union instead of borrowing the levels from only one dataset.</p>
+</div></blockquote>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group_new</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cellchat_e14</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">categories</span><span class="p">)</span>
+<span class="n">missing_from_e14</span> <span class="o">=</span> <span class="p">[</span><span class="n">group</span> <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">cellchat_e13</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">categories</span> <span class="k">if</span> <span class="n">group</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">group_new</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">missing_from_e14</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+        <span class="s2">"E14.5 does not contain every E13.5 group; build an ordered union for group_new. "</span>
+        <span class="sa">f</span><span class="s2">"Missing groups: </span><span class="si">{</span><span class="n">missing_from_e14</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span>
+
+<span class="n">cellchat_e13</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">lift_cellchat</span><span class="p">(</span><span class="n">cellchat_e13</span><span class="p">,</span> <span class="n">group_new</span><span class="o">=</span><span class="n">group_new</span><span class="p">)</span>
+
+<span class="n">object_list</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"E13.5"</span><span class="p">:</span> <span class="n">cellchat_e13</span><span class="p">,</span> <span class="s2">"E14.5"</span><span class="p">:</span> <span class="n">cellchat_e14</span><span class="p">}</span>
+<span class="n">cellchat</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">merge_cellchat</span><span class="p">(</span>
+    <span class="nb">list</span><span class="p">(</span><span class="n">object_list</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+    <span class="n">add_names</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">object_list</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
+    <span class="n">cell_prefix</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Lifted E13.5 cell groups:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cellchat_e13</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">categories</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Merged datasets:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cellchat</span><span class="o">.</span><span class="n">network</span><span class="p">))</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Lifting CellChat object using cell labels: FIB-A, FIB-B, FIB-P, DC, Pericyte, MYL, Immune, ENDO, Muscle, MELA, Basal-P, Basal, Spinious
+Merging signaling expression, metadata, spatial data, and dataset networks
+Lifted E13.5 cell groups:
+[&#39;FIB-A&#39;, &#39;FIB-B&#39;, &#39;FIB-P&#39;, &#39;DC&#39;, &#39;Pericyte&#39;, &#39;MYL&#39;, &#39;Immune&#39;, &#39;ENDO&#39;, &#39;Muscle&#39;, &#39;MELA&#39;, &#39;Basal-P&#39;, &#39;Basal&#39;, &#39;Spinious&#39;]
+
+Merged datasets:
+[&#39;E13.5&#39;, &#39;E14.5&#39;]
+</pre></div></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="Part-IV:-Compare-WNT-signaling">
+<h2>Part IV: Compare WNT signaling<a class="headerlink" href="#Part-IV:-Compare-WNT-signaling" title="Link to this heading"></a></h2>
+<p>WNT is the example pathway used by the original vignette. Before plotting, we verify that WNT was inferred in both datasets and compute one shared maximum edge weight. Using a common scale prevents the same line width from representing different communication strengths in E13.5 and E14.5.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pathways_show</span> <span class="o">=</span> <span class="s2">"WNT"</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">object_list</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">available_pathways</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">pathway_network</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"prob"</span><span class="p">,</span> <span class="p">{}))</span>
+    <span class="k">if</span> <span class="n">pathways_show</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">available_pathways</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">pathways_show</span><span class="si">}</span><span class="s2"> was not inferred in </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">. "</span>
+            <span class="sa">f</span><span class="s2">"Available pathways: </span><span class="si">{</span><span class="n">available_pathways</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+
+<span class="n">weight_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
+    <span class="nb">float</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="n">aggregate_signaling_matrix</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">signaling</span><span class="o">=</span><span class="n">pathways_show</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">object_list</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="k">if</span> <span class="n">weight_max</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"WNT has no significant communication strength to visualize."</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shared maximum WNT edge weight: </span><span class="si">{</span><span class="n">weight_max</span><span class="si">:</span><span class="s2">.6g</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Shared maximum WNT edge weight: 0.0659105
+</pre></div></div>
+</div>
+<section id="Circle-plot">
+<h3>Circle plot<a class="headerlink" href="#Circle-plot" title="Link to this heading"></a></h3>
+<p>The circle layout shows every lifted cell group around a common ring. Directed edges connect sender groups to receiver groups, while the shared <code class="docutils literal notranslate"><span class="pre">weight_max</span></code> makes edge widths comparable between developmental stages.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">object_list</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">plot_network_aggregate</span><span class="p">(</span>
+        <span class="n">obj</span><span class="p">,</span>
+        <span class="n">signaling</span><span class="o">=</span><span class="n">pathways_show</span><span class="p">,</span>
+        <span class="n">layout</span><span class="o">=</span><span class="s2">"circle"</span><span class="p">,</span>
+        <span class="n">edge_weight_max</span><span class="o">=</span><span class="n">weight_max</span><span class="p">,</span>
+        <span class="n">edge_width_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">title_name</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">pathways_show</span><span class="si">}</span><span class="s2"> signaling - </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">return_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"01_circle_WNT_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.png"</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_different_cellular_compositions\01_circle_WNT_E13.5.png
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_16_1.png" src="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_16_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_different_cellular_compositions\01_circle_WNT_E14.5.png
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_16_3.png" src="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_16_3.png" />
+</div>
+</div>
+</section>
+<section id="Hierarchy-plot">
+<h3>Hierarchy plot<a class="headerlink" href="#Hierarchy-plot" title="Link to this heading"></a></h3>
+<p>The first ten groups in <code class="docutils literal notranslate"><span class="pre">group_new</span></code> are dermal populations and are selected as receivers in the left hierarchy panel. The complementary epidermal populations appear in the right panel. CellChatPy uses zero-based indices, hence <code class="docutils literal notranslate"><span class="pre">range(10)</span></code> corresponds to the first ten groups.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vertex_receiver</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">object_list</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">plot_network_aggregate</span><span class="p">(</span>
+        <span class="n">obj</span><span class="p">,</span>
+        <span class="n">signaling</span><span class="o">=</span><span class="n">pathways_show</span><span class="p">,</span>
+        <span class="n">layout</span><span class="o">=</span><span class="s2">"hierarchy"</span><span class="p">,</span>
+        <span class="n">vertex_receiver</span><span class="o">=</span><span class="n">vertex_receiver</span><span class="p">,</span>
+        <span class="n">edge_weight_max</span><span class="o">=</span><span class="n">weight_max</span><span class="p">,</span>
+        <span class="n">edge_width_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">title_name</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">pathways_show</span><span class="si">}</span><span class="s2"> signaling - </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">fig_size</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+        <span class="n">return_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"02_hierarchy_WNT_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.png"</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_different_cellular_compositions\02_hierarchy_WNT_E13.5.png
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_18_1.png" src="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_18_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_different_cellular_compositions\02_hierarchy_WNT_E14.5.png
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_18_3.png" src="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_18_3.png" />
+</div>
+</div>
+</section>
+<section id="Chord-diagram">
+<h3>Chord diagram<a class="headerlink" href="#Chord-diagram" title="Link to this heading"></a></h3>
+<p>The chord layout emphasizes reciprocal signaling and the overall connectivity between individual cell groups. It visualizes the same aggregated WNT matrix as the circle plot.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">object_list</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">plot_network_aggregate</span><span class="p">(</span>
+        <span class="n">obj</span><span class="p">,</span>
+        <span class="n">signaling</span><span class="o">=</span><span class="n">pathways_show</span><span class="p">,</span>
+        <span class="n">layout</span><span class="o">=</span><span class="s2">"chord"</span><span class="p">,</span>
+        <span class="n">edge_weight_max</span><span class="o">=</span><span class="n">weight_max</span><span class="p">,</span>
+        <span class="n">edge_width_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">title_name</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">pathways_show</span><span class="si">}</span><span class="s2"> signaling - </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">return_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"03_chord_WNT_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.png"</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_different_cellular_compositions\03_chord_WNT_E13.5.png
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_20_1.png" src="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_20_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_different_cellular_compositions\03_chord_WNT_E14.5.png
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_20_3.png" src="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_20_3.png" />
+</div>
+</div>
+</section>
+<section id="Chord-diagram-grouped-by-tissue-compartment">
+<h3>Chord diagram grouped by tissue compartment<a class="headerlink" href="#Chord-diagram-grouped-by-tissue-compartment" title="Link to this heading"></a></h3>
+<p>To summarize communication above the cell-group level, map the first ten groups to <code class="docutils literal notranslate"><span class="pre">Dermal</span></code> and the remaining three to <code class="docutils literal notranslate"><span class="pre">Epidermal</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">group_new</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">13</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"This tutorial expects 13 lifted groups, but found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">group_new</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span>
+    <span class="p">)</span>
+
+<span class="n">compartment_by_group</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">group</span><span class="p">:</span> <span class="s2">"Dermal"</span> <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="k">else</span> <span class="s2">"Epidermal"</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">group_new</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">compartment_by_group</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"compartment"</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>compartment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>FIB-A</th>
+      <td>Dermal</td>
+    </tr>
+    <tr>
+      <th>FIB-B</th>
+      <td>Dermal</td>
+    </tr>
+    <tr>
+      <th>FIB-P</th>
+      <td>Dermal</td>
+    </tr>
+    <tr>
+      <th>DC</th>
+      <td>Dermal</td>
+    </tr>
+    <tr>
+      <th>Pericyte</th>
+      <td>Dermal</td>
+    </tr>
+    <tr>
+      <th>MYL</th>
+      <td>Dermal</td>
+    </tr>
+    <tr>
+      <th>Immune</th>
+      <td>Dermal</td>
+    </tr>
+    <tr>
+      <th>ENDO</th>
+      <td>Dermal</td>
+    </tr>
+    <tr>
+      <th>Muscle</th>
+      <td>Dermal</td>
+    </tr>
+    <tr>
+      <th>MELA</th>
+      <td>Dermal</td>
+    </tr>
+    <tr>
+      <th>Basal-P</th>
+      <td>Epidermal</td>
+    </tr>
+    <tr>
+      <th>Basal</th>
+      <td>Epidermal</td>
+    </tr>
+    <tr>
+      <th>Spinious</th>
+      <td>Epidermal</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">object_list</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">plot_network_chord_cell</span><span class="p">(</span>
+        <span class="n">obj</span><span class="p">,</span>
+        <span class="n">signaling</span><span class="o">=</span><span class="n">pathways_show</span><span class="p">,</span>
+        <span class="n">group</span><span class="o">=</span><span class="n">compartment_by_group</span><span class="p">,</span>
+        <span class="n">title_name</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">pathways_show</span><span class="si">}</span><span class="s2"> signaling network - </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">return_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"04_chord_grouped_WNT_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.png"</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_different_cellular_compositions\04_chord_grouped_WNT_E13.5.png
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_23_1.png" src="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_23_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Saved: E:\Jin\cellchat.python_new\tutorial\figures_different_cellular_compositions\04_chord_grouped_WNT_E14.5.png
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_23_3.png" src="../_images/tutorials_Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions_23_3.png" />
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="Part-V:-When-cellular-compositions-differ-substantially">
+<h2>Part V: When cellular compositions differ substantially<a class="headerlink" href="#Part-V:-When-cellular-compositions-differ-substantially" title="Link to this heading"></a></h2>
+<p>Lifting supports comparison when datasets differ by a limited number of groups, as in this example. When most cell populations differ, methods that depend on one-to-one sender and receiver identities are not directly interpretable.</p>
+<ul class="simple">
+<li><p>Do not directly compare differential interaction counts or strengths between unmatched cell populations. Plot each dataset’s interaction network separately.</p></li>
+<li><p>Do not use functional pathway similarity unless the sender and receiver group identities are comparable across datasets.</p></li>
+<li><p>Structural pathway similarity remains appropriate because it compares network topology rather than requiring identical cell labels.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="Save-the-analysis-objects">
+<h2>Save the analysis objects<a class="headerlink" href="#Save-the-analysis-objects" title="Link to this heading"></a></h2>
+<p>Store both lifted single-dataset objects together with the merged object. This allows downstream comparison without rerunning the bootstrap inference.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">OUTPUT_PATH</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">"cellchat_e13"</span><span class="p">:</span> <span class="n">cellchat_e13</span><span class="p">,</span>
+            <span class="s2">"cellchat_e14"</span><span class="p">:</span> <span class="n">cellchat_e14</span><span class="p">,</span>
+            <span class="s2">"cellchat_merged"</span><span class="p">:</span> <span class="n">cellchat</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="n">handle</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Saved CellChat objects to: </span><span class="si">{</span><span class="n">OUTPUT_PATH</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total runtime: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ptm_total</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Saved CellChat objects to: E:\Jin\cellchat.python_new\tutorial\cellchat_mouseSkin_E13_E14_from_h5.pkl
+Total runtime: 313.8 seconds
+</pre></div></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CellChat_analysis_of_multiple_spatial_transcriptomics_datasets.html" class="btn btn-neutral float-left" title="CellChatPy analysis of multiple spatial transcriptomics datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, CellChatPy contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

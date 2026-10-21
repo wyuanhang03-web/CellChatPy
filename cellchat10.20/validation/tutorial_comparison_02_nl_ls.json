@@ -1,0 +1,611 @@
+{
+  "reference_label": "reference",
+  "candidate_label": "development",
+  "exact_array_equality_definition": "numpy.array_equal on finite values (legacy bitwise_equal field name); PNG equality uses SHA-256 byte hashes",
+  "absolute_tolerance": 1e-12,
+  "relative_tolerance": 1e-12,
+  "requested_tutorials": [
+    "CellChat_comparison_analysis_NL_LS"
+  ],
+  "tutorials": [
+    {
+      "name": "CellChat_comparison_analysis_NL_LS",
+      "directory": "02_nl_ls",
+      "comparisons": [
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\02_nl_ls\\evidence\\final_cellchat_all.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\evidence\\final_cellchat_all.npz",
+          "arrays": [],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 0,
+          "has_numerical_content": false,
+          "scope": "metadata_only_empty_network_snapshot",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\02_nl_ls\\evidence\\final_cellchat_grouped.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\evidence\\final_cellchat_grouped.npz",
+          "arrays": [],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 0,
+          "has_numerical_content": false,
+          "scope": "metadata_only_empty_network_snapshot",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\02_nl_ls\\evidence\\final_cellchat_LS.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\evidence\\final_cellchat_LS.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                688,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                688,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            },
+            {
+              "key": "count",
+              "shape": [
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "weight",
+              "shape": [
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 198432,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\02_nl_ls\\evidence\\final_cellchat_LS_grouped.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\evidence\\final_cellchat_LS_grouped.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            },
+            {
+              "key": "count",
+              "shape": [
+                3,
+                3
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "weight",
+              "shape": [
+                3,
+                3
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 18,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\02_nl_ls\\evidence\\final_cellchat_merged.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\evidence\\final_cellchat_merged.npz",
+          "arrays": [],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 0,
+          "has_numerical_content": false,
+          "scope": "metadata_only_empty_network_snapshot",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\02_nl_ls\\evidence\\final_cellchat_NL.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\evidence\\final_cellchat_NL.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                491,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                491,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            },
+            {
+              "key": "count",
+              "shape": [
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "weight",
+              "shape": [
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 141696,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\02_nl_ls\\evidence\\final_cellchat_NL_grouped.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\evidence\\final_cellchat_NL_grouped.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                0
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            },
+            {
+              "key": "count",
+              "shape": [
+                3,
+                3
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "weight",
+              "shape": [
+                3,
+                3
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 18,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\02_nl_ls\\evidence\\inference_0.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\evidence\\inference_0.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                491,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                491,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 141408,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\02_nl_ls\\evidence\\inference_1.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\evidence\\inference_1.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                688,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                688,
+                12,
+                12
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 198144,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        }
+      ],
+      "reference_status": "passed",
+      "candidate_status": "passed",
+      "reference_package_python_source_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+      "candidate_package_python_source_sha256": "8b4db0a0fb311b6a7f92412ea6a1a1570c3697fe1fcd606ab58ccee5f2794d1d",
+      "original_source_equal": true,
+      "reference_seconds": 423.35624379996443,
+      "candidate_seconds": 153.09164880000753,
+      "reference_figures": 46,
+      "candidate_figures": 46,
+      "figure_paths_equal": true,
+      "figure_comparisons": [
+        {
+          "figure": "tutorial/figures_comparison/cmp_01a_compare_interactions_count.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_01b_compare_interactions_weight.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_02a_diff_interaction_count.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_02b_diff_interaction_weight.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_03a_diff_heatmap_count.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_03b_diff_heatmap_weight.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_04_circle_count_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_04_circle_count_NL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_05a_circle_count_grouped_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_05a_circle_count_grouped_NL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_05b_diff_interaction_count_grouped.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_05c_diff_interaction_weight_grouped.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_06_role_scatter_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_06_role_scatter_NL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_07_signaling_changes_cDC1.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_07_signaling_changes_Inflam_DC.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_08_embedding_pairwise_functional.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_09_embedding_pairwise_structural.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_09_zoom_in_embedding_pairwise_structural.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_10_rank_similarity_functional.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_11a_rank_net_stacked.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_11b_rank_net_unstacked.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_12_role_heatmap_all_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_12_role_heatmap_all_NL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_12_role_heatmap_incoming_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_12_role_heatmap_incoming_NL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_12_role_heatmap_outgoing_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_12_role_heatmap_outgoing_NL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_13_bubble_comparison.png",
+          "exists": true,
+          "sha256_equal": false
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_13a_bubble_increased_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_13b_bubble_decreased_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_14a_bubble_up.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_14b_bubble_down.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_15a_chord_up.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_15b_chord_down.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_16a_circle_CXCL_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_16a_circle_CXCL_NL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_16b_heatmap_CXCL_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_16b_heatmap_CXCL_NL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_16c_chord_CXCL_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_16c_chord_CXCL_NL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_17a_chord_gene_received_InflamDC_TC_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_17a_chord_gene_received_InflamDC_TC_NL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_17b_chord_pathways_fibroblast_to_immune_LS.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_17b_chord_pathways_fibroblast_to_immune_NL.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_comparison/cmp_18_gene_expression_CXCL_split.png",
+          "exists": true,
+          "sha256_equal": true
+        }
+      ],
+      "all_figure_files_identical": false,
+      "evidence_names_equal": true,
+      "passed": true,
+      "nonempty_numerical_snapshots": 6,
+      "core_comparison_scope": "Group network prob/pval/count/weight and labels when present; empty snapshots contain metadata only",
+      "saved_object_audit_required_for_full_suite": true,
+      "saved_object_audit": {
+        "report": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\validation\\tutorial_saved_objects_02_nl_ls.json",
+        "passed": true,
+        "current_execution_provenance_matches": true,
+        "nonempty_spot_probability_arrays": 0,
+        "numeric_arrays": 10380
+      }
+    }
+  ],
+  "complete_suite": false,
+  "requested_scope_complete": true,
+  "passed": true
+}

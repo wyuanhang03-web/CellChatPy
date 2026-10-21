@@ -1,0 +1,3 @@
+barcode,in_tissue,array_row,array_col,imagerow,imagecol
+spot_a,1,2,3,40,50
+spot_b,1,4,5,60,70

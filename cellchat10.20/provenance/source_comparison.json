@@ -1,0 +1,163 @@
+{
+  "github_commit": "986bf7ef909f1e15059aad8a9a9ee31ac675ffc3",
+  "tree": "f3c44d7cc552bbf6ac14bec25bf0d89d98c1f65d",
+  "source": "git archive from local object database; tree hash verified against GitHub commit response",
+  "local_comparisons": {
+    "CellChatPy": [
+      {
+        "file": "__init__.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "analysis.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "cellchat_class.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "database.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "modeling.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "network_storage.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "spatial.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "utilities.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "visualization.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "viz_helpers.py",
+        "identical": false,
+        "normalized_equal": true
+      }
+    ],
+    "CellChatPy_GitHub/CellChatPy": [
+      {
+        "file": "__init__.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "analysis.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "cellchat_class.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "database.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "modeling.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "network_storage.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "spatial.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "utilities.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "visualization.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "viz_helpers.py",
+        "identical": false,
+        "normalized_equal": true
+      }
+    ],
+    "work2/CellChatPy": [
+      {
+        "file": "__init__.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "analysis.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "cellchat_class.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "database.py",
+        "identical": false,
+        "normalized_equal": true
+      },
+      {
+        "file": "modeling.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "network_storage.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "spatial.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "utilities.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "visualization.py",
+        "identical": false,
+        "normalized_equal": false
+      },
+      {
+        "file": "viz_helpers.py",
+        "identical": false,
+        "normalized_equal": false
+      }
+    ]
+  }
+}

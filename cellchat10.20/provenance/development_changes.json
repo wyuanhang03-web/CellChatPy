@@ -1,0 +1,85 @@
+{
+  "base_commit": "986bf7ef909f1e15059aad8a9a9ee31ac675ffc3",
+  "source_changes": [
+    {
+      "path": "CellChatPy/__init__.py",
+      "kind": "modified",
+      "upstream_sha256": "7857368de52a0feffc4e1b4d5d948f8b72fe2c4a66c153401804cae12f424f8f",
+      "development_sha256": "895a5352dfbebfcedcf39e2376b0511d6f128da5aef9175613c8a81fb94580a1"
+    },
+    {
+      "path": "CellChatPy/_sparse_quantiles.py",
+      "kind": "added",
+      "upstream_sha256": null,
+      "development_sha256": "f6cf2019ab2cae4c5aefd7aa8e6ca22ce658f7a2c1ac7395717452457f67e793"
+    },
+    {
+      "path": "CellChatPy/_streaming.py",
+      "kind": "added",
+      "upstream_sha256": null,
+      "development_sha256": "aa25a524d695245b7e11a37c83fe4bc0bc5a7e6d2c1399892680ed71eaa91ee7"
+    },
+    {
+      "path": "CellChatPy/modeling.py",
+      "kind": "modified",
+      "upstream_sha256": "c54f2f9ed2b843ff8f48c85323086e6b7f256e5898ef9d18d77355bacca7f27d",
+      "development_sha256": "b70a4e4c70f7490eb72d06e98398fc1ef2d0ae17e0892da897291386231ac6d0"
+    },
+    {
+      "path": "CellChatPy/network_storage.py",
+      "kind": "modified",
+      "upstream_sha256": "fb88154f3b836dafe62b20deb92a7834d016b49d5813aee9e48c83dbb4590abd",
+      "development_sha256": "5f677cd7da54bd11107726ed4e9d11db04307cdcd75d37e537f418094c78b18f"
+    },
+    {
+      "path": "docs/index.md",
+      "kind": "modified",
+      "upstream_sha256": "d658ad99d820d96116348c03c5a560b8be202e89c382181fa0fabfc1cdf7b463",
+      "development_sha256": "d0cb30af096974dd29d35521c11ba6a8029e6919c070358a08ff3f5cbd101375"
+    },
+    {
+      "path": "docs/streaming_engine.md",
+      "kind": "added",
+      "upstream_sha256": null,
+      "development_sha256": "4ac8cf4617313f0523fe349e7a8a64894b1d72354a839f957b34a36bf9929efa"
+    },
+    {
+      "path": "pyproject.toml",
+      "kind": "modified",
+      "upstream_sha256": "46efb86016e67e0cf28333be448613cb2ff0dcfd50a5324ff70468c4b553b086",
+      "development_sha256": "d67f06ba810a98f7e414913bc5e01c2ad0ce1bb6ad8a245f44c712db0c6da045"
+    },
+    {
+      "path": "README.md",
+      "kind": "modified",
+      "upstream_sha256": "0aec608217ecf20b1bd64c2383d13471f578608942e936073b7bf5a0894051a7",
+      "development_sha256": "af8e278dd5e5e70115891456f492ad0355639d2f326bd148023d76b2c2b66103"
+    },
+    {
+      "path": "tests/test_network_and_modeling.py",
+      "kind": "modified",
+      "upstream_sha256": "d5e3d528762a589a5cb03ccf2d16d8ffb03c42f03e2e7938667d335ee21b6272",
+      "development_sha256": "b1405979a071ced85431c6fb3ec6fd4420b8a9682b3ceb9c94dac72da039effc"
+    },
+    {
+      "path": "tests/test_public_api.py",
+      "kind": "modified",
+      "upstream_sha256": "bbdd9ef50398221e26ab21f5c5cb0e8823fa2fb763e8e26d251a64f82f633c90",
+      "development_sha256": "14bddbc9166c0925f4d467738490d994c294ca16dcfcdc41a46f610152c715a9"
+    }
+  ],
+  "notebook_source_changes": [
+    {
+      "path": "docs/tutorials/CellChat_analysis_of_spatial_transcriptomics_data.ipynb",
+      "cell_index": 15,
+      "old_source": "lr_names = list(cellchat.network[\"prob\"])\nlr_prob = np.stack([cellchat.network[\"prob\"][name].toarray() for name in lr_names], axis=2)\nlr_pval = np.stack([cellchat.network[\"pval\"][name] for name in lr_names], axis=2)\n\nsignificant_prob = lr_prob.copy()\nsignificant_prob[lr_pval > 0.05] = 0.0\ncount_check = np.sum(significant_prob > 0, axis=2)\nweight_check = np.sum(significant_prob, axis=2)\n\nnp.testing.assert_array_equal(count_check, np.asarray(cellchat.network[\"count\"]))\nnp.testing.assert_allclose(weight_check, np.asarray(cellchat.network[\"weight\"]), atol=1e-14)\n\nprint(\"Aggregated count and weight are consistent with significant LR probabilities.\")",
+      "new_source": "lr_names = list(cellchat.network[\"prob\"])\nlr_prob = np.stack([cellchat.network[\"prob\"][name].toarray() for name in lr_names], axis=2)\nlr_pval = np.stack([cellchat.network[\"pval\"][name] for name in lr_names], axis=2)\n\nsignificant_prob = lr_prob.copy()\nsignificant_prob[lr_pval >= 0.05] = 0.0\ncount_check = np.sum(significant_prob > 0, axis=2)\nweight_check = np.sum(significant_prob, axis=2)\n\nnp.testing.assert_array_equal(count_check, np.asarray(cellchat.network[\"count\"]))\nnp.testing.assert_allclose(weight_check, np.asarray(cellchat.network[\"weight\"]), atol=1e-14)\n\nprint(\"Aggregated count and weight are consistent with significant LR probabilities.\")"
+    },
+    {
+      "path": "tutorial/CellChat_analysis_of_spatial_transcriptomics_data.ipynb",
+      "cell_index": 15,
+      "old_source": "lr_names = list(cellchat.network[\"prob\"])\nlr_prob = np.stack([cellchat.network[\"prob\"][name].toarray() for name in lr_names], axis=2)\nlr_pval = np.stack([cellchat.network[\"pval\"][name] for name in lr_names], axis=2)\n\nsignificant_prob = lr_prob.copy()\nsignificant_prob[lr_pval > 0.05] = 0.0\ncount_check = np.sum(significant_prob > 0, axis=2)\nweight_check = np.sum(significant_prob, axis=2)\n\nnp.testing.assert_array_equal(count_check, np.asarray(cellchat.network[\"count\"]))\nnp.testing.assert_allclose(weight_check, np.asarray(cellchat.network[\"weight\"]), atol=1e-14)\n\nprint(\"Aggregated count and weight are consistent with significant LR probabilities.\")",
+      "new_source": "lr_names = list(cellchat.network[\"prob\"])\nlr_prob = np.stack([cellchat.network[\"prob\"][name].toarray() for name in lr_names], axis=2)\nlr_pval = np.stack([cellchat.network[\"pval\"][name] for name in lr_names], axis=2)\n\nsignificant_prob = lr_prob.copy()\nsignificant_prob[lr_pval >= 0.05] = 0.0\ncount_check = np.sum(significant_prob > 0, axis=2)\nweight_check = np.sum(significant_prob, axis=2)\n\nnp.testing.assert_array_equal(count_check, np.asarray(cellchat.network[\"count\"]))\nnp.testing.assert_allclose(weight_check, np.asarray(cellchat.network[\"weight\"]), atol=1e-14)\n\nprint(\"Aggregated count and weight are consistent with significant LR probabilities.\")"
+    }
+  ]
+}

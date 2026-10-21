@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="7" time="23.739" timestamp="2026-10-20T23:24:10.981272+08:00" hostname="abc"><testcase classname="validation.test_streaming_engine" name="test_unused_group_category_matches_reference[triMean]" time="0.138" /><testcase classname="validation.test_streaming_engine" name="test_unused_group_category_matches_reference[median]" time="0.074" /><testcase classname="validation.test_streaming_engine" name="test_unused_group_category_matches_reference[truncatedMean]" time="0.079" /><testcase classname="validation.test_streaming_engine" name="test_unused_group_category_matches_reference[thresholdedMean]" time="0.077" /><testcase classname="validation.test_streaming_engine" name="test_no_measured_lr_dependencies_returns_reference_zero_network" time="0.055" /><testcase classname="validation.test_streaming_engine" name="test_empty_signaling_gene_selection_rejected_by_both_engines" time="0.015" /><testcase classname="validation.test_streaming_engine" name="test_inferred_streaming_network_survives_h5ad_round_trip" time="0.204"><failure message="AssertionError: &#10;Not equal to tolerance rtol=2e-14, atol=1e-16&#10;&#10;Mismatched elements: 108 / 108 (100%)&#10;Max absolute difference among violations: 0.19107981&#10;Max relative difference among violations: 466.11170279&#10; ACTUAL: array([[[0.003624, 0.004135, 0.002206, 0.002218, 0.002663, 0.003132,&#10;         0.      , 0.001843, 0.003348, 0.003348, 0.003348, 0.      ],&#10;        [0.000745, 0.000857, 0.000732, 0.000375, 0.000932, 0.00061 ,...&#10; DESIRED: array([[[0.003348, 0.003348, 0.002663, 0.001843, 0.      , 0.      ,&#10;         0.003624, 0.003132, 0.004135, 0.002218, 0.002206, 0.003348],&#10;        [0.000657, 0.024855, 0.000932, 0.000361, 0.      , 0.      ,...">validation\test_streaming_engine.py:434: in test_inferred_streaming_network_survives_h5ad_round_trip
+    assert_same_result(actual, restored)
+validation\test_streaming_engine.py:110: in assert_same_result
+    np.testing.assert_allclose(stack_network_field(actual.network, "prob"),
+E   AssertionError: 
+E   Not equal to tolerance rtol=2e-14, atol=1e-16
+E   
+E   Mismatched elements: 108 / 108 (100%)
+E   Max absolute difference among violations: 0.19107981
+E   Max relative difference among violations: 466.11170279
+E    ACTUAL: array([[[0.003624, 0.004135, 0.002206, 0.002218, 0.002663, 0.003132,
+E            0.      , 0.001843, 0.003348, 0.003348, 0.003348, 0.      ],
+E           [0.000745, 0.000857, 0.000732, 0.000375, 0.000932, 0.00061 ,...
+E    DESIRED: array([[[0.003348, 0.003348, 0.002663, 0.001843, 0.      , 0.      ,
+E            0.003624, 0.003132, 0.004135, 0.002218, 0.002206, 0.003348],
+E           [0.000657, 0.024855, 0.000932, 0.000361, 0.      , 0.      ,...</failure></testcase></testsuite></testsuites>

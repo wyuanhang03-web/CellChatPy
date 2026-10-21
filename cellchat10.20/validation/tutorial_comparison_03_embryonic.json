@@ -1,0 +1,289 @@
+{
+  "reference_label": "reference",
+  "candidate_label": "development",
+  "exact_array_equality_definition": "numpy.array_equal on finite values (legacy bitwise_equal field name); PNG equality uses SHA-256 byte hashes",
+  "absolute_tolerance": 1e-12,
+  "relative_tolerance": 1e-12,
+  "requested_tutorials": [
+    "Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions"
+  ],
+  "tutorials": [
+    {
+      "name": "Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions",
+      "directory": "03_embryonic",
+      "comparisons": [
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\03_embryonic\\evidence\\final_cellchat.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\03_embryonic\\evidence\\final_cellchat.npz",
+          "arrays": [],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 0,
+          "has_numerical_content": false,
+          "scope": "metadata_only_empty_network_snapshot",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\03_embryonic\\evidence\\final_cellchat_e13.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\03_embryonic\\evidence\\final_cellchat_e13.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                846,
+                13,
+                13
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                846,
+                13,
+                13
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            },
+            {
+              "key": "count",
+              "shape": [
+                13,
+                13
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "weight",
+              "shape": [
+                13,
+                13
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 286286,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\03_embryonic\\evidence\\final_cellchat_e14.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\03_embryonic\\evidence\\final_cellchat_e14.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                871,
+                13,
+                13
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                871,
+                13,
+                13
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            },
+            {
+              "key": "count",
+              "shape": [
+                13,
+                13
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "weight",
+              "shape": [
+                13,
+                13
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 294736,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\03_embryonic\\evidence\\inference_0.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\03_embryonic\\evidence\\inference_0.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                846,
+                11,
+                11
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                846,
+                11,
+                11
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 204732,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\03_embryonic\\evidence\\inference_1.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\03_embryonic\\evidence\\inference_1.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                871,
+                13,
+                13
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                871,
+                13,
+                13
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 294398,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        }
+      ],
+      "reference_status": "passed",
+      "candidate_status": "passed",
+      "reference_package_python_source_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+      "candidate_package_python_source_sha256": "8b4db0a0fb311b6a7f92412ea6a1a1570c3697fe1fcd606ab58ccee5f2794d1d",
+      "original_source_equal": true,
+      "reference_seconds": 585.480063199997,
+      "candidate_seconds": 110.31176239997149,
+      "reference_figures": 8,
+      "candidate_figures": 8,
+      "figure_paths_equal": true,
+      "figure_comparisons": [
+        {
+          "figure": "tutorial/figures_different_cellular_compositions/01_circle_WNT_E13.5.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_different_cellular_compositions/01_circle_WNT_E14.5.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_different_cellular_compositions/02_hierarchy_WNT_E13.5.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_different_cellular_compositions/02_hierarchy_WNT_E14.5.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_different_cellular_compositions/03_chord_WNT_E13.5.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_different_cellular_compositions/03_chord_WNT_E14.5.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_different_cellular_compositions/04_chord_grouped_WNT_E13.5.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_different_cellular_compositions/04_chord_grouped_WNT_E14.5.png",
+          "exists": true,
+          "sha256_equal": true
+        }
+      ],
+      "all_figure_files_identical": true,
+      "evidence_names_equal": true,
+      "passed": true,
+      "nonempty_numerical_snapshots": 4,
+      "core_comparison_scope": "Group network prob/pval/count/weight and labels when present; empty snapshots contain metadata only",
+      "saved_object_audit_required_for_full_suite": true,
+      "saved_object_audit": {
+        "report": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\validation\\tutorial_saved_objects_03_embryonic.json",
+        "passed": true,
+        "current_execution_provenance_matches": true,
+        "nonempty_spot_probability_arrays": 0,
+        "numeric_arrays": 14268
+      }
+    }
+  ],
+  "complete_suite": false,
+  "requested_scope_complete": true,
+  "passed": true
+}

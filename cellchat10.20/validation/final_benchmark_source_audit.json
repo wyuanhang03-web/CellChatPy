@@ -1,0 +1,154 @@
+{
+  "current_source_sha256": {
+    "modeling.py": "b70a4e4c70f7490eb72d06e98398fc1ef2d0ae17e0892da897291386231ac6d0",
+    "_streaming.py": "aa25a524d695245b7e11a37c83fe4bc0bc5a7e6d2c1399892680ed71eaa91ee7",
+    "_sparse_quantiles.py": "f6cf2019ab2cae4c5aefd7aa8e6ca22ce658f7a2c1ac7395717452457f67e793",
+    "network_storage.py": "5f677cd7da54bd11107726ed4e9d11db04307cdcd75d37e537f418094c78b18f"
+  },
+  "streaming_benchmarks": [
+    {
+      "file": "results\\benchmarks\\pbmc68579_b10\\streaming_0.json",
+      "status": "completed",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\pbmc68579_b100\\streaming_0.json",
+      "status": "completed",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic1000000_b100\\streaming_0.json",
+      "status": "completed",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\streaming_0.json",
+      "status": "completed",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\streaming_1.json",
+      "status": "completed",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\streaming_2.json",
+      "status": "completed",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\streaming_0.json",
+      "status": "completed",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\streaming_1.json",
+      "status": "completed",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\streaming_2.json",
+      "status": "completed",
+      "source_hash_match": true
+    }
+  ],
+  "ablation_source_hash_match": true,
+  "preserved_upstream_files": [
+    {
+      "file": "results\\benchmarks\\pbmc68579_b10\\upstream_0.json",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\pbmc68579_b10\\upstream_0.log",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\pbmc68579_b10\\upstream_0.npz",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\pbmc68579_b100\\upstream_0.json",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\pbmc68579_b100\\upstream_0.log",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\pbmc68579_b100\\upstream_0.npz",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\upstream_0.json",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\upstream_0.log",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\upstream_0.npz",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\upstream_1.json",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\upstream_1.log",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\upstream_1.npz",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\upstream_2.json",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\upstream_2.log",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic100000_b100\\upstream_2.npz",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\upstream_0.json",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\upstream_0.log",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\upstream_0.npz",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\upstream_1.json",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\upstream_1.log",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\upstream_1.npz",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\upstream_2.json",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\upstream_2.log",
+      "source_hash_match": true
+    },
+    {
+      "file": "results\\benchmarks\\synthetic5000_b20\\upstream_2.npz",
+      "source_hash_match": true
+    }
+  ]
+}

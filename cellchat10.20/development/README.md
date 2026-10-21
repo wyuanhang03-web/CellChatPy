@@ -1,0 +1,115 @@
+# CellChatPy
+
+This local research build (`1.1.0+streaming.20261020`) adds an exact,
+memory-bounded group-level inference engine on top of upstream commit
+`986bf7ef909f1e15059aad8a9a9ee31ac675ffc3`.
+See [streaming inference](docs/streaming_engine.md) for its scope, compatibility
+contract, and installation. This build has not been published to GitHub or PyPI.
+
+CellChatPy is a Python toolkit for inferring, analyzing, and visualizing
+cell-cell communication from single-cell and spatial transcriptomics data.
+It uses Python-native data structures and plotting tools.
+
+## What It Provides
+
+- CellChat objects from matrices, metadata, or AnnData
+- Human, mouse, and zebrafish ligand-receptor databases
+- Overexpressed gene and ligand-receptor analysis
+- Communication probability and pathway-level network inference
+- Network comparison, centrality, and communication pattern analysis
+- Circle, heatmap, bubble, chord, hierarchy, and spatial visualization
+- Spatial transcriptomics and spatial multiomics workflows
+
+## Install
+
+For this research build, install from its local source directory:
+
+```bash
+python -m pip install ".[accelerate]"
+```
+
+Install CellChatPy directly from this GitHub repository:
+
+```bash
+python -m pip install "git+https://github.com/wyuanhang03-web/CellChatPy.git"
+```
+
+CellChatPy requires Python 3.10 or newer.
+
+## Quick Example
+
+```python
+import CellChatPy as cc
+
+cellchat = cc.create_cellchat(
+    object=expression_matrix,
+    metadata=cell_metadata,
+    group_by="cell_type",
+)
+
+database = cc.load_database(species="human")
+cellchat = cc.set_database(cellchat, database=database)
+cellchat = cc.subset_signaling_data(cellchat)
+cellchat = cc.identify_overexpressed_genes(cellchat)
+cellchat = cc.identify_overexpressed_interactions(cellchat)
+cellchat = cc.compute_communication_probability(cellchat)
+cellchat = cc.filter_communication(cellchat, min_cells=10)
+cellchat = cc.compute_pathway_probability(cellchat)
+cellchat = cc.aggregate_network(cellchat)
+```
+
+## Tutorials
+
+The `tutorial/` directory contains seven notebooks covering:
+
+- Human skin single-dataset analysis
+- Human skin NL/LS comparison
+- Spatial transcriptomics
+- Spatial multiomics
+- Multiple spatial transcriptomics datasets
+- Different cellular compositions
+- Advanced spatial communication and motif analysis
+
+The large input datasets are not stored in this repository. See
+[`data/README.md`](data/README.md) for the required filenames and data policy.
+Saved notebook outputs, figures, and tables are included so the examples can
+be inspected without downloading the original datasets.
+
+## Documentation
+
+Full documentation, tutorials, and API reference:
+https://cellchatpy.readthedocs.io/en/latest/
+
+## Repository Layout
+
+```text
+CellChatPy/
+|-- CellChatPy/       Python package and CellChatDB
+|-- data/              Data instructions; large inputs stay outside GitHub
+|-- tutorial/          Seven notebooks and saved outputs
+|-- docs/              Documentation website source
+|-- pyproject.toml     Package metadata and dependencies
+|-- MANIFEST.in        Source distribution file rules
+|-- LICENSE             GPL-3.0 license
+`-- README.md
+```
+
+## Relationship to CellChat R
+
+CellChatPy is a Python reimplementation of the CellChat R package. It
+translates the main cell-cell communication analysis workflow into native
+Python data structures and plotting tools. CellChatPy is an independent
+Python project and is not the official CellChat R package.
+
+See the [CellChat R package](https://github.com/jinworks/CellChat) for the
+original R implementation and publications.
+
+## License
+
+This repository is distributed under the GNU General Public License v3.0.
+See [`LICENSE`](LICENSE).
+
+## Links
+
+- [Documentation source](docs/index.md)
+- [Issue tracker](https://github.com/wyuanhang03-web/CellChatPy/issues)

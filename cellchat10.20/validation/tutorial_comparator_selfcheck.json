@@ -1,0 +1,5 @@
+{
+  "equal_logical_values_mixed_c_f_order_pass": true,
+  "different_logical_values_equal_physical_bytes_rejected": true,
+  "pvalues_require_exact_equality": true
+}

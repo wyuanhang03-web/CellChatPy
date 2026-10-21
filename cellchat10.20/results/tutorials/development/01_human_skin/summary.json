@@ -1,0 +1,22 @@
+{
+  "name": "CellChat_humanSkin_LS",
+  "label": "development",
+  "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\development",
+  "package_python_source_sha256": "8b4db0a0fb311b6a7f92412ea6a1a1570c3697fe1fcd606ab58ccee5f2794d1d",
+  "source_sha256": "6aba9a7c6e4e6566c6b3d2e211ce12723c2d61e93343ea7f7963ba9763513342",
+  "threads": 2,
+  "original_code_cell_count": 23,
+  "original_cells_unchanged": true,
+  "tutorial_compatibility_patches": [],
+  "executed_code_sha256": "d7f6e959043d52e3b41230bd37be888cdc723b1394b3805d2082a1d6c4529c6e",
+  "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\01_human_skin",
+  "status": "passed",
+  "resource_observations": {
+    "kernel_tree_peak_rss_bytes": 1079545856,
+    "system_min_available_bytes": 2438778880,
+    "sampling_interval_seconds": 0.25
+  },
+  "elapsed_seconds": 106.91396430000896,
+  "executed_original_code_cells": 23,
+  "figures": 44
+}

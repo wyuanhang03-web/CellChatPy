@@ -1,0 +1,22 @@
+{
+  "name": "CellChat_comparison_analysis_NL_LS",
+  "label": "reference",
+  "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream",
+  "package_python_source_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+  "source_sha256": "63d79489db286a2ec8f099aeb2b2409922ad1313e4f21852fddcb5414f6ea2a9",
+  "threads": 2,
+  "original_code_cell_count": 28,
+  "original_cells_unchanged": true,
+  "tutorial_compatibility_patches": [],
+  "executed_code_sha256": "0ba863588066f1f867dadc27ffb4d103f3a49166a0001d070a1f51fc8d0e80c1",
+  "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\02_nl_ls",
+  "status": "passed",
+  "resource_observations": {
+    "kernel_tree_peak_rss_bytes": 1262964736,
+    "system_min_available_bytes": 2153873408,
+    "sampling_interval_seconds": 0.25
+  },
+  "elapsed_seconds": 423.35624379996443,
+  "executed_original_code_cells": 28,
+  "figures": 46
+}

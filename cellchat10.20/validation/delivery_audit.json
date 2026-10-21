@@ -1,0 +1,1416 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "pinned_archive_hash",
+      "passed": true
+    },
+    {
+      "check": "pinned_commit",
+      "passed": true
+    },
+    {
+      "check": "upstream_matches_pinned_archive",
+      "passed": true,
+      "differences": []
+    },
+    {
+      "check": "upstream_package_inventory",
+      "passed": true
+    },
+    {
+      "check": "wheel_recorded_digest",
+      "passed": true
+    },
+    {
+      "check": "wheel_current_contents",
+      "passed": true,
+      "files": 30,
+      "mismatches": []
+    },
+    {
+      "check": "wheel_version",
+      "passed": true
+    },
+    {
+      "check": "exported_source_manifest_nonempty",
+      "passed": true
+    },
+    {
+      "check": "exported_source_hash:CellChatPy/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "exported_source_hash:CellChatPy/_sparse_quantiles.py",
+      "passed": true
+    },
+    {
+      "check": "exported_source_hash:CellChatPy/_streaming.py",
+      "passed": true
+    },
+    {
+      "check": "exported_source_hash:CellChatPy/modeling.py",
+      "passed": true
+    },
+    {
+      "check": "exported_source_hash:CellChatPy/network_storage.py",
+      "passed": true
+    },
+    {
+      "check": "exported_source_hash:docs/index.md",
+      "passed": true
+    },
+    {
+      "check": "exported_source_hash:docs/streaming_engine.md",
+      "passed": true
+    },
+    {
+      "check": "exported_source_hash:pyproject.toml",
+      "passed": true
+    },
+    {
+      "check": "exported_source_hash:README.md",
+      "passed": true
+    },
+    {
+      "check": "exported_source_hash:tests/test_network_and_modeling.py",
+      "passed": true
+    },
+    {
+      "check": "exported_source_hash:tests/test_public_api.py",
+      "passed": true
+    },
+    {
+      "check": "regression_suite",
+      "passed": true,
+      "tests": 303,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "check": "regression_current_source_and_tests",
+      "passed": true
+    },
+    {
+      "check": "all_seven_tutorials",
+      "passed": true
+    },
+    {
+      "check": "tutorial:reference/01_human_skin",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:reference/01_human_skin",
+      "passed": true
+    },
+    {
+      "check": "tutorial:development/01_human_skin",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:development/01_human_skin",
+      "passed": true
+    },
+    {
+      "check": "tutorial_array_inventory:01_human_skin",
+      "passed": true
+    },
+    {
+      "check": "tutorial_raw_comparison:01_human_skin",
+      "passed": true
+    },
+    {
+      "check": "tutorial_figures_current:01_human_skin",
+      "passed": true
+    },
+    {
+      "check": "tutorial:reference/02_nl_ls",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:reference/02_nl_ls",
+      "passed": true
+    },
+    {
+      "check": "tutorial:development/02_nl_ls",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:development/02_nl_ls",
+      "passed": true
+    },
+    {
+      "check": "tutorial_array_inventory:02_nl_ls",
+      "passed": true
+    },
+    {
+      "check": "tutorial_raw_comparison:02_nl_ls",
+      "passed": true
+    },
+    {
+      "check": "tutorial_figures_current:02_nl_ls",
+      "passed": true
+    },
+    {
+      "check": "tutorial:reference/03_embryonic",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:reference/03_embryonic",
+      "passed": true
+    },
+    {
+      "check": "tutorial:development/03_embryonic",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:development/03_embryonic",
+      "passed": true
+    },
+    {
+      "check": "tutorial_array_inventory:03_embryonic",
+      "passed": true
+    },
+    {
+      "check": "tutorial_raw_comparison:03_embryonic",
+      "passed": true
+    },
+    {
+      "check": "tutorial_figures_current:03_embryonic",
+      "passed": true
+    },
+    {
+      "check": "tutorial:reference/04_visium",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:reference/04_visium",
+      "passed": true
+    },
+    {
+      "check": "tutorial:development/04_visium",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:development/04_visium",
+      "passed": true
+    },
+    {
+      "check": "tutorial_array_inventory:04_visium",
+      "passed": true
+    },
+    {
+      "check": "tutorial_raw_comparison:04_visium",
+      "passed": true
+    },
+    {
+      "check": "tutorial_figures_current:04_visium",
+      "passed": true
+    },
+    {
+      "check": "tutorial:reference/05_multi_spatial",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:reference/05_multi_spatial",
+      "passed": true
+    },
+    {
+      "check": "tutorial:development/05_multi_spatial",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:development/05_multi_spatial",
+      "passed": true
+    },
+    {
+      "check": "tutorial_array_inventory:05_multi_spatial",
+      "passed": true
+    },
+    {
+      "check": "tutorial_raw_comparison:05_multi_spatial",
+      "passed": true
+    },
+    {
+      "check": "tutorial_figures_current:05_multi_spatial",
+      "passed": true
+    },
+    {
+      "check": "tutorial:reference/06_multiomics",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:reference/06_multiomics",
+      "passed": true
+    },
+    {
+      "check": "tutorial:development/06_multiomics",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:development/06_multiomics",
+      "passed": true
+    },
+    {
+      "check": "tutorial_array_inventory:06_multiomics",
+      "passed": true
+    },
+    {
+      "check": "tutorial_raw_comparison:06_multiomics",
+      "passed": true
+    },
+    {
+      "check": "tutorial_figures_current:06_multiomics",
+      "passed": true
+    },
+    {
+      "check": "tutorial:reference/07_psoriasis",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:reference/07_psoriasis",
+      "passed": true
+    },
+    {
+      "check": "tutorial:development/07_psoriasis",
+      "passed": true
+    },
+    {
+      "check": "tutorial_comparison_source:development/07_psoriasis",
+      "passed": true
+    },
+    {
+      "check": "tutorial_array_inventory:07_psoriasis",
+      "passed": true
+    },
+    {
+      "check": "tutorial_raw_comparison:07_psoriasis",
+      "passed": true
+    },
+    {
+      "check": "tutorial_figures_current:07_psoriasis",
+      "passed": true
+    },
+    {
+      "check": "four_saved_object_reports",
+      "passed": true
+    },
+    {
+      "check": "saved_object_report:01_human_skin",
+      "passed": true
+    },
+    {
+      "check": "saved_object_current:reference/01_human_skin",
+      "passed": true
+    },
+    {
+      "check": "saved_object_current:development/01_human_skin",
+      "passed": true
+    },
+    {
+      "check": "tutorial_saved_object_link:01_human_skin",
+      "passed": true
+    },
+    {
+      "check": "saved_object_report:02_nl_ls",
+      "passed": true
+    },
+    {
+      "check": "saved_object_current:reference/02_nl_ls",
+      "passed": true
+    },
+    {
+      "check": "saved_object_current:development/02_nl_ls",
+      "passed": true
+    },
+    {
+      "check": "tutorial_saved_object_link:02_nl_ls",
+      "passed": true
+    },
+    {
+      "check": "saved_object_report:03_embryonic",
+      "passed": true
+    },
+    {
+      "check": "saved_object_current:reference/03_embryonic",
+      "passed": true
+    },
+    {
+      "check": "saved_object_current:development/03_embryonic",
+      "passed": true
+    },
+    {
+      "check": "tutorial_saved_object_link:03_embryonic",
+      "passed": true
+    },
+    {
+      "check": "saved_object_report:07_psoriasis",
+      "passed": true
+    },
+    {
+      "check": "saved_object_current:reference/07_psoriasis",
+      "passed": true
+    },
+    {
+      "check": "saved_object_current:development/07_psoriasis",
+      "passed": true
+    },
+    {
+      "check": "tutorial_saved_object_link:07_psoriasis",
+      "passed": true
+    },
+    {
+      "check": "tutorial_driver_complete",
+      "passed": true
+    },
+    {
+      "check": "tutorial_driver_pair:CellChat_analysis_of_spatial_transcriptomics_data",
+      "passed": true
+    },
+    {
+      "check": "tutorial_driver_pair:CellChat_analysis_of_multiple_spatial_transcriptomics_datasets",
+      "passed": true
+    },
+    {
+      "check": "tutorial_driver_pair:CellChat_analysis_of_spatial_multiomics_data",
+      "passed": true
+    },
+    {
+      "check": "tutorial_driver_pair:SpatialCellChat_analysis_of_spatial_transcriptomics_data",
+      "passed": true
+    },
+    {
+      "check": "tutorial_driver_pair:CellChat_humanSkin_LS",
+      "passed": true
+    },
+    {
+      "check": "tutorial_driver_pair:CellChat_comparison_analysis_NL_LS",
+      "passed": true
+    },
+    {
+      "check": "tutorial_driver_pair:Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions",
+      "passed": true
+    },
+    {
+      "check": "required_benchmark_directories",
+      "passed": true
+    },
+    {
+      "check": "benchmark_record_inventory:pbmc68579_b10",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:pbmc68579_b10/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:pbmc68579_b10/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:pbmc68579_b10/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:pbmc68579_b10/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:pbmc68579_b10/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:pbmc68579_b10/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:pbmc68579_b10/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:pbmc68579_b10/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_pair_inventory:pbmc68579_b10",
+      "passed": true
+    },
+    {
+      "check": "benchmark_equal_parameters:pbmc68579_b10/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_raw_comparison:pbmc68579_b10/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_exact_results:pbmc68579_b10/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_summary_consistency:pbmc68579_b10",
+      "passed": true
+    },
+    {
+      "check": "required_benchmark:pbmc68579_b10",
+      "passed": true
+    },
+    {
+      "check": "retained_upstream_hashes:pbmc68579_b10",
+      "passed": true
+    },
+    {
+      "check": "benchmark_record_inventory:pbmc68579_b100",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:pbmc68579_b100/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:pbmc68579_b100/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:pbmc68579_b100/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:pbmc68579_b100/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:pbmc68579_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:pbmc68579_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:pbmc68579_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:pbmc68579_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_pair_inventory:pbmc68579_b100",
+      "passed": true
+    },
+    {
+      "check": "benchmark_equal_parameters:pbmc68579_b100/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_raw_comparison:pbmc68579_b100/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_exact_results:pbmc68579_b100/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_summary_consistency:pbmc68579_b100",
+      "passed": true
+    },
+    {
+      "check": "required_benchmark:pbmc68579_b100",
+      "passed": true
+    },
+    {
+      "check": "retained_upstream_hashes:pbmc68579_b100",
+      "passed": true
+    },
+    {
+      "check": "benchmark_record_inventory:synthetic1000000_b100",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic1000000_b100/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_allowed_incompletion:synthetic1000000_b100/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic1000000_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic1000000_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic1000000_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic1000000_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_pair_inventory:synthetic1000000_b100",
+      "passed": true
+    },
+    {
+      "check": "benchmark_summary_consistency:synthetic1000000_b100",
+      "passed": true
+    },
+    {
+      "check": "million_cell_streaming_completion",
+      "passed": true
+    },
+    {
+      "check": "benchmark_record_inventory:synthetic100000_b100",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic100000_b100/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic100000_b100/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic100000_b100/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic100000_b100/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic100000_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic100000_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic100000_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic100000_b100/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic100000_b100/streaming/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic100000_b100/streaming/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic100000_b100/streaming/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic100000_b100/streaming/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic100000_b100/upstream/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic100000_b100/upstream/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic100000_b100/upstream/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic100000_b100/upstream/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic100000_b100/upstream/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic100000_b100/upstream/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic100000_b100/upstream/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic100000_b100/upstream/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic100000_b100/streaming/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic100000_b100/streaming/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic100000_b100/streaming/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic100000_b100/streaming/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_pair_inventory:synthetic100000_b100",
+      "passed": true
+    },
+    {
+      "check": "benchmark_equal_parameters:synthetic100000_b100/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_raw_comparison:synthetic100000_b100/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_exact_results:synthetic100000_b100/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_equal_parameters:synthetic100000_b100/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_raw_comparison:synthetic100000_b100/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_exact_results:synthetic100000_b100/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_equal_parameters:synthetic100000_b100/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_raw_comparison:synthetic100000_b100/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_exact_results:synthetic100000_b100/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_summary_consistency:synthetic100000_b100",
+      "passed": true
+    },
+    {
+      "check": "required_benchmark:synthetic100000_b100",
+      "passed": true
+    },
+    {
+      "check": "retained_upstream_hashes:synthetic100000_b100",
+      "passed": true
+    },
+    {
+      "check": "benchmark_record_inventory:synthetic5000_b20",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic5000_b20/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic5000_b20/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic5000_b20/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic5000_b20/upstream/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic5000_b20/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic5000_b20/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic5000_b20/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic5000_b20/streaming/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic5000_b20/streaming/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic5000_b20/streaming/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic5000_b20/streaming/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic5000_b20/streaming/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic5000_b20/upstream/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic5000_b20/upstream/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic5000_b20/upstream/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic5000_b20/upstream/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic5000_b20/upstream/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic5000_b20/upstream/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic5000_b20/upstream/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic5000_b20/upstream/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_worker_current:synthetic5000_b20/streaming/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_source:synthetic5000_b20/streaming/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_execution:synthetic5000_b20/streaming/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_output:synthetic5000_b20/streaming/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_pair_inventory:synthetic5000_b20",
+      "passed": true
+    },
+    {
+      "check": "benchmark_equal_parameters:synthetic5000_b20/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_raw_comparison:synthetic5000_b20/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_exact_results:synthetic5000_b20/0",
+      "passed": true
+    },
+    {
+      "check": "benchmark_equal_parameters:synthetic5000_b20/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_raw_comparison:synthetic5000_b20/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_exact_results:synthetic5000_b20/1",
+      "passed": true
+    },
+    {
+      "check": "benchmark_equal_parameters:synthetic5000_b20/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_raw_comparison:synthetic5000_b20/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_exact_results:synthetic5000_b20/2",
+      "passed": true
+    },
+    {
+      "check": "benchmark_summary_consistency:synthetic5000_b20",
+      "passed": true
+    },
+    {
+      "check": "required_benchmark:synthetic5000_b20",
+      "passed": true
+    },
+    {
+      "check": "retained_upstream_hashes:synthetic5000_b20",
+      "passed": true
+    },
+    {
+      "check": "ablation_source",
+      "passed": true
+    },
+    {
+      "check": "ablation_numerics",
+      "passed": true
+    }
+  ],
+  "notes": [
+    "reference/05_multi_spatial: explicitly allowlisted early baseline execution lacks package/code fingerprints; frozen archive and original executed cell sources are verified directly.",
+    "synthetic1000000_b100/upstream/0: private_memory_budget_exceeded; no paired speed/equality claim.",
+    "synthetic5000_b20/upstream/0: explicitly allowlisted early immutable-baseline pilot without source fingerprint.",
+    "synthetic5000_b20/upstream/1: explicitly allowlisted early immutable-baseline pilot without source fingerprint.",
+    "synthetic5000_b20/upstream/2: explicitly allowlisted early pilot recorded only modeling.py; that hash and the complete pinned baseline archive are verified, including network_storage.py."
+  ],
+  "artifact_sha256": {
+    "provenance/upstream.zip": "46ef4c548cd97365ba61e0335fc58424425efa5dd4e88b0211177181548ef894",
+    "provenance/github_commit.json": "f1e489ef446c08953b15e925cd768040c79b6bf95095ffb54ed60c2ac95c63e7",
+    "validation/wheel_integrity.json": "fd4f832a4b009c95c88317da7ec12f604fa70698adb4bcb9a4d45e9580ddaf16",
+    "dist/CellChatPy-1.1.0+streaming.20261020-py3-none-any.whl": "5171f4ec05f6b611b32013263763db978c5dbe7a1534d5859907933d39e62cee",
+    "provenance/development_changes.json": "c9ff3d66b5beda005a2ed506a034a986e33bf03c547909fa1e94e9c68233deb9",
+    "development/CellChatPy/__init__.py": "895a5352dfbebfcedcf39e2376b0511d6f128da5aef9175613c8a81fb94580a1",
+    "development/CellChatPy/_sparse_quantiles.py": "f6cf2019ab2cae4c5aefd7aa8e6ca22ce658f7a2c1ac7395717452457f67e793",
+    "development/CellChatPy/_streaming.py": "aa25a524d695245b7e11a37c83fe4bc0bc5a7e6d2c1399892680ed71eaa91ee7",
+    "development/CellChatPy/modeling.py": "b70a4e4c70f7490eb72d06e98398fc1ef2d0ae17e0892da897291386231ac6d0",
+    "development/CellChatPy/network_storage.py": "5f677cd7da54bd11107726ed4e9d11db04307cdcd75d37e537f418094c78b18f",
+    "development/docs/index.md": "d0cb30af096974dd29d35521c11ba6a8029e6919c070358a08ff3f5cbd101375",
+    "development/docs/streaming_engine.md": "4ac8cf4617313f0523fe349e7a8a64894b1d72354a839f957b34a36bf9929efa",
+    "development/pyproject.toml": "d67f06ba810a98f7e414913bc5e01c2ad0ce1bb6ad8a245f44c712db0c6da045",
+    "development/README.md": "af8e278dd5e5e70115891456f492ad0355639d2f326bd148023d76b2c2b66103",
+    "development/tests/test_network_and_modeling.py": "b1405979a071ced85431c6fb3ec6fd4420b8a9682b3ceb9c94dac72da039effc",
+    "development/tests/test_public_api.py": "14bddbc9166c0925f4d467738490d994c294ca16dcfcdc41a46f610152c715a9",
+    "validation/regression_provenance.json": "5a4dafb78578b4b8a572d21a6a969c4e8841432f687888859420563faf6220ed",
+    "validation/combined_regression.xml": "b17bfae2f4c92d20f33832164e46900c91839477935e3df2bcadca94e90de7a9",
+    "validation/tutorial_comparison_reference_development.json": "9929ad53a2592c620120b6e92c1cd4e9adb8e79ef6bb6e0da3459dcf1156168b",
+    "results/tutorials/reference/01_human_skin/summary.json": "61646fc79a1dd96778d6d29f58fad5ad0303cacd5ff6c843b8940604e2bd0c66",
+    "upstream/docs/tutorials/CellChat_humanSkin_LS.ipynb": "6aba9a7c6e4e6566c6b3d2e211ce12723c2d61e93343ea7f7963ba9763513342",
+    "results/tutorials/reference/01_human_skin/executed.ipynb": "671f83322eb040a6e5741f6f43b9808e885d47de4046781378360e3b20f06ff3",
+    "results/tutorials/development/01_human_skin/summary.json": "0763aac485023456768fa213e396b4c96c048e09ce7440c4f321777de4516f16",
+    "results/tutorials/development/01_human_skin/executed.ipynb": "d0de3ddaafdac4b6fb6a200f36e316ed63f4e102c63b872fa17af813971cf47b",
+    "results/tutorials/reference/01_human_skin/evidence/final_cellchat.npz": "96f5a50d2033234597aa69664e2d36364ff8eadd70a1d35184fdc9c56121d992",
+    "results/tutorials/reference/01_human_skin/evidence/final_cellchat.json": "84a68484dd787308a12993430754a7abe9e2f9859b3974b278d75169339f2184",
+    "results/tutorials/development/01_human_skin/evidence/final_cellchat.npz": "96f5a50d2033234597aa69664e2d36364ff8eadd70a1d35184fdc9c56121d992",
+    "results/tutorials/development/01_human_skin/evidence/final_cellchat.json": "84a68484dd787308a12993430754a7abe9e2f9859b3974b278d75169339f2184",
+    "results/tutorials/reference/01_human_skin/evidence/inference_0.npz": "98fa4e1ff077f75bf83359207d138a9be73e8fc3b9215c3a2e135101bcf130e8",
+    "results/tutorials/reference/01_human_skin/evidence/inference_0.json": "84a68484dd787308a12993430754a7abe9e2f9859b3974b278d75169339f2184",
+    "results/tutorials/development/01_human_skin/evidence/inference_0.npz": "98fa4e1ff077f75bf83359207d138a9be73e8fc3b9215c3a2e135101bcf130e8",
+    "results/tutorials/development/01_human_skin/evidence/inference_0.json": "84a68484dd787308a12993430754a7abe9e2f9859b3974b278d75169339f2184",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/00_database_category.png": "112e9cb3c3dde7ef4f918a11da651792c2e9a87cf4fa826afd1ce4752fdb2f3e",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/00_database_category.png": "112e9cb3c3dde7ef4f918a11da651792c2e9a87cf4fa826afd1ce4752fdb2f3e",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/01_circle_count.png": "17ff3892374e7be6b50ed5c61a710dd26e63e1f92b1fb4f68a6bf4d2281689ef",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/01_circle_count.png": "17ff3892374e7be6b50ed5c61a710dd26e63e1f92b1fb4f68a6bf4d2281689ef",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_APOEplus_FIB_out.png": "d1a803457e3dfdbbd044696ec9ac15c93dc0f7aa921c5dd667a106c1e2624f69",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_APOEplus_FIB_out.png": "d1a803457e3dfdbbd044696ec9ac15c93dc0f7aa921c5dd667a106c1e2624f69",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_CD40LGplus_TC_out.png": "94a9a0324eeaefc200f6204e3901be774febd9b103fc7fe15c9b109c9169b912",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_CD40LGplus_TC_out.png": "94a9a0324eeaefc200f6204e3901be774febd9b103fc7fe15c9b109c9169b912",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_cDC1_out.png": "e1bd9b8edb8ea674884fad546cdbcad96c9f576bf6decedb5e085c756b86713c",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_cDC1_out.png": "e1bd9b8edb8ea674884fad546cdbcad96c9f576bf6decedb5e085c756b86713c",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_cDC2_out.png": "7a2fe7b18aae01e3de1d48d2ea7593a4f5581e169d5aa1256f1392663df483a4",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_cDC2_out.png": "7a2fe7b18aae01e3de1d48d2ea7593a4f5581e169d5aa1256f1392663df483a4",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_COL11A1plus_FIB_out.png": "d0441451891183518f337dd6c4124d8835735c01665128312419a6c73d1e6bbe",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_COL11A1plus_FIB_out.png": "d0441451891183518f337dd6c4124d8835735c01665128312419a6c73d1e6bbe",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_FBN1plus_FIB_out.png": "e7beea6501ff0d092b77f430cd90aa08de7fd38ea9fd9585ebc8d3385393ee36",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_FBN1plus_FIB_out.png": "e7beea6501ff0d092b77f430cd90aa08de7fd38ea9fd9585ebc8d3385393ee36",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_Inflam._DC_out.png": "120ce3555470bec65ac168234b7eb0c6d735481f6aa02f273fb5a93aac518824",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_Inflam._DC_out.png": "120ce3555470bec65ac168234b7eb0c6d735481f6aa02f273fb5a93aac518824",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_Inflam._FIB_out.png": "dccb20ccadb9d5484b014370756cf2a1f033409238236209036ab0a5fac03bab",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_Inflam._FIB_out.png": "dccb20ccadb9d5484b014370756cf2a1f033409238236209036ab0a5fac03bab",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_Inflam._TC_out.png": "46dfd377dd9fd23e2489c89aee4fe4df3a969775d65293d0412e5797f26f00ac",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_Inflam._TC_out.png": "46dfd377dd9fd23e2489c89aee4fe4df3a969775d65293d0412e5797f26f00ac",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_LC_out.png": "1634c46e2c629c0646d53b8a62896400768d940743a89094b03e7b3669f3cbf7",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_LC_out.png": "1634c46e2c629c0646d53b8a62896400768d940743a89094b03e7b3669f3cbf7",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_NKT_out.png": "37dd0e3bfbbd8230c89b93587b33bbb41ab64b0a0edfdd08245ec747d0125445",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_NKT_out.png": "37dd0e3bfbbd8230c89b93587b33bbb41ab64b0a0edfdd08245ec747d0125445",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_TC_out.png": "cc256d6b5d6a34f1ca3db45f502d51d57cf32a97152157b41dd4a1dd06625354",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_TC_out.png": "cc256d6b5d6a34f1ca3db45f502d51d57cf32a97152157b41dd4a1dd06625354",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/02_circle_weight.png": "2482f7c0cf883693b61d34f9a5665a0603343feacdbdc6f1e58e963939e46f26",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/02_circle_weight.png": "2482f7c0cf883693b61d34f9a5665a0603343feacdbdc6f1e58e963939e46f26",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/03_chord_cell_CXCL.png": "e817b4b5d2168f9ba054a3407b7a88abe3bf383de97c39f345396dbb6d8d4491",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/03_chord_cell_CXCL.png": "e817b4b5d2168f9ba054a3407b7a88abe3bf383de97c39f345396dbb6d8d4491",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/03_circle_CXCL.png": "fc401194a3c7005feb24f103baf6285203bcecf063035ae70a21b74ec62bd016",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/03_circle_CXCL.png": "fc401194a3c7005feb24f103baf6285203bcecf063035ae70a21b74ec62bd016",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/03_heatmap_CXCL.png": "38efa41f3c69246007a77317b2ff4555a9fa21bcb7b404bb55740f53e8361a7e",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/03_heatmap_CXCL.png": "38efa41f3c69246007a77317b2ff4555a9fa21bcb7b404bb55740f53e8361a7e",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/04_contribution_CXCL.png": "2e6f45e8f81cd2af3a845136d01729d994bb98ab0f1784511581f0a60a547470",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/04_contribution_CXCL.png": "2e6f45e8f81cd2af3a845136d01729d994bb98ab0f1784511581f0a60a547470",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/05_individual_CXCL_chord.png": "230570243ea9f75884d5b492860583b4e275429675f471c1f78866f8828cc630",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/05_individual_CXCL_chord.png": "230570243ea9f75884d5b492860583b4e275429675f471c1f78866f8828cc630",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/05_individual_CXCL_circle.png": "e4a84fe5304e6c5e6da1a347b29881379ae61eb78b554d767a9f527c03afc44b",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/05_individual_CXCL_circle.png": "e4a84fe5304e6c5e6da1a347b29881379ae61eb78b554d767a9f527c03afc44b",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/06_bubble_CCL_CXCL.png": "b9b18dc104554c42bdbf978e424d106a6bed55f48b0bf915ee65fb4dc40aa752",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/06_bubble_CCL_CXCL.png": "b9b18dc104554c42bdbf978e424d106a6bed55f48b0bf915ee65fb4dc40aa752",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/06_bubble_CCL_CXCL_FGF.png": "8dabf58a77948657f6daffb01378b579a170abca62b81693a17fe408d13ba523",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/06_bubble_CCL_CXCL_FGF.png": "8dabf58a77948657f6daffb01378b579a170abca62b81693a17fe408d13ba523",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/06_bubble_src4_tgt5to11.png": "71846ceb6b78b2aa0bca38d774ca322dd3a7c52ae17db20863522aa28106c758",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/06_bubble_src4_tgt5to11.png": "71846ceb6b78b2aa0bca38d774ca322dd3a7c52ae17db20863522aa28106c758",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/07_chord_gene_CCL_CXCL.png": "c8632941053db2ccd52f4e96fd58149290d82fe358052c37f2a4880ef07898ca",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/07_chord_gene_CCL_CXCL.png": "c8632941053db2ccd52f4e96fd58149290d82fe358052c37f2a4880ef07898ca",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/07_chord_gene_from_InflamFIB.png": "16f0fc8ddd47aa1dcbf42af27d9a0a80afc4cd6251fd5ddc939bbb77d26fc2e3",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/07_chord_gene_from_InflamFIB.png": "16f0fc8ddd47aa1dcbf42af27d9a0a80afc4cd6251fd5ddc939bbb77d26fc2e3",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/07_chord_gene_pathway_network.png": "e1fe012b5e670894a38707464fb20ea5ae6ee6d743cb28997fcc6a00788d465e",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/07_chord_gene_pathway_network.png": "e1fe012b5e670894a38707464fb20ea5ae6ee6d743cb28997fcc6a00788d465e",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/07_chord_gene_to_InflamDC.png": "c45ffa1d3294f733ecc287fd54f50733c63e1df9c4d3bf94ca40a9f6d199277f",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/07_chord_gene_to_InflamDC.png": "c45ffa1d3294f733ecc287fd54f50733c63e1df9c4d3bf94ca40a9f6d199277f",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/08_geneExpr_CXCL_violin.png": "e2bb038de21857fcbde8b2b816b8db83ab14ef595ea895c9292b24156d55f5fe",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/08_geneExpr_CXCL_violin.png": "e2bb038de21857fcbde8b2b816b8db83ab14ef595ea895c9292b24156d55f5fe",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/09_centrality_network_CXCL.png": "985d03a82fe8c4e3d5e37e2a863dd4709d4d0a2bf4f57b94feb01144e8f301ea",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/09_centrality_network_CXCL.png": "985d03a82fe8c4e3d5e37e2a863dd4709d4d0a2bf4f57b94feb01144e8f301ea",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/10_role_scatter_all.png": "7685d36af93226b52899da9b2a0f07991055fd8e3115e402673995b5857def7f",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/10_role_scatter_all.png": "7685d36af93226b52899da9b2a0f07991055fd8e3115e402673995b5857def7f",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/10_role_scatter_subset.png": "63fac53abc109f7ba47b08e9cd4403c47563f787f670dcbabd13f4b4d3c3ee31",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/10_role_scatter_subset.png": "63fac53abc109f7ba47b08e9cd4403c47563f787f670dcbabd13f4b4d3c3ee31",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/11_role_heatmap_incoming.png": "19bdb4877b59869c5c7568402cc83fa1a8e2041baed515b6291c6ec809c7f9f9",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/11_role_heatmap_incoming.png": "19bdb4877b59869c5c7568402cc83fa1a8e2041baed515b6291c6ec809c7f9f9",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/11_role_heatmap_outgoing.png": "0bc92eeff774121a4c5d8873a85198ffa28cc2ead7f9bfeef35dd014f10827ed",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/11_role_heatmap_outgoing.png": "0bc92eeff774121a4c5d8873a85198ffa28cc2ead7f9bfeef35dd014f10827ed",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/12a_selectK_incoming.png": "b172b5c59f8895e07f655431a84a66f30dff7d7c3532cfbc86f3b49296021eed",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/12a_selectK_incoming.png": "b172b5c59f8895e07f655431a84a66f30dff7d7c3532cfbc86f3b49296021eed",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/12a_selectK_outgoing.png": "01a7c4aa6e2e4ca1a5f7ec27bfe5cbf40a9232ff9f5e4f43b2ceab649dcaf2f6",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/12a_selectK_outgoing.png": "01a7c4aa6e2e4ca1a5f7ec27bfe5cbf40a9232ff9f5e4f43b2ceab649dcaf2f6",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/12b_pattern_heatmap_outgoing.png": "df75a7a76000f76f33e508ae2dd980176b265d47ac4166ee1fa16bc0d08aaee2",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/12b_pattern_heatmap_outgoing.png": "df75a7a76000f76f33e508ae2dd980176b265d47ac4166ee1fa16bc0d08aaee2",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/12b_river_outgoing.png": "f332828d29e94e6020256e52047b2121bd5a6736699c6b65ec5e66d8387305c3",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/12b_river_outgoing.png": "f332828d29e94e6020256e52047b2121bd5a6736699c6b65ec5e66d8387305c3",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/12c_dot_outgoing.png": "8445efca18be9f86ec5fd7d3010ac75824ba35bc78f559e4829a76812a098fd6",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/12c_dot_outgoing.png": "8445efca18be9f86ec5fd7d3010ac75824ba35bc78f559e4829a76812a098fd6",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/12d_river_incoming.png": "6492273f40b94181518de3a609d71e8c1446da3d542d937084e8a93af41d1fe6",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/12d_river_incoming.png": "6492273f40b94181518de3a609d71e8c1446da3d542d937084e8a93af41d1fe6",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/12e_dot_incoming.png": "87f1d84681af7044087ce07b2ef43aaba02580f7c042bd090703fb16e8450df2",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/12e_dot_incoming.png": "87f1d84681af7044087ce07b2ef43aaba02580f7c042bd090703fb16e8450df2",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/13_embedding_functional.png": "144c1e771d7ace56817e10fed2c05426dc6a01b879bb17e791c5f4fca3947bd3",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/13_embedding_functional.png": "144c1e771d7ace56817e10fed2c05426dc6a01b879bb17e791c5f4fca3947bd3",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/14_embedding_structural.png": "38d91ac4f36197f8fbf14d58b4078b204e23067b6e1eac250122bc272dc16a27",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/14_embedding_structural.png": "38d91ac4f36197f8fbf14d58b4078b204e23067b6e1eac250122bc272dc16a27",
+    "results/tutorials/reference/01_human_skin/tutorial/figures_vignette/14_embedding_structural_zoomin.png": "20b10961e5876776bcf7c86d5a6f629bce7bf7fe6e7515fbccd5b824d65ff382",
+    "results/tutorials/development/01_human_skin/tutorial/figures_vignette/14_embedding_structural_zoomin.png": "20b10961e5876776bcf7c86d5a6f629bce7bf7fe6e7515fbccd5b824d65ff382",
+    "results/tutorials/reference/02_nl_ls/summary.json": "59491613063712a002a1431c0b59dc49aea56d352747120e0f5827cbd84e491b",
+    "upstream/docs/tutorials/CellChat_comparison_analysis_NL_LS.ipynb": "63d79489db286a2ec8f099aeb2b2409922ad1313e4f21852fddcb5414f6ea2a9",
+    "results/tutorials/reference/02_nl_ls/executed.ipynb": "30bd3ef5a1b3d378877561073320ee09a914c73867fb78c6d76bed8ceddfe6f9",
+    "results/tutorials/development/02_nl_ls/summary.json": "c8a9008d8531b132ae966a5d2ef2821c93b64365a82eda96c31732c60c31b6be",
+    "results/tutorials/development/02_nl_ls/executed.ipynb": "2880d5fd6eb749273a2cf0e599ba1555ccb488b3da96bc69558aafbeb93e1a80",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_all.npz": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_all.json": "66cbaf3e2e21f81de50beff7455c0be73878b506136fdff90a956f65ab70862c",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_all.npz": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_all.json": "66cbaf3e2e21f81de50beff7455c0be73878b506136fdff90a956f65ab70862c",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_grouped.npz": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_grouped.json": "f59cc6c5723cc1b6a4de1357d0568cec84381558c9500f24108e196f61512531",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_grouped.npz": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_grouped.json": "f59cc6c5723cc1b6a4de1357d0568cec84381558c9500f24108e196f61512531",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_LS.npz": "4a41dc55c855d61798cb317cfede8e2df22a7872dcbad84c45e23eed6d3a42db",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_LS.json": "84a68484dd787308a12993430754a7abe9e2f9859b3974b278d75169339f2184",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_LS.npz": "4a41dc55c855d61798cb317cfede8e2df22a7872dcbad84c45e23eed6d3a42db",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_LS.json": "84a68484dd787308a12993430754a7abe9e2f9859b3974b278d75169339f2184",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_LS_grouped.npz": "513479e21f57d43660a9a69d563d7f283f45a5d04c6514c9f7d244f5e585416f",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_LS_grouped.json": "5b137f965342de6b69850ca54022edd0433814f12088d7d144bb68d8b791ef56",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_LS_grouped.npz": "513479e21f57d43660a9a69d563d7f283f45a5d04c6514c9f7d244f5e585416f",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_LS_grouped.json": "5b137f965342de6b69850ca54022edd0433814f12088d7d144bb68d8b791ef56",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_merged.npz": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_merged.json": "66cbaf3e2e21f81de50beff7455c0be73878b506136fdff90a956f65ab70862c",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_merged.npz": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_merged.json": "66cbaf3e2e21f81de50beff7455c0be73878b506136fdff90a956f65ab70862c",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_NL.npz": "a992ee173cdb4cc654346829319a3587249d7976e97f9cbe9b854c50fdc3c12b",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_NL.json": "8ac998c05f4da06f256b716c2078d54cd43bd215ee62cfbfbac91a7528f22ed2",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_NL.npz": "a992ee173cdb4cc654346829319a3587249d7976e97f9cbe9b854c50fdc3c12b",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_NL.json": "8ac998c05f4da06f256b716c2078d54cd43bd215ee62cfbfbac91a7528f22ed2",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_NL_grouped.npz": "b72cce3b38c5cea3c97cb9ae4140744178a1d60780a3804eb424d18c6a830696",
+    "results/tutorials/reference/02_nl_ls/evidence/final_cellchat_NL_grouped.json": "5b137f965342de6b69850ca54022edd0433814f12088d7d144bb68d8b791ef56",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_NL_grouped.npz": "b72cce3b38c5cea3c97cb9ae4140744178a1d60780a3804eb424d18c6a830696",
+    "results/tutorials/development/02_nl_ls/evidence/final_cellchat_NL_grouped.json": "5b137f965342de6b69850ca54022edd0433814f12088d7d144bb68d8b791ef56",
+    "results/tutorials/reference/02_nl_ls/evidence/inference_0.npz": "0f866e52ff59a72afafbf3e273661f81d8ccbee483fa3eb1b9c6c00aa887b380",
+    "results/tutorials/reference/02_nl_ls/evidence/inference_0.json": "8ac998c05f4da06f256b716c2078d54cd43bd215ee62cfbfbac91a7528f22ed2",
+    "results/tutorials/development/02_nl_ls/evidence/inference_0.npz": "0f866e52ff59a72afafbf3e273661f81d8ccbee483fa3eb1b9c6c00aa887b380",
+    "results/tutorials/development/02_nl_ls/evidence/inference_0.json": "8ac998c05f4da06f256b716c2078d54cd43bd215ee62cfbfbac91a7528f22ed2",
+    "results/tutorials/reference/02_nl_ls/evidence/inference_1.npz": "32c01c252819c199c7dc531b106d9cda61d18423fceb68f907d89e2f23349934",
+    "results/tutorials/reference/02_nl_ls/evidence/inference_1.json": "84a68484dd787308a12993430754a7abe9e2f9859b3974b278d75169339f2184",
+    "results/tutorials/development/02_nl_ls/evidence/inference_1.npz": "32c01c252819c199c7dc531b106d9cda61d18423fceb68f907d89e2f23349934",
+    "results/tutorials/development/02_nl_ls/evidence/inference_1.json": "84a68484dd787308a12993430754a7abe9e2f9859b3974b278d75169339f2184",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_01a_compare_interactions_count.png": "8acb442b1f36023d9f9c2085e300519de97c67d7702fc2a7e13c65e28e14aea4",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_01a_compare_interactions_count.png": "8acb442b1f36023d9f9c2085e300519de97c67d7702fc2a7e13c65e28e14aea4",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_01b_compare_interactions_weight.png": "e8cb0ecf02afe8ce81f6994671ae4a28180014bb077a51f52e6371ea292b0bb5",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_01b_compare_interactions_weight.png": "e8cb0ecf02afe8ce81f6994671ae4a28180014bb077a51f52e6371ea292b0bb5",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_02a_diff_interaction_count.png": "3a39555e46a13b58e64ce6589e14d6ba0c9bedba30b43a74406296c4ac6f442e",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_02a_diff_interaction_count.png": "3a39555e46a13b58e64ce6589e14d6ba0c9bedba30b43a74406296c4ac6f442e",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_02b_diff_interaction_weight.png": "74d9a668d4f0638aeb10c5f926ec2e1780cd8dc8f3cde70411a3c5fc233ed579",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_02b_diff_interaction_weight.png": "74d9a668d4f0638aeb10c5f926ec2e1780cd8dc8f3cde70411a3c5fc233ed579",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_03a_diff_heatmap_count.png": "f4de192986bf0cfa07fb90cb07492954080a18ffb77ab351ddffb19cb7f7a3ee",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_03a_diff_heatmap_count.png": "f4de192986bf0cfa07fb90cb07492954080a18ffb77ab351ddffb19cb7f7a3ee",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_03b_diff_heatmap_weight.png": "8d5f2af5dea258794c35e7129d12c014374717266c65f63054d488f9b15fb304",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_03b_diff_heatmap_weight.png": "8d5f2af5dea258794c35e7129d12c014374717266c65f63054d488f9b15fb304",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_04_circle_count_LS.png": "8d229632167ea62f3651f855d0405142964f726277865ad8522426d7d274e70a",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_04_circle_count_LS.png": "8d229632167ea62f3651f855d0405142964f726277865ad8522426d7d274e70a",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_04_circle_count_NL.png": "573a7f7f1d840fdf1a097a52dae3d93b68a79309d9720e365a5d99443c5fb55c",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_04_circle_count_NL.png": "573a7f7f1d840fdf1a097a52dae3d93b68a79309d9720e365a5d99443c5fb55c",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_05a_circle_count_grouped_LS.png": "6ea14089aaed874611cd70a40b1e5321b35fd926205106b8061953bf4127f811",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_05a_circle_count_grouped_LS.png": "6ea14089aaed874611cd70a40b1e5321b35fd926205106b8061953bf4127f811",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_05a_circle_count_grouped_NL.png": "c1b8f34044cd57eaf475d1496c9403ad9bb7d6c61394082b46be7335628689b3",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_05a_circle_count_grouped_NL.png": "c1b8f34044cd57eaf475d1496c9403ad9bb7d6c61394082b46be7335628689b3",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_05b_diff_interaction_count_grouped.png": "6feafb9ba2a9be20bf35dbc4ef30aeb209a807e57997fd44d0d687d9e3174afb",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_05b_diff_interaction_count_grouped.png": "6feafb9ba2a9be20bf35dbc4ef30aeb209a807e57997fd44d0d687d9e3174afb",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_05c_diff_interaction_weight_grouped.png": "90944b00bd17817dea60069eb6850e1b335c26435c4ffc10b8512b9568ceb15e",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_05c_diff_interaction_weight_grouped.png": "90944b00bd17817dea60069eb6850e1b335c26435c4ffc10b8512b9568ceb15e",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_06_role_scatter_LS.png": "dc7249ad1181a201f4331ed79f21839e127373cbcdd5dd08f3d7dc3ff1aaf196",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_06_role_scatter_LS.png": "dc7249ad1181a201f4331ed79f21839e127373cbcdd5dd08f3d7dc3ff1aaf196",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_06_role_scatter_NL.png": "fd63c7385f337f9298776d8d1a265826dbeac384a2ef9ae4669144acd1e3be17",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_06_role_scatter_NL.png": "fd63c7385f337f9298776d8d1a265826dbeac384a2ef9ae4669144acd1e3be17",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_07_signaling_changes_cDC1.png": "27ecde5d507f7fbfd3d73bcf4f44ae31a07433200b4ff549875162b82e64e56f",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_07_signaling_changes_cDC1.png": "27ecde5d507f7fbfd3d73bcf4f44ae31a07433200b4ff549875162b82e64e56f",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_07_signaling_changes_Inflam_DC.png": "bd927cb43d7caf4a412dd36495844bed40c59f3057f9d96a62cd3bd15ae545a1",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_07_signaling_changes_Inflam_DC.png": "bd927cb43d7caf4a412dd36495844bed40c59f3057f9d96a62cd3bd15ae545a1",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_08_embedding_pairwise_functional.png": "2fe91723380135ec92bbbd5b78be105530d3c8b6418189732b396e38d4157193",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_08_embedding_pairwise_functional.png": "2fe91723380135ec92bbbd5b78be105530d3c8b6418189732b396e38d4157193",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_09_embedding_pairwise_structural.png": "27fd140c2a2fbce1e60a9286c6dc715d3ef818b38dae2fce8b3e086c2e6813e5",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_09_embedding_pairwise_structural.png": "27fd140c2a2fbce1e60a9286c6dc715d3ef818b38dae2fce8b3e086c2e6813e5",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_09_zoom_in_embedding_pairwise_structural.png": "aac729e4c827f8f13938643a7a8764bc3887aaba86977271375e81843011eec0",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_09_zoom_in_embedding_pairwise_structural.png": "aac729e4c827f8f13938643a7a8764bc3887aaba86977271375e81843011eec0",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_10_rank_similarity_functional.png": "8708836206d147637027f78ed36020b58dbb5501eadda8cae864427155362867",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_10_rank_similarity_functional.png": "8708836206d147637027f78ed36020b58dbb5501eadda8cae864427155362867",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_11a_rank_net_stacked.png": "63f6c7bd632212a55110aaf556b9c78bb8d1e77f3a5140526d851a87d8fe23cd",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_11a_rank_net_stacked.png": "63f6c7bd632212a55110aaf556b9c78bb8d1e77f3a5140526d851a87d8fe23cd",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_11b_rank_net_unstacked.png": "5bc4a0ea53303fb473c68c4bd24439057d594575555e400e79f4ddcbfc81305f",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_11b_rank_net_unstacked.png": "5bc4a0ea53303fb473c68c4bd24439057d594575555e400e79f4ddcbfc81305f",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_all_LS.png": "a68ff8080784658c4d8d7b6464541e069c20b64199ccf4ef89461fe9cf5649a0",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_all_LS.png": "a68ff8080784658c4d8d7b6464541e069c20b64199ccf4ef89461fe9cf5649a0",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_all_NL.png": "d333abdf5f97a2e9eddfef71fe6450ebd60266c9d7add0c6d5689448b2da6c44",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_all_NL.png": "d333abdf5f97a2e9eddfef71fe6450ebd60266c9d7add0c6d5689448b2da6c44",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_incoming_LS.png": "7c2974a22c32afd137f4650bd4a9f6bb3551261f3e983b63d0c8e94d6c8d59f0",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_incoming_LS.png": "7c2974a22c32afd137f4650bd4a9f6bb3551261f3e983b63d0c8e94d6c8d59f0",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_incoming_NL.png": "f70d2642b19deea2c9e50912f917bfc6ee8d42cc7abf07f32d7bc081ab525ad5",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_incoming_NL.png": "f70d2642b19deea2c9e50912f917bfc6ee8d42cc7abf07f32d7bc081ab525ad5",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_outgoing_LS.png": "30543516ddc6b221735f98847e2b8f554ee3756312fab26d99c530152afe1869",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_outgoing_LS.png": "30543516ddc6b221735f98847e2b8f554ee3756312fab26d99c530152afe1869",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_outgoing_NL.png": "28eed54c526a943bea11b15a5337bb2836a5508af1af013ee7b7708822ee25c7",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_12_role_heatmap_outgoing_NL.png": "28eed54c526a943bea11b15a5337bb2836a5508af1af013ee7b7708822ee25c7",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_13_bubble_comparison.png": "a75d96c3af24d7c5a9aea0a0a1faf68e97d33a31107a59f09bfae2c4b88f4299",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_13_bubble_comparison.png": "6951e7847c49398f151b6e911b44bfbb7c9268fc4c7a625f1556ee73aa501608",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_13a_bubble_increased_LS.png": "91230574f2c2e78187ec3bd91d7045980dfdc8c4fbdcaee3422927fbb292a06e",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_13a_bubble_increased_LS.png": "91230574f2c2e78187ec3bd91d7045980dfdc8c4fbdcaee3422927fbb292a06e",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_13b_bubble_decreased_LS.png": "9370976bb6d69297164bed62761de18b1af3f1006034eb4737ab7bb831efa7c2",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_13b_bubble_decreased_LS.png": "9370976bb6d69297164bed62761de18b1af3f1006034eb4737ab7bb831efa7c2",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_14a_bubble_up.png": "63290e6c8e62f1f43514cc2c6b39c72a66a44fdb64acf804aedefc1708e3940a",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_14a_bubble_up.png": "63290e6c8e62f1f43514cc2c6b39c72a66a44fdb64acf804aedefc1708e3940a",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_14b_bubble_down.png": "78765b9d05ba66cf89bcace7f2d171a2d866753db9a832ae1ed63825111a4319",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_14b_bubble_down.png": "78765b9d05ba66cf89bcace7f2d171a2d866753db9a832ae1ed63825111a4319",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_15a_chord_up.png": "a7722937045eec95531628522daba22c5c1e1b7f1a9e521fe11d4668b68a979f",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_15a_chord_up.png": "a7722937045eec95531628522daba22c5c1e1b7f1a9e521fe11d4668b68a979f",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_15b_chord_down.png": "54c4735ac9edec4cb36547ab732ac502ee646e0b98074f35acb4934aa83fadf8",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_15b_chord_down.png": "54c4735ac9edec4cb36547ab732ac502ee646e0b98074f35acb4934aa83fadf8",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_16a_circle_CXCL_LS.png": "fd894afb923589cb4d757e99e0a3d9d05ecb42f7ebdfaff75983afec8f39e743",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_16a_circle_CXCL_LS.png": "fd894afb923589cb4d757e99e0a3d9d05ecb42f7ebdfaff75983afec8f39e743",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_16a_circle_CXCL_NL.png": "c32531f36d1f513a916233a2a5eef81ce4e6b96dc4dd9a68c206bafda2fb07b8",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_16a_circle_CXCL_NL.png": "c32531f36d1f513a916233a2a5eef81ce4e6b96dc4dd9a68c206bafda2fb07b8",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_16b_heatmap_CXCL_LS.png": "52a7d444b833a227a99344df8e42139396ad78ba2c1b3db75de93756ce484620",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_16b_heatmap_CXCL_LS.png": "52a7d444b833a227a99344df8e42139396ad78ba2c1b3db75de93756ce484620",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_16b_heatmap_CXCL_NL.png": "f62d4c3d76c4cf58b41b2c5015ea566ad81c3984a7b1a23e124f818c633c06fa",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_16b_heatmap_CXCL_NL.png": "f62d4c3d76c4cf58b41b2c5015ea566ad81c3984a7b1a23e124f818c633c06fa",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_16c_chord_CXCL_LS.png": "521242f22da5cc0778d93291fc4eef0c80063fd76ccdccb9cbc7ff780e814af0",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_16c_chord_CXCL_LS.png": "521242f22da5cc0778d93291fc4eef0c80063fd76ccdccb9cbc7ff780e814af0",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_16c_chord_CXCL_NL.png": "d95b50c0af4b79b405c82e852da242e1958a5d03e1b1c67f91de125ff396e4ff",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_16c_chord_CXCL_NL.png": "d95b50c0af4b79b405c82e852da242e1958a5d03e1b1c67f91de125ff396e4ff",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_17a_chord_gene_received_InflamDC_TC_LS.png": "18d38d1e8372b7856e5a6736ef83c3f814ba0edd8231536fd25a1194a212b353",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_17a_chord_gene_received_InflamDC_TC_LS.png": "18d38d1e8372b7856e5a6736ef83c3f814ba0edd8231536fd25a1194a212b353",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_17a_chord_gene_received_InflamDC_TC_NL.png": "1277b656765bbf83a369d5f1e55e31e7537f36e2c85ce032eafd0a59b7c6f6ad",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_17a_chord_gene_received_InflamDC_TC_NL.png": "1277b656765bbf83a369d5f1e55e31e7537f36e2c85ce032eafd0a59b7c6f6ad",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_17b_chord_pathways_fibroblast_to_immune_LS.png": "1b2a6cc13e40fda9d1302c728631278c7c716dd3acaff31ffcb9e8db0764aee5",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_17b_chord_pathways_fibroblast_to_immune_LS.png": "1b2a6cc13e40fda9d1302c728631278c7c716dd3acaff31ffcb9e8db0764aee5",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_17b_chord_pathways_fibroblast_to_immune_NL.png": "32a48444af75bebad63c70b59bf584d5be5234540ebcf413cfd108ecdb779807",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_17b_chord_pathways_fibroblast_to_immune_NL.png": "32a48444af75bebad63c70b59bf584d5be5234540ebcf413cfd108ecdb779807",
+    "results/tutorials/reference/02_nl_ls/tutorial/figures_comparison/cmp_18_gene_expression_CXCL_split.png": "ddda15c71295ad3b7f4f5e464e3e3d6c8f8da0ad8daced495ba5ad32e48d546b",
+    "results/tutorials/development/02_nl_ls/tutorial/figures_comparison/cmp_18_gene_expression_CXCL_split.png": "ddda15c71295ad3b7f4f5e464e3e3d6c8f8da0ad8daced495ba5ad32e48d546b",
+    "results/tutorials/reference/03_embryonic/summary.json": "09d129b8d48f4fe2c6b47ee421a1cac7f803b5947ed847df30358230ebe9a8f3",
+    "upstream/docs/tutorials/Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions.ipynb": "c37050d1509e83aa2de49a3d22e7cfbaaf498119513f088ace90a358ec03003b",
+    "results/tutorials/reference/03_embryonic/executed.ipynb": "1da64ac34c997211e8d96cfd118595a3f81c18cb66af75892ec8ea80b9f1f54f",
+    "results/tutorials/development/03_embryonic/summary.json": "701ce66891a04439a36b343d93d1fc93a641baf0af779459a8ecf04d5f80ac2a",
+    "results/tutorials/development/03_embryonic/executed.ipynb": "a96e170ebf65b3145c68d459d0615ad00130ca2ed50122dae920a0ae3040799c",
+    "results/tutorials/reference/03_embryonic/evidence/final_cellchat.npz": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+    "results/tutorials/reference/03_embryonic/evidence/final_cellchat.json": "a6027fe8dc460d72e0b90fa94af9ba30a0432b4e3f06bb6f650a10de8f4eaf5a",
+    "results/tutorials/development/03_embryonic/evidence/final_cellchat.npz": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+    "results/tutorials/development/03_embryonic/evidence/final_cellchat.json": "a6027fe8dc460d72e0b90fa94af9ba30a0432b4e3f06bb6f650a10de8f4eaf5a",
+    "results/tutorials/reference/03_embryonic/evidence/final_cellchat_e13.npz": "3f3fc89ab85a30cc374b5d5eab2f10bca910119ad10e68b1de9e3f74271fa273",
+    "results/tutorials/reference/03_embryonic/evidence/final_cellchat_e13.json": "017e55af4e2de0fc25e8b8693e1aa374fc0b712456557631ebd6b0c12ffa69d9",
+    "results/tutorials/development/03_embryonic/evidence/final_cellchat_e13.npz": "3f3fc89ab85a30cc374b5d5eab2f10bca910119ad10e68b1de9e3f74271fa273",
+    "results/tutorials/development/03_embryonic/evidence/final_cellchat_e13.json": "017e55af4e2de0fc25e8b8693e1aa374fc0b712456557631ebd6b0c12ffa69d9",
+    "results/tutorials/reference/03_embryonic/evidence/final_cellchat_e14.npz": "f57cf64753c29c106e9aa18bbc8db9cf631393d4bcb3e85677d519a33036c73d",
+    "results/tutorials/reference/03_embryonic/evidence/final_cellchat_e14.json": "abe39aa02a57d662fe6164f64d9a29a67a55ab9229c2eec1472531c8196a4e6e",
+    "results/tutorials/development/03_embryonic/evidence/final_cellchat_e14.npz": "f57cf64753c29c106e9aa18bbc8db9cf631393d4bcb3e85677d519a33036c73d",
+    "results/tutorials/development/03_embryonic/evidence/final_cellchat_e14.json": "abe39aa02a57d662fe6164f64d9a29a67a55ab9229c2eec1472531c8196a4e6e",
+    "results/tutorials/reference/03_embryonic/evidence/inference_0.npz": "2334ed730510577166c4c33299e2ab47c2e6bd597de183b9795af8a5909b6067",
+    "results/tutorials/reference/03_embryonic/evidence/inference_0.json": "a662b67faa311a5f3fce05485cfb2e123261c2a3d7a7b312c670e955cfc5a9b4",
+    "results/tutorials/development/03_embryonic/evidence/inference_0.npz": "2334ed730510577166c4c33299e2ab47c2e6bd597de183b9795af8a5909b6067",
+    "results/tutorials/development/03_embryonic/evidence/inference_0.json": "a662b67faa311a5f3fce05485cfb2e123261c2a3d7a7b312c670e955cfc5a9b4",
+    "results/tutorials/reference/03_embryonic/evidence/inference_1.npz": "fd0be70ada645b3558f23c661bd7cd0b8a9d68fcf639249eb99afcb9bbbcfbfb",
+    "results/tutorials/reference/03_embryonic/evidence/inference_1.json": "abe39aa02a57d662fe6164f64d9a29a67a55ab9229c2eec1472531c8196a4e6e",
+    "results/tutorials/development/03_embryonic/evidence/inference_1.npz": "fd0be70ada645b3558f23c661bd7cd0b8a9d68fcf639249eb99afcb9bbbcfbfb",
+    "results/tutorials/development/03_embryonic/evidence/inference_1.json": "abe39aa02a57d662fe6164f64d9a29a67a55ab9229c2eec1472531c8196a4e6e",
+    "results/tutorials/reference/03_embryonic/tutorial/figures_different_cellular_compositions/01_circle_WNT_E13.5.png": "a108c75636b7a9b8ddf9f16648685984d3f5ef40b7dfbc60ab0cebc9069690b9",
+    "results/tutorials/development/03_embryonic/tutorial/figures_different_cellular_compositions/01_circle_WNT_E13.5.png": "a108c75636b7a9b8ddf9f16648685984d3f5ef40b7dfbc60ab0cebc9069690b9",
+    "results/tutorials/reference/03_embryonic/tutorial/figures_different_cellular_compositions/01_circle_WNT_E14.5.png": "f4a44eb77170c5e3ababba3fb91863933fe5172bef29258430f6c04e48a9923f",
+    "results/tutorials/development/03_embryonic/tutorial/figures_different_cellular_compositions/01_circle_WNT_E14.5.png": "f4a44eb77170c5e3ababba3fb91863933fe5172bef29258430f6c04e48a9923f",
+    "results/tutorials/reference/03_embryonic/tutorial/figures_different_cellular_compositions/02_hierarchy_WNT_E13.5.png": "efb74c85e86698df1c113380ebfd8fba24580740102a4b5d9e4a6d6c1e34bfc8",
+    "results/tutorials/development/03_embryonic/tutorial/figures_different_cellular_compositions/02_hierarchy_WNT_E13.5.png": "efb74c85e86698df1c113380ebfd8fba24580740102a4b5d9e4a6d6c1e34bfc8",
+    "results/tutorials/reference/03_embryonic/tutorial/figures_different_cellular_compositions/02_hierarchy_WNT_E14.5.png": "8de5f5f916474ec78b47aa8e34495bb17f0f4e0a4884278608fa82518dcb984e",
+    "results/tutorials/development/03_embryonic/tutorial/figures_different_cellular_compositions/02_hierarchy_WNT_E14.5.png": "8de5f5f916474ec78b47aa8e34495bb17f0f4e0a4884278608fa82518dcb984e",
+    "results/tutorials/reference/03_embryonic/tutorial/figures_different_cellular_compositions/03_chord_WNT_E13.5.png": "ca5655d0a9a098b7e28ba3342504cca711cc8980363f75e16f2afbc3d6743457",
+    "results/tutorials/development/03_embryonic/tutorial/figures_different_cellular_compositions/03_chord_WNT_E13.5.png": "ca5655d0a9a098b7e28ba3342504cca711cc8980363f75e16f2afbc3d6743457",
+    "results/tutorials/reference/03_embryonic/tutorial/figures_different_cellular_compositions/03_chord_WNT_E14.5.png": "ba12ec4101e5b408665380d28f3c39f0ad951305b8b91a3cdd2e92a852af07b9",
+    "results/tutorials/development/03_embryonic/tutorial/figures_different_cellular_compositions/03_chord_WNT_E14.5.png": "ba12ec4101e5b408665380d28f3c39f0ad951305b8b91a3cdd2e92a852af07b9",
+    "results/tutorials/reference/03_embryonic/tutorial/figures_different_cellular_compositions/04_chord_grouped_WNT_E13.5.png": "85412438b7fccded8fdc600124bbd9f2384a552fe7e062aa042633850c7c0f2d",
+    "results/tutorials/development/03_embryonic/tutorial/figures_different_cellular_compositions/04_chord_grouped_WNT_E13.5.png": "85412438b7fccded8fdc600124bbd9f2384a552fe7e062aa042633850c7c0f2d",
+    "results/tutorials/reference/03_embryonic/tutorial/figures_different_cellular_compositions/04_chord_grouped_WNT_E14.5.png": "d5a8966d3f0f7fe02d1a828976b0c3e4460bc33e39fff3b4b422691860817768",
+    "results/tutorials/development/03_embryonic/tutorial/figures_different_cellular_compositions/04_chord_grouped_WNT_E14.5.png": "d5a8966d3f0f7fe02d1a828976b0c3e4460bc33e39fff3b4b422691860817768",
+    "results/tutorials/reference/04_visium/summary.json": "12c4f33dcd86a4ba1d17b0eb8b056bcd815cf01b433f74119fe3dcf403cc12d1",
+    "upstream/docs/tutorials/CellChat_analysis_of_spatial_transcriptomics_data.ipynb": "fbff2d01fd95fcae42b1da4417359beb2b2eb8cdff4d9a06076b33aaaf19abbe",
+    "results/tutorials/reference/04_visium/executed.ipynb": "b364e376bd8fb23a9d1744c1ac87207a9fd001285866017e581b8606aa5d1128",
+    "results/tutorials/development/04_visium/summary.json": "d99b2772ad7ac7f50f90bb78a3500de957f3c8ccc428f83d27376c87c7545a74",
+    "results/tutorials/development/04_visium/executed.ipynb": "7bcb4f07b1ba680d2b452953633e84dd611b94f0bbf9c17774ee06a856c7d656",
+    "results/tutorials/reference/04_visium/evidence/final_cellchat.npz": "716bf92add1ed7b5176b3f17d4bed0679203a9e8e20f3f8b7ee29ec520475b76",
+    "results/tutorials/reference/04_visium/evidence/final_cellchat.json": "91f84af40b2377ff68caa9a4bf7e5daaed7351864a39239aa3440cf8582cc97d",
+    "results/tutorials/development/04_visium/evidence/final_cellchat.npz": "716bf92add1ed7b5176b3f17d4bed0679203a9e8e20f3f8b7ee29ec520475b76",
+    "results/tutorials/development/04_visium/evidence/final_cellchat.json": "91f84af40b2377ff68caa9a4bf7e5daaed7351864a39239aa3440cf8582cc97d",
+    "results/tutorials/reference/04_visium/evidence/inference_0.npz": "b45d477c13c1ba8cddd49cda78605b9b3473dadac004f2f80316bbd9e76d26b6",
+    "results/tutorials/reference/04_visium/evidence/inference_0.json": "91f84af40b2377ff68caa9a4bf7e5daaed7351864a39239aa3440cf8582cc97d",
+    "results/tutorials/development/04_visium/evidence/inference_0.npz": "b45d477c13c1ba8cddd49cda78605b9b3473dadac004f2f80316bbd9e76d26b6",
+    "results/tutorials/development/04_visium/evidence/inference_0.json": "91f84af40b2377ff68caa9a4bf7e5daaed7351864a39239aa3440cf8582cc97d",
+    "results/tutorials/reference/04_visium/tutorial/figures_spatial_transcriptomics/00_database_category.png": "88733c36f5dd948424b5227b92b0f86c55cfdff4fb4dc474e16aaa98b67a3f3b",
+    "results/tutorials/development/04_visium/tutorial/figures_spatial_transcriptomics/00_database_category.png": "88733c36f5dd948424b5227b92b0f86c55cfdff4fb4dc474e16aaa98b67a3f3b",
+    "results/tutorials/reference/04_visium/tutorial/figures_spatial_transcriptomics/00_spatial_annotations.png": "b6e0edba43666249f50f1c02593982d71bdca312ea77f3f1ba5585290047f01c",
+    "results/tutorials/development/04_visium/tutorial/figures_spatial_transcriptomics/00_spatial_annotations.png": "b6e0edba43666249f50f1c02593982d71bdca312ea77f3f1ba5585290047f01c",
+    "results/tutorials/reference/04_visium/tutorial/figures_spatial_transcriptomics/01_circle_count.png": "d73c2ca90691bb04d6b8308c995041c643f5de942804bff9120a615135fd43b2",
+    "results/tutorials/development/04_visium/tutorial/figures_spatial_transcriptomics/01_circle_count.png": "d73c2ca90691bb04d6b8308c995041c643f5de942804bff9120a615135fd43b2",
+    "results/tutorials/reference/04_visium/tutorial/figures_spatial_transcriptomics/01_circle_weight.png": "06f53fc666d85e1e09256f49d0855fef850661062bf5c7e794dfeb0aef8817cf",
+    "results/tutorials/development/04_visium/tutorial/figures_spatial_transcriptomics/01_circle_weight.png": "06f53fc666d85e1e09256f49d0855fef850661062bf5c7e794dfeb0aef8817cf",
+    "results/tutorials/reference/04_visium/tutorial/figures_spatial_transcriptomics/02_heatmap_count.png": "e3b92fb5175880d16af3b6962fb2934f48f3dc176d26e160b475e497e030f3e3",
+    "results/tutorials/development/04_visium/tutorial/figures_spatial_transcriptomics/02_heatmap_count.png": "e3b92fb5175880d16af3b6962fb2934f48f3dc176d26e160b475e497e030f3e3",
+    "results/tutorials/reference/04_visium/tutorial/figures_spatial_transcriptomics/02_heatmap_weight.png": "f5b72d94d2b28debd355e0e41e5815f4bcc8c369cbd70630f5d50c0a89e05ec5",
+    "results/tutorials/development/04_visium/tutorial/figures_spatial_transcriptomics/02_heatmap_weight.png": "f5b72d94d2b28debd355e0e41e5815f4bcc8c369cbd70630f5d50c0a89e05ec5",
+    "results/tutorials/reference/04_visium/tutorial/figures_spatial_transcriptomics/03_circle_IGF.png": "4b4ff10f0c22e8373b5c78b511201b6d4a2e95896d2bc94ca20101c521be8919",
+    "results/tutorials/development/04_visium/tutorial/figures_spatial_transcriptomics/03_circle_IGF.png": "4b4ff10f0c22e8373b5c78b511201b6d4a2e95896d2bc94ca20101c521be8919",
+    "results/tutorials/reference/04_visium/tutorial/figures_spatial_transcriptomics/03_spatial_IGF.png": "794684ff1f60abe80373ed137fda1a28f75d5451900e916e8a9943fd55798b39",
+    "results/tutorials/development/04_visium/tutorial/figures_spatial_transcriptomics/03_spatial_IGF.png": "794684ff1f60abe80373ed137fda1a28f75d5451900e916e8a9943fd55798b39",
+    "results/tutorials/reference/04_visium/tutorial/figures_spatial_transcriptomics/04_role_network_IGF.png": "6583a5cf776e4fa697b315eecde4c8e2fcd32b1e279dccbe0ec15d9c1129ace1",
+    "results/tutorials/development/04_visium/tutorial/figures_spatial_transcriptomics/04_role_network_IGF.png": "6583a5cf776e4fa697b315eecde4c8e2fcd32b1e279dccbe0ec15d9c1129ace1",
+    "results/tutorials/reference/04_visium/tutorial/figures_spatial_transcriptomics/05_spatial_expression_IGF.png": "12a50b9cc85659509f74f5a9261cd577e3adb56ff15daae3c281fc420359cbd4",
+    "results/tutorials/development/04_visium/tutorial/figures_spatial_transcriptomics/05_spatial_expression_IGF.png": "12a50b9cc85659509f74f5a9261cd577e3adb56ff15daae3c281fc420359cbd4",
+    "results/tutorials/reference/04_visium/tutorial/figures_spatial_transcriptomics/05_spatial_expression_Igf1_Igf1r.png": "46ac3ea622458fdf3897001476bbe56fabf881f21a75d3e7effc7ef3e94b6f44",
+    "results/tutorials/development/04_visium/tutorial/figures_spatial_transcriptomics/05_spatial_expression_Igf1_Igf1r.png": "46ac3ea622458fdf3897001476bbe56fabf881f21a75d3e7effc7ef3e94b6f44",
+    "results/tutorials/reference/05_multi_spatial/summary.json": "1cb6f9569ec658a0ebefe0f6ce7287093c1b65ff4ecba1947baaf95245cc3845",
+    "upstream/docs/tutorials/CellChat_analysis_of_multiple_spatial_transcriptomics_datasets.ipynb": "6edbed657346775ac6a44fb9960b2b11beb4d47ae11254a72ccf8bcaf213b7df",
+    "results/tutorials/reference/05_multi_spatial/executed.ipynb": "159302accd5e232f6bef388e88217204002db8537c1adf2ab7f62c5417635a3f",
+    "results/tutorials/development/05_multi_spatial/summary.json": "4353eced197bf1e6ca90585024b4efc2c6b8cfae95f2f189348dc37e76ceba95",
+    "results/tutorials/development/05_multi_spatial/executed.ipynb": "bfe84b489d0be0537cfa29380fc1ff076c1032dc9211d8dff5c135ffaf1efc2d",
+    "results/tutorials/reference/05_multi_spatial/evidence/final_cellchat.npz": "db9bbad15fcca2bfd5163c1e5a22611c0489485c70ca3a5f448f3b37d2897d66",
+    "results/tutorials/reference/05_multi_spatial/evidence/final_cellchat.json": "cc6554548068862f7578401c59ac51fe72dfc37c79345e521d8a2137f070ad5d",
+    "results/tutorials/development/05_multi_spatial/evidence/final_cellchat.npz": "db9bbad15fcca2bfd5163c1e5a22611c0489485c70ca3a5f448f3b37d2897d66",
+    "results/tutorials/development/05_multi_spatial/evidence/final_cellchat.json": "cc6554548068862f7578401c59ac51fe72dfc37c79345e521d8a2137f070ad5d",
+    "results/tutorials/reference/05_multi_spatial/evidence/inference_0.npz": "4208cac3b3de31a87cf2d0a10cb60cd180e1626c25b2104cf35abcb6dbe83ea6",
+    "results/tutorials/reference/05_multi_spatial/evidence/inference_0.json": "cc6554548068862f7578401c59ac51fe72dfc37c79345e521d8a2137f070ad5d",
+    "results/tutorials/development/05_multi_spatial/evidence/inference_0.npz": "4208cac3b3de31a87cf2d0a10cb60cd180e1626c25b2104cf35abcb6dbe83ea6",
+    "results/tutorials/development/05_multi_spatial/evidence/inference_0.json": "cc6554548068862f7578401c59ac51fe72dfc37c79345e521d8a2137f070ad5d",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/00_database_category.png": "112e9cb3c3dde7ef4f918a11da651792c2e9a87cf4fa826afd1ce4752fdb2f3e",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/00_database_category.png": "112e9cb3c3dde7ef4f918a11da651792c2e9a87cf4fa826afd1ce4752fdb2f3e",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/00_spatial_annotations.png": "d715d49144320a03fedc0f15fc22af4aad096dfdb564e4f7f1c18ac95999398e",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/00_spatial_annotations.png": "d715d49144320a03fedc0f15fc22af4aad096dfdb564e4f7f1c18ac95999398e",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/01_circle_count.png": "1ec7fe8ef5dfc5f1040f4911cfd4a4697bf7c77a0b626d4469825ceccec09e69",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/01_circle_count.png": "1ec7fe8ef5dfc5f1040f4911cfd4a4697bf7c77a0b626d4469825ceccec09e69",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/01_circle_weight.png": "679add5031904a1792931518a8396da27b73823df1121b635dfa8da55eb3e745",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/01_circle_weight.png": "679add5031904a1792931518a8396da27b73823df1121b635dfa8da55eb3e745",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/02_heatmap_count.png": "191a0c5d15695db7afaa42d3e7069f9543609a58fffa11e56466a8f3b2106f44",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/02_heatmap_count.png": "191a0c5d15695db7afaa42d3e7069f9543609a58fffa11e56466a8f3b2106f44",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/02_heatmap_weight.png": "ba4317aff0f443cbf1af5a90a691a18f8b7584734119bcbc9aa5c472e2df5937",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/02_heatmap_weight.png": "ba4317aff0f443cbf1af5a90a691a18f8b7584734119bcbc9aa5c472e2df5937",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/03_EGF_circle.png": "018a330380a14317ff9dce2e84de112362c677544bb44dabd4f800456d569c57",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/03_EGF_circle.png": "018a330380a14317ff9dce2e84de112362c677544bb44dabd4f800456d569c57",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/03_EGF_spatial_overview.png": "4f3eba6e959e017e7f5124b37c1fb93a2e3a3c9b6d4a434d2db87bdf74e82723",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/03_EGF_spatial_overview.png": "4f3eba6e959e017e7f5124b37c1fb93a2e3a3c9b6d4a434d2db87bdf74e82723",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/04_EGF_signaling_roles.png": "38ff637df8e1835d0bad699283e44e5cb286149e47d1706f2aab03a46d8005be",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/04_EGF_signaling_roles.png": "38ff637df8e1835d0bad699283e44e5cb286149e47d1706f2aab03a46d8005be",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/05_EGF_contribution.png": "2b1185c1f3e18f3db79045f9b9f5c89b03c56394d7366ec808621ffa3ee2f825",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/05_EGF_contribution.png": "2b1185c1f3e18f3db79045f9b9f5c89b03c56394d7366ec808621ffa3ee2f825",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/06_spatial_AREG_EGFR.png": "a1a5e4accca4fddd6f1c439f05744c32c88fd5331e2ced636359277f08a3197f",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/06_spatial_AREG_EGFR.png": "a1a5e4accca4fddd6f1c439f05744c32c88fd5331e2ced636359277f08a3197f",
+    "results/tutorials/reference/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/06_spatial_EGF_features.png": "8ff9489fb89777f40ac61669081ef8ba7cb4e351eb8891b9018b5b71cc72e299",
+    "results/tutorials/development/05_multi_spatial/tutorial/figures_multiple_spatial_transcriptomics/06_spatial_EGF_features.png": "8ff9489fb89777f40ac61669081ef8ba7cb4e351eb8891b9018b5b71cc72e299",
+    "results/tutorials/reference/06_multiomics/summary.json": "575858650de8e94fbc60809f46be395b636871ecd666b8780dde4da98dabf29b",
+    "upstream/docs/tutorials/CellChat_analysis_of_spatial_multiomics_data.ipynb": "bd87ead6fac24316df0d0483b4f9c2582eec152244c35d57173cd32e55c5f997",
+    "results/tutorials/reference/06_multiomics/executed.ipynb": "7491b40f5fc4d9e4f6eef5600d6764a48a4ee333989a9a2a3cf275f295cd1de7",
+    "results/tutorials/development/06_multiomics/summary.json": "7a3519e16e21be324b233e804ceda5d644855b5e6f8947a3d2c5d5839d585f67",
+    "results/tutorials/development/06_multiomics/executed.ipynb": "79eadcf228d4a37282f472ed6ccac3dc698683003ea3317d88c68561e9d9126e",
+    "results/tutorials/reference/06_multiomics/evidence/final_cellchat.npz": "8c36719774c8c0eafa57c67c7c3081c986cc1ed8f0b31585381f0bb6b3a6375e",
+    "results/tutorials/reference/06_multiomics/evidence/final_cellchat.json": "7d4d55ddd492b60a4e2284bc575b7656e033c9ab45e9892f7557666fe1649a9b",
+    "results/tutorials/development/06_multiomics/evidence/final_cellchat.npz": "8c36719774c8c0eafa57c67c7c3081c986cc1ed8f0b31585381f0bb6b3a6375e",
+    "results/tutorials/development/06_multiomics/evidence/final_cellchat.json": "7d4d55ddd492b60a4e2284bc575b7656e033c9ab45e9892f7557666fe1649a9b",
+    "results/tutorials/reference/06_multiomics/evidence/inference_0.npz": "ce190dea56b4823617c7f04524e8e6b4c17e7db21b56844c0621657952e53a81",
+    "results/tutorials/reference/06_multiomics/evidence/inference_0.json": "7d4d55ddd492b60a4e2284bc575b7656e033c9ab45e9892f7557666fe1649a9b",
+    "results/tutorials/development/06_multiomics/evidence/inference_0.npz": "ce190dea56b4823617c7f04524e8e6b4c17e7db21b56844c0621657952e53a81",
+    "results/tutorials/development/06_multiomics/evidence/inference_0.json": "7d4d55ddd492b60a4e2284bc575b7656e033c9ab45e9892f7557666fe1649a9b",
+    "results/tutorials/reference/06_multiomics/tutorial/figures_spatial_multiomics/00_spatial_annotations.png": "3386202edb722bc38a2a49b174a409643fad37b44769d5bd908cf4e70236e2a4",
+    "results/tutorials/development/06_multiomics/tutorial/figures_spatial_multiomics/00_spatial_annotations.png": "3386202edb722bc38a2a49b174a409643fad37b44769d5bd908cf4e70236e2a4",
+    "results/tutorials/reference/06_multiomics/tutorial/figures_spatial_multiomics/01_IL16_chord.png": "9f3a2e081802b02240208d1d9cb2bf5057e310f810410bec4acbf37b8d5bb3ac",
+    "results/tutorials/development/06_multiomics/tutorial/figures_spatial_multiomics/01_IL16_chord.png": "9f3a2e081802b02240208d1d9cb2bf5057e310f810410bec4acbf37b8d5bb3ac",
+    "results/tutorials/reference/06_multiomics/tutorial/figures_spatial_multiomics/02_IL16_spatial_network.png": "52dabfd7610fb9e4ff108ac54c6d902e0d0cfc9cd84457a69a105f067dc232e9",
+    "results/tutorials/development/06_multiomics/tutorial/figures_spatial_multiomics/02_IL16_spatial_network.png": "52dabfd7610fb9e4ff108ac54c6d902e0d0cfc9cd84457a69a105f067dc232e9",
+    "results/tutorials/reference/06_multiomics/tutorial/figures_spatial_multiomics/03_IL16_signaling_roles.png": "37f14d03701662533651dca9da62167b6241953607eaab1954ffece678f9b7b0",
+    "results/tutorials/development/06_multiomics/tutorial/figures_spatial_multiomics/03_IL16_signaling_roles.png": "37f14d03701662533651dca9da62167b6241953607eaab1954ffece678f9b7b0",
+    "results/tutorials/reference/06_multiomics/tutorial/figures_spatial_multiomics/04_spatial_ADT_CD4.png": "a69636dae57234b53d80340cd55be9739f1026f475a36f9c28def5f2bd7199ab",
+    "results/tutorials/development/06_multiomics/tutorial/figures_spatial_multiomics/04_spatial_ADT_CD4.png": "a69636dae57234b53d80340cd55be9739f1026f475a36f9c28def5f2bd7199ab",
+    "results/tutorials/reference/06_multiomics/tutorial/figures_spatial_multiomics/04_spatial_RNA_Il16.png": "5eda270fab1f6540fdd05fcbcdc3c79c2cbf0e2d317b75ca3b4931949bf2339f",
+    "results/tutorials/development/06_multiomics/tutorial/figures_spatial_multiomics/04_spatial_RNA_Il16.png": "5eda270fab1f6540fdd05fcbcdc3c79c2cbf0e2d317b75ca3b4931949bf2339f",
+    "results/tutorials/reference/06_multiomics/tutorial/figures_spatial_multiomics/05_spatial_IL16_features.png": "fd2f110631e3e57b03c694c996ead9091f81b088cdb2c0c915b5f1db23be258f",
+    "results/tutorials/development/06_multiomics/tutorial/figures_spatial_multiomics/05_spatial_IL16_features.png": "fd2f110631e3e57b03c694c996ead9091f81b088cdb2c0c915b5f1db23be258f",
+    "results/tutorials/reference/07_psoriasis/summary.json": "e9a56995e49fe15018da3b83c2cf946e50a127e0e9c3bd91b68c668f3d2deea0",
+    "upstream/docs/tutorials/SpatialCellChat_analysis_of_spatial_transcriptomics_data.ipynb": "949a2484d96c37c8b42c2251a30684fc5454eaa4ac105c53b3e96fbf113b66dc",
+    "results/tutorials/reference/07_psoriasis/executed.ipynb": "bd588a4e16c10e1fc8d5540fcfd9511d64988787573e1ea1acea7f96b28ff198",
+    "results/tutorials/development/07_psoriasis/summary.json": "406274bb93d4b5a522c6115972c26b5377b0488b5cf186423d3a1e1252efaae6",
+    "results/tutorials/development/07_psoriasis/executed.ipynb": "a36ef227b6784400f632b983563efa51f544865c2cf5e310252626abddddd661",
+    "results/tutorials/reference/07_psoriasis/evidence/final_cellchat.npz": "ed79bf0a045109b0ebeea8a8a096bb498c672e96293390606a788b413040ebf9",
+    "results/tutorials/reference/07_psoriasis/evidence/final_cellchat.json": "82da644edb7d64675b3c63065afbf294fe012096da2bac617f9690a6dd9474df",
+    "results/tutorials/development/07_psoriasis/evidence/final_cellchat.npz": "ed79bf0a045109b0ebeea8a8a096bb498c672e96293390606a788b413040ebf9",
+    "results/tutorials/development/07_psoriasis/evidence/final_cellchat.json": "82da644edb7d64675b3c63065afbf294fe012096da2bac617f9690a6dd9474df",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/01_spatial_clusters.png": "81970909e7dfa97f2ee34886056c7564b17fef9314b2d3ebe06640d95f780322",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/01_spatial_clusters.png": "81970909e7dfa97f2ee34886056c7564b17fef9314b2d3ebe06640d95f780322",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/02_deconvolution_proportions.png": "00dae8cad7bd67dec4ff9f912cd79cb878cabdabb72191c7e62be8f27a735450",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/02_deconvolution_proportions.png": "00dae8cad7bd67dec4ff9f912cd79cb878cabdabb72191c7e62be8f27a735450",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/03_database_categories.png": "ab431b3313174e96479ce7785556b4c9c11be378f612df5a587c10113cc2bd2e",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/03_database_categories.png": "ab431b3313174e96479ce7785556b4c9c11be378f612df5a587c10113cc2bd2e",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/04_TNF_spatial_expression.png": "a779b524bf5ef18fdfbbae3ce536f2b2a15278d1a33da64f1108885edaeaabd4",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/04_TNF_spatial_expression.png": "a779b524bf5ef18fdfbbae3ce536f2b2a15278d1a33da64f1108885edaeaabd4",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/05_TNF_spot_pathway_scores.png": "a173b6ae3a09e9a06c217544d3774a2d1d0505948f73ab2abf0b3955003e8541",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/05_TNF_spot_pathway_scores.png": "a173b6ae3a09e9a06c217544d3774a2d1d0505948f73ab2abf0b3955003e8541",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/06_TNF_TNFRSF1B_spot_lr_scores.png": "c989dd158604541c25492d40424e87dd000ac6d859855477fa0fea79d3e532c9",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/06_TNF_TNFRSF1B_spot_lr_scores.png": "c989dd158604541c25492d40424e87dd000ac6d859855477fa0fea79d3e532c9",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/07_TNF_group_circle.png": "1bc60bdbfe60c1d8f53f0c40fcc7a82f9c6c5d740fa4fbe20d0d7dfd32ef388d",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/07_TNF_group_circle.png": "1bc60bdbfe60c1d8f53f0c40fcc7a82f9c6c5d740fa4fbe20d0d7dfd32ef388d",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/08_TNF_group_sender_receiver.png": "2148e0432646c5c1a3d9bf65a4c6c9a3f692a8cd3d0adb79f1764ae8b67768e0",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/08_TNF_group_sender_receiver.png": "2148e0432646c5c1a3d9bf65a4c6c9a3f692a8cd3d0adb79f1764ae8b67768e0",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/09_TNF_group_heatmap.png": "9e76d75cc00b72dcc8bf8bac07d164a0ed1874cefc6f6ac537bd02d123d7c6e7",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/09_TNF_group_heatmap.png": "9e76d75cc00b72dcc8bf8bac07d164a0ed1874cefc6f6ac537bd02d123d7c6e7",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/10_secreted_signaling_gi.png": "0f3ac2d49f270de2170a8743116904dc93a405569d2b83a18ff067f7d540f609",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/10_secreted_signaling_gi.png": "0f3ac2d49f270de2170a8743116904dc93a405569d2b83a18ff067f7d540f609",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/11_cell_contact_gi.png": "897537b58d5f75a3697cc51640984a6ac0820fad85e999fa5561b8087032d091",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/11_cell_contact_gi.png": "897537b58d5f75a3697cc51640984a6ac0820fad85e999fa5561b8087032d091",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/12_secreted_hotspot_classes.png": "e732f423968e55925f10057f1b928bd2ca5d0dc9b2cf6fb5f3e6177f9df104a9",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/12_secreted_hotspot_classes.png": "e732f423968e55925f10057f1b928bd2ca5d0dc9b2cf6fb5f3e6177f9df104a9",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/13_hotspot_cell_group_lee.png": "256aa5f966ba5dd8bb7d3535beb5a07ed2151f1e425b57af186754ac650c5935",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/13_hotspot_cell_group_lee.png": "256aa5f966ba5dd8bb7d3535beb5a07ed2151f1e425b57af186754ac650c5935",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/14_cxcl_inflammatory_spatial_lee.png": "b3e507205fee27bbb9942af2ad75efb55fe8dd2a61541243770edbdb9caef53a",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/14_cxcl_inflammatory_spatial_lee.png": "b3e507205fee27bbb9942af2ad75efb55fe8dd2a61541243770edbdb9caef53a",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/15_incoming_topics_spatial.png": "26b2e18331e0783157701e98b5943e72f28763a808c90189be52c2bca59ea322",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/15_incoming_topics_spatial.png": "26b2e18331e0783157701e98b5943e72f28763a808c90189be52c2bca59ea322",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/16_incoming_topic_composition.png": "8a511f000dfe62b8158c14e705fc254cb4423a4e8ab753a6ce9cc14649e96dd2",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/16_incoming_topic_composition.png": "8a511f000dfe62b8158c14e705fc254cb4423a4e8ab753a6ce9cc14649e96dd2",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/17_incoming_topic_signaling.png": "7139bb4455c6ae824d79a93fe801d8211e385cd46ce2302b1e7187f06dbc9410",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/17_incoming_topic_signaling.png": "7139bb4455c6ae824d79a93fe801d8211e385cd46ce2302b1e7187f06dbc9410",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/18_group_pathway_ranking_secreted.png": "e9530f14e11b3ab711f72e43b3289419de60afc3ed110ba4f0d159224fff9e24",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/18_group_pathway_ranking_secreted.png": "e9530f14e11b3ab711f72e43b3289419de60afc3ed110ba4f0d159224fff9e24",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/19_group_pathway_ranking_ecm.png": "2e7fad126cc820edf32003eec95a7f101553e2f07998558c117cbe20166236a9",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/19_group_pathway_ranking_ecm.png": "2e7fad126cc820edf32003eec95a7f101553e2f07998558c117cbe20166236a9",
+    "results/tutorials/reference/07_psoriasis/tutorial/figures_spatial_transcriptomics/20_group_pathway_ranking_contact.png": "2d082e2fadc1570e86a2d4439af2267baa8d9e85bc1737c3a4b7bb8da4e9dbbd",
+    "results/tutorials/development/07_psoriasis/tutorial/figures_spatial_transcriptomics/20_group_pathway_ranking_contact.png": "2d082e2fadc1570e86a2d4439af2267baa8d9e85bc1737c3a4b7bb8da4e9dbbd",
+    "validation/tutorial_saved_object_comparison.json": "bf82a64d96dbe2b70df039dc5d86ad9495eeaa5b65ff723fd387c6def905c317",
+    "validation/tutorial_saved_objects_01_human_skin.json": "f18de3fd4dfe5503a8ddce605fd73c7af89a1a9383a6e0e506ffb219526e3374",
+    "results/tutorials/reference/01_human_skin/cellchat_humanSkin_LS.pkl": "a46341bb83b624f2acac109754f47aa817df8eafafdd3be4203c4d524a8932b5",
+    "results/tutorials/development/01_human_skin/cellchat_humanSkin_LS.pkl": "e96fa98a4082700683518dcf5504a7e18850c4ee37fe41dbe053a02af451243f",
+    "validation/tutorial_saved_objects_02_nl_ls.json": "4db744da96d8ae7763e1a6e8e650339c12756b08a790b243145f298bb98471e6",
+    "results/tutorials/reference/02_nl_ls/tutorial/cellchat_NL_LS_comparison.pkl": "b3476c70a00bd691792aaca18d5e1ecb699abcecacff193e447dbe5532341cae",
+    "results/tutorials/development/02_nl_ls/tutorial/cellchat_NL_LS_comparison.pkl": "f47a3b8e8cbeac1c3e5b7e21277aad7d4b8675d53e237f27a45207bdf6c0d57c",
+    "validation/tutorial_saved_objects_03_embryonic.json": "c649f28bfdd02a0e1c9fc42c62de313336655be0b4c062c4c9cd7998d9e01aea",
+    "results/tutorials/reference/03_embryonic/tutorial/cellchat_mouseSkin_E13_E14_from_h5.pkl": "e5f73e446aa29cf2be368cfe7eea8908623e0d463c14f770a4e7e8b9b916aa1a",
+    "results/tutorials/development/03_embryonic/tutorial/cellchat_mouseSkin_E13_E14_from_h5.pkl": "a42ac7b6240ebd27f838431afef0ab828cdb42ac9a130b75a04b06dd2495a7d3",
+    "validation/tutorial_saved_objects_07_psoriasis.json": "d80a07adf299261087f9661f50a346e6ac357642998069b90d22095331e42e63",
+    "results/tutorials/reference/07_psoriasis/tutorial/spatial_tutorial_output/cellchat_psoriasis_spatial.pkl": "e1d0f869332d440ce226ce81d61a5a33f3804fd9fccf21ff8c316448a316f904",
+    "results/tutorials/development/07_psoriasis/tutorial/spatial_tutorial_output/cellchat_psoriasis_spatial.pkl": "1e974850ed3edc457a44bf1ae311608abb558be03c9bb8ef6cfce84652efd1ef",
+    "results/tutorials/paired_progress.json": "2bc652c2313c8b167bbed6fd297ab94b388014983b69be913c256ef246425bbb",
+    "validation/tutorial_comparison_04_visium.json": "54e7229d9311c6b969209f282fd4b0b7ba6c4b6152c2d66b43c37b6be8ec601e",
+    "validation/tutorial_comparison_05_multi_spatial.json": "97b10b64ec730073a09713fe0a20696134906d95226ae9236ad9568433095079",
+    "validation/tutorial_comparison_06_multiomics.json": "34ee8b7c0e285730fcd79c1bdd1c126b482e170a2ccb80d4cb24157492636ecc",
+    "validation/tutorial_comparison_07_psoriasis.json": "a826c31fa883694a0bc44bfcacdff02995e2e9b10f172d24dad2d58c21c5f6c9",
+    "validation/tutorial_comparison_01_human_skin.json": "13679d3692dddf90ae9ce001bd95648217f8f2c90a1ce5785dc5e065827a27f0",
+    "validation/tutorial_comparison_02_nl_ls.json": "db8b68793526ddc51ec72e681378ab0cd357598e32c332a6d8819f70c4fc55d9",
+    "validation/tutorial_comparison_03_embryonic.json": "1c09992d97586dc69eb44f24932f491f146f00382269bb92da63a658e7162a4d",
+    "results/benchmarks/pbmc68579_b10/summary.json": "8d61f3523874f8d056ac8247ddc8e7e264eaa66c2486ea0cfeee00e3453b8c74",
+    "results/benchmarks/pbmc68579_b10/upstream_0.json": "8962df5bc04823129ce3e2e59bfb37a43fa05e8a2a87e5714851ef57c57f906f",
+    "results/benchmarks/pbmc68579_b10/upstream_0.log": "72929bf719e33778220880daa360b37ea6d0e08afa475c6bf4819b7cffc4bc88",
+    "upstream/CellChatPy/modeling.py": "c54f2f9ed2b843ff8f48c85323086e6b7f256e5898ef9d18d77355bacca7f27d",
+    "upstream/CellChatPy/network_storage.py": "fb88154f3b836dafe62b20deb92a7834d016b49d5813aee9e48c83dbb4590abd",
+    "results/benchmarks/pbmc68579_b10/upstream_0.npz": "15562b01424caff6c8dcefe3bb58fa312635e0992abf690dcf594e49b87984f3",
+    "results/benchmarks/pbmc68579_b10/streaming_0.json": "f484d60fb98832f2dbed2a18f6979758b90564d40f6ba850f41b046a33076fe6",
+    "results/benchmarks/pbmc68579_b10/streaming_0.log": "d89c6a88096125e7ea95d2d93951e00aa8f3f3db8133fb3d218508060a688f64",
+    "results/benchmarks/pbmc68579_b10/streaming_0.npz": "15562b01424caff6c8dcefe3bb58fa312635e0992abf690dcf594e49b87984f3",
+    "results/benchmarks/pbmc68579_b100/summary.json": "5365342a99af78bb10c022b28d7c492f867aa1233272e95b6600c9fceec11b31",
+    "results/benchmarks/pbmc68579_b100/upstream_0.json": "a997d6eac6f297c4b3685c30bd38bbdf7c24c9d73782549f07797084cd242de9",
+    "results/benchmarks/pbmc68579_b100/upstream_0.log": "e87ceec9b9d063be54b1a8180fa8032e99ffb9aa2b7b7aa3a7e83d08db3f6771",
+    "results/benchmarks/pbmc68579_b100/upstream_0.npz": "01b0defbec53147865da2430f0be05e30d26995a7c19b87b666a04c68b40da3e",
+    "results/benchmarks/pbmc68579_b100/streaming_0.json": "246051ad0cae751e5d5af0a2b27ab94b942da244579577fb17dc17e7b9ff07d4",
+    "results/benchmarks/pbmc68579_b100/streaming_0.log": "2de7c73fae65d0409d27d9a21b5dbaa447ecddb04d1f400a858ee733330beadf",
+    "results/benchmarks/pbmc68579_b100/streaming_0.npz": "01b0defbec53147865da2430f0be05e30d26995a7c19b87b666a04c68b40da3e",
+    "results/benchmarks/synthetic1000000_b100/summary.json": "8d3c25b213e137ff81a2596e1c2fca43d7268a0096c0db9aaa5ae560f0942bcf",
+    "results/benchmarks/synthetic1000000_b100/upstream_0.json": "54e5d9e1edecc1eee880dfc4fd703d7adcc1d6491a75eaac47e44d2e3d99d166",
+    "results/benchmarks/synthetic1000000_b100/upstream_0.log": "afcf6e8b2f513b8f4540a45a4a4c9b5e07a8f295882179c49d6d51bf97558422",
+    "results/benchmarks/synthetic1000000_b100/streaming_0.json": "d20b78beeed3d032f5cf4ab7e850787cd9ef556640d1b854e4aea419fcf9b157",
+    "results/benchmarks/synthetic1000000_b100/streaming_0.log": "05e9ba8252b1532533802f7576aecb2279a0ce360ffc7166efa021e760ec95ff",
+    "results/benchmarks/synthetic1000000_b100/streaming_0.npz": "04bd78bbd311060002bc89c201a5c44ea2156dc601e4d3351a43adf5482777e3",
+    "results/benchmarks/synthetic100000_b100/summary.json": "706d17f22b9613b4d3f15a562586e4aa979174fe5c562fae5ab235e1825430f1",
+    "results/benchmarks/synthetic100000_b100/upstream_0.json": "b376da8c19600c8043031e29d28a9306a1c9359741bdd1fab6063a8aff2fc2f3",
+    "results/benchmarks/synthetic100000_b100/upstream_0.log": "079a4fa22e1e7f371349563d81e71fc5197dd7651bb9e76ab37e1f2de0947c8c",
+    "results/benchmarks/synthetic100000_b100/upstream_0.npz": "3212e17b7e89493ea2b4dc391664266df88d1f368345733cbd0ef35dfb581bae",
+    "results/benchmarks/synthetic100000_b100/streaming_0.json": "a7b0bbccde223d71acd32d4a89d16c3369070006e00ea4ae536388923baa14a5",
+    "results/benchmarks/synthetic100000_b100/streaming_0.log": "a39a3d33e20748873c086db34a540e6cb29fb9d7d4e084c68d72fcf580b6a577",
+    "results/benchmarks/synthetic100000_b100/streaming_0.npz": "3212e17b7e89493ea2b4dc391664266df88d1f368345733cbd0ef35dfb581bae",
+    "results/benchmarks/synthetic100000_b100/streaming_1.json": "1a80e748bb3cc47f80507f966c0db7fb0c97ee571bd82340f0668bde9f666a34",
+    "results/benchmarks/synthetic100000_b100/streaming_1.log": "d9e11c579597551d0d447675c8330a2d0a13adbefdafdde4223dfb067f00432a",
+    "results/benchmarks/synthetic100000_b100/streaming_1.npz": "3212e17b7e89493ea2b4dc391664266df88d1f368345733cbd0ef35dfb581bae",
+    "results/benchmarks/synthetic100000_b100/upstream_1.json": "382341cf52f70d821e2e12b350bddfe5b320c1e108e391b9e7664e0b32feff61",
+    "results/benchmarks/synthetic100000_b100/upstream_1.log": "7739c50bd3057fade4d46d36122fa9e5a18fc3d34b8a61024b76b6c4d09c2bf6",
+    "results/benchmarks/synthetic100000_b100/upstream_1.npz": "3212e17b7e89493ea2b4dc391664266df88d1f368345733cbd0ef35dfb581bae",
+    "results/benchmarks/synthetic100000_b100/upstream_2.json": "9fc9df031be60ea10c4575c16955b4dc64a82b632bb9c22c5e109080604a3204",
+    "results/benchmarks/synthetic100000_b100/upstream_2.log": "ee956683c94c13465df4e2007370480d8bd80ea18af3e26fbaf9e37f3efbe3d3",
+    "results/benchmarks/synthetic100000_b100/upstream_2.npz": "3212e17b7e89493ea2b4dc391664266df88d1f368345733cbd0ef35dfb581bae",
+    "results/benchmarks/synthetic100000_b100/streaming_2.json": "02fe205e4da30c361bcabda12c07e74c65c0078edf22e42d2137eaa8aa8616b9",
+    "results/benchmarks/synthetic100000_b100/streaming_2.log": "ac649f073d9fb535b71cc934ca033c227aeafd6699a813f3081ea241855db756",
+    "results/benchmarks/synthetic100000_b100/streaming_2.npz": "3212e17b7e89493ea2b4dc391664266df88d1f368345733cbd0ef35dfb581bae",
+    "results/benchmarks/synthetic5000_b20/summary.json": "284d53b00d8f534aefbe63efa56c9d59a7ace805d03bdb5fdb416c38d180422b",
+    "results/benchmarks/synthetic5000_b20/upstream_0.json": "f127c77713be81745e16b979d6b9ed110247816c35df76354620fe2ef0b19848",
+    "results/benchmarks/synthetic5000_b20/upstream_0.log": "5f8873201bbd7c0be3960d005bdb089deb9edd444689768afba8c4571dc4f940",
+    "results/benchmarks/synthetic5000_b20/upstream_0.npz": "51918d1ddefa818b711a0065fae4506857739d141583787a33b2cf331a625870",
+    "results/benchmarks/synthetic5000_b20/streaming_0.json": "fd7b0e02c6dede191e7806986114e856751f8fe7dd09a5d22b6c5b0fc672eef0",
+    "results/benchmarks/synthetic5000_b20/streaming_0.log": "fae5851a53d6281cabc70cc7b79a1b011a7d7ee8671eebf3ea76761b1b609b3e",
+    "results/benchmarks/synthetic5000_b20/streaming_0.npz": "51918d1ddefa818b711a0065fae4506857739d141583787a33b2cf331a625870",
+    "results/benchmarks/synthetic5000_b20/streaming_1.json": "eb5cb441f89a4ce2069b33fc5466f28b568a9fd7e292765b6b382ba310d74019",
+    "results/benchmarks/synthetic5000_b20/streaming_1.log": "a10a7c431877151c849fa7e196e846d3d9a918a7a98c4e4f03b4d3c18de4da16",
+    "results/benchmarks/synthetic5000_b20/streaming_1.npz": "51918d1ddefa818b711a0065fae4506857739d141583787a33b2cf331a625870",
+    "results/benchmarks/synthetic5000_b20/upstream_1.json": "dd95d0aa377c5bea6af81f18754af7e3260a7a2c047ebeb1e5a11dcffb5a5e0d",
+    "results/benchmarks/synthetic5000_b20/upstream_1.log": "dc4915d0eabccd78cf79d224ce1298eeff71ca2fd3ffba645c1ad7b04053ad0f",
+    "results/benchmarks/synthetic5000_b20/upstream_1.npz": "51918d1ddefa818b711a0065fae4506857739d141583787a33b2cf331a625870",
+    "results/benchmarks/synthetic5000_b20/upstream_2.json": "81a0a88786315d50e1dc48fd2985813ba6fbedc281f16612be6665e0d94d432b",
+    "results/benchmarks/synthetic5000_b20/upstream_2.log": "0fa0feb2a98c103ad207f8dbd1b2c8d789dc7d93301daa23c6c2b023751f62ee",
+    "results/benchmarks/synthetic5000_b20/upstream_2.npz": "51918d1ddefa818b711a0065fae4506857739d141583787a33b2cf331a625870",
+    "results/benchmarks/synthetic5000_b20/streaming_2.json": "ea917f808473bfe8f74be535ffa19aba96fd48e5a14e447bb69e09e5fccb655a",
+    "results/benchmarks/synthetic5000_b20/streaming_2.log": "89727a9972e0000034921976dd63c8b5996ab5db89ed924a358bfa848bceddf4",
+    "results/benchmarks/synthetic5000_b20/streaming_2.npz": "51918d1ddefa818b711a0065fae4506857739d141583787a33b2cf331a625870",
+    "validation/ablation.json": "2ea5271b64886111de71f88009e30408396041de0c12dec8f9c23847fda39152"
+  },
+  "upstream_package_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+  "development_package_sha256": "8b4db0a0fb311b6a7f92412ea6a1a1570c3697fe1fcd606ab58ccee5f2794d1d",
+  "audit_scope": "Fresh comparison of saved arrays and direct artifact/source verification; no inference or notebook re-execution"
+}

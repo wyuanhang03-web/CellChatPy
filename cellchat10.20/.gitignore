@@ -1,0 +1,17 @@
+.venv/
+cache/
+__pycache__/
+.pytest_cache/
+.build/
+_github_publish/
+*.pyc
+.env
+.env.*
+data/**/*.h5
+data/**/*.h5ad
+data/**/*.npz
+data/**/*.tar.gz
+results/**/*.pkl
+results/**/*.h5
+results/**/*.h5ad
+results/**/saved_object_evidence/

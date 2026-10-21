@@ -1,0 +1,142 @@
+{
+  "scope": "21 representative figures from the seven completed candidate tutorials",
+  "figures": [
+    {
+      "tutorial": "01_human_skin",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\01_human_skin\\tutorial\\figures_vignette\\00_database_category.png",
+      "row": 0,
+      "column": 0
+    },
+    {
+      "tutorial": "01_human_skin",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\01_human_skin\\tutorial\\figures_vignette\\06_bubble_CCL_CXCL_FGF.png",
+      "row": 0,
+      "column": 1
+    },
+    {
+      "tutorial": "01_human_skin",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\01_human_skin\\tutorial\\figures_vignette\\14_embedding_structural_zoomin.png",
+      "row": 0,
+      "column": 2
+    },
+    {
+      "tutorial": "02_nl_ls",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\tutorial\\figures_comparison\\cmp_01a_compare_interactions_count.png",
+      "row": 1,
+      "column": 0
+    },
+    {
+      "tutorial": "02_nl_ls",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\tutorial\\figures_comparison\\cmp_12_role_heatmap_all_NL.png",
+      "row": 1,
+      "column": 1
+    },
+    {
+      "tutorial": "02_nl_ls",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\02_nl_ls\\tutorial\\figures_comparison\\cmp_18_gene_expression_CXCL_split.png",
+      "row": 1,
+      "column": 2
+    },
+    {
+      "tutorial": "03_embryonic",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\03_embryonic\\tutorial\\figures_different_cellular_compositions\\01_circle_WNT_E13.5.png",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "tutorial": "03_embryonic",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\03_embryonic\\tutorial\\figures_different_cellular_compositions\\03_chord_WNT_E13.5.png",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "tutorial": "03_embryonic",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\03_embryonic\\tutorial\\figures_different_cellular_compositions\\04_chord_grouped_WNT_E14.5.png",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "tutorial": "04_visium",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\04_visium\\tutorial\\figures_spatial_transcriptomics\\00_database_category.png",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "tutorial": "04_visium",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\04_visium\\tutorial\\figures_spatial_transcriptomics\\02_heatmap_weight.png",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "tutorial": "04_visium",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\04_visium\\tutorial\\figures_spatial_transcriptomics\\05_spatial_expression_Igf1_Igf1r.png",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "tutorial": "05_multi_spatial",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\05_multi_spatial\\tutorial\\figures_multiple_spatial_transcriptomics\\00_database_category.png",
+      "row": 4,
+      "column": 0
+    },
+    {
+      "tutorial": "05_multi_spatial",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\05_multi_spatial\\tutorial\\figures_multiple_spatial_transcriptomics\\03_EGF_circle.png",
+      "row": 4,
+      "column": 1
+    },
+    {
+      "tutorial": "05_multi_spatial",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\05_multi_spatial\\tutorial\\figures_multiple_spatial_transcriptomics\\06_spatial_EGF_features.png",
+      "row": 4,
+      "column": 2
+    },
+    {
+      "tutorial": "06_multiomics",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\06_multiomics\\tutorial\\figures_spatial_multiomics\\00_spatial_annotations.png",
+      "row": 5,
+      "column": 0
+    },
+    {
+      "tutorial": "06_multiomics",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\06_multiomics\\tutorial\\figures_spatial_multiomics\\03_IL16_signaling_roles.png",
+      "row": 5,
+      "column": 1
+    },
+    {
+      "tutorial": "06_multiomics",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\06_multiomics\\tutorial\\figures_spatial_multiomics\\05_spatial_IL16_features.png",
+      "row": 5,
+      "column": 2
+    },
+    {
+      "tutorial": "07_psoriasis",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\07_psoriasis\\tutorial\\figures_spatial_transcriptomics\\01_spatial_clusters.png",
+      "row": 6,
+      "column": 0
+    },
+    {
+      "tutorial": "07_psoriasis",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\07_psoriasis\\tutorial\\figures_spatial_transcriptomics\\11_cell_contact_gi.png",
+      "row": 6,
+      "column": 1
+    },
+    {
+      "tutorial": "07_psoriasis",
+      "figure": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\07_psoriasis\\tutorial\\figures_spatial_transcriptomics\\20_group_pathway_ranking_contact.png",
+      "row": 6,
+      "column": 2
+    }
+  ],
+  "visual_review": {
+    "representative_figures_reviewed": 21,
+    "result": "All 21 displayed samples render with visible content, legends/axes where applicable, and no obvious clipping introduced by the candidate.",
+    "scope_limit": "Representative contact-sheet inspection; all original PNG files are separately compared with the upstream outputs by SHA-256."
+  },
+  "paired_png_byte_comparison": {
+    "total": 148,
+    "sha256_equal": 147,
+    "exception": "02_nl_ls/tutorial/figures_comparison/cmp_13_bubble_comparison.png",
+    "notes": "validation/figure_difference_notes.md"
+  }
+}

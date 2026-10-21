@@ -1,0 +1,39 @@
+{
+  "kind": "real",
+  "dataset": "10x Genomics fresh 68k PBMC donor A",
+  "original_shape_genes_cells": [
+    32738,
+    68579
+  ],
+  "cells": 68579,
+  "signaling_genes": 1404,
+  "signaling_nnz": 1523308,
+  "groups": 10,
+  "group_source": "fixed computational clusters on complete normalized signaling matrix; not biological annotations",
+  "official_analysis_labeled_cells": 40000,
+  "benchmark_clustering": {
+    "projection": "TruncatedSVD",
+    "n_components": 30,
+    "n_iter": 5,
+    "clustering": "MiniBatchKMeans",
+    "n_clusters": 10,
+    "n_init": 10,
+    "batch_size": 4096,
+    "random_state": 42
+  },
+  "preparation_seconds": 122.3352440999588,
+  "normalization": "log1p(10000 * raw_count / total raw UMI across all original genes)",
+  "duplicate_gene_symbols": "sum raw counts before normalization",
+  "scope": "all original cells; database signaling genes only; no cell duplication",
+  "source_archives": [
+    {
+      "file": "fresh_68k_pbmc_donor_a_filtered_gene_bc_matrices.tar.gz",
+      "sha256": "3f35f37ff344bc9b32f97cd003ac986ebb9b5d7f31006c53dff4cb38da267931"
+    },
+    {
+      "file": "fresh_68k_pbmc_donor_a_analysis.tar.gz",
+      "sha256": "4b199ceacfd936cfad0eb6b38898f8cb30fb8ab373447ec728eaa531a214bfbb"
+    }
+  ],
+  "database_interaction_sha256": "4af68e9bacecd43bcd8bb71e12862ef8d1bb7ca561140c781618bc48d3094225"
+}

@@ -1,0 +1,178 @@
+{
+  "reference_label": "reference",
+  "candidate_label": "development",
+  "absolute_tolerance": 1e-12,
+  "relative_tolerance": 1e-12,
+  "requested_tutorials": [
+    "CellChat_analysis_of_spatial_transcriptomics_data"
+  ],
+  "tutorials": [
+    {
+      "name": "CellChat_analysis_of_spatial_transcriptomics_data",
+      "directory": "04_visium",
+      "comparisons": [
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\04_visium\\evidence\\final_cellchat.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\04_visium\\evidence\\final_cellchat.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                434,
+                8,
+                8
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                434,
+                8,
+                8
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            },
+            {
+              "key": "count",
+              "shape": [
+                8,
+                8
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "weight",
+              "shape": [
+                8,
+                8
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\04_visium\\evidence\\inference_0.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\04_visium\\evidence\\inference_0.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                434,
+                8,
+                8
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                434,
+                8,
+                8
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "passed": true
+        }
+      ],
+      "reference_status": "passed",
+      "candidate_status": "passed",
+      "original_source_equal": true,
+      "reference_seconds": 68.63598219997948,
+      "candidate_seconds": 55.28797339997254,
+      "reference_figures": 11,
+      "candidate_figures": 11,
+      "figure_paths_equal": true,
+      "figure_comparisons": [
+        {
+          "figure": "tutorial/figures_spatial_transcriptomics/00_database_category.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_spatial_transcriptomics/00_spatial_annotations.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_spatial_transcriptomics/01_circle_count.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_spatial_transcriptomics/01_circle_weight.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_spatial_transcriptomics/02_heatmap_count.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_spatial_transcriptomics/02_heatmap_weight.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_spatial_transcriptomics/03_circle_IGF.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_spatial_transcriptomics/03_spatial_IGF.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_spatial_transcriptomics/04_role_network_IGF.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_spatial_transcriptomics/05_spatial_expression_IGF.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_spatial_transcriptomics/05_spatial_expression_Igf1_Igf1r.png",
+          "exists": true,
+          "sha256_equal": true
+        }
+      ],
+      "all_figure_files_identical": true,
+      "evidence_names_equal": true,
+      "passed": true
+    }
+  ],
+  "complete_suite": false,
+  "requested_scope_complete": true,
+  "passed": true
+}

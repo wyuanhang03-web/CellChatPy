@@ -1,5 +1,10 @@
 # CellChatPy
 
+This branch includes the [2026-10-20 low-memory research snapshot](cellchat10.20/README.md),
+with optimized source, validation reports, benchmarks, and presentation slides.
+See [publication scope and reproduction instructions](cellchat10.20/PUBLICATION.md)
+before running the research workflows.
+
 CellChatPy is a Python toolkit for inferring, analyzing, and visualizing
 cell-cell communication from single-cell and spatial transcriptomics data.
 It uses Python-native data structures and plotting tools.

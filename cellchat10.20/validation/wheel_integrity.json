@@ -1,0 +1,186 @@
+{
+  "passed": true,
+  "wheel": "dist\\CellChatPy-1.1.0+streaming.20261020-py3-none-any.whl",
+  "sha256": "5171f4ec05f6b611b32013263763db978c5dbe7a1534d5859907933d39e62cee",
+  "version": "1.1.0+streaming.20261020",
+  "checked_files": 30,
+  "requirements": [
+    "anndata>=0.8",
+    "h5py>=3.7",
+    "matplotlib>=3.6",
+    "networkx>=2.8",
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "scikit-learn>=1.2",
+    "scipy>=1.9",
+    "seaborn>=0.12",
+    "umap-learn>=0.5",
+    "numba>=0.59; extra == \"accelerate\"",
+    "build>=1; extra == \"dev\"",
+    "pytest>=7; extra == \"dev\"",
+    "sphinx<9,>=7; extra == \"docs\"",
+    "sphinx-rtd-theme>=2; extra == \"docs\"",
+    "sphinx-copybutton>=0.5; extra == \"docs\"",
+    "sphinx-design>=0.6; extra == \"docs\"",
+    "myst-parser>=2; extra == \"docs\"",
+    "nbsphinx>=0.9; extra == \"docs\"",
+    "ipython>=8; extra == \"docs\"",
+    "nbconvert>=7; extra == \"docs\"",
+    "geosketch>=1.2; extra == \"sketch\"",
+    "ipykernel>=6; extra == \"tutorial\"",
+    "ipython>=8; extra == \"tutorial\"",
+    "jupyterlab>=4; extra == \"tutorial\""
+  ],
+  "files": [
+    {
+      "path": "CellChatPy/__init__.py",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/_sparse_quantiles.py",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/_streaming.py",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/analysis.py",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/cellchat_class.py",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.human/cofactor.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.human/complex.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.human/geneInfo.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.human/interaction.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.mouse/cofactor.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.mouse/complex.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.mouse/geneInfo.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.mouse/interaction.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.zebrafish/cofactor.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.zebrafish/complex.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.zebrafish/geneInfo.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/CellChatDB.zebrafish/interaction.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/PPI.human/PPI.human.mtx",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/PPI.human/PPI.human_colnames.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/PPI.human/PPI.human_rownames.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/PPI.mouse/PPI.mouse.mtx",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/PPI.mouse/PPI.mouse_colnames.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/CellChatDB/PPI.mouse/PPI.mouse_rownames.csv",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/database.py",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/modeling.py",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/network_storage.py",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/spatial.py",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/utilities.py",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/visualization.py",
+      "present": true,
+      "matches_source": true
+    },
+    {
+      "path": "CellChatPy/viz_helpers.py",
+      "present": true,
+      "matches_source": true
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions",
+  "label": "development",
+  "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\development",
+  "package_python_source_sha256": "8b4db0a0fb311b6a7f92412ea6a1a1570c3697fe1fcd606ab58ccee5f2794d1d",
+  "source_sha256": "c37050d1509e83aa2de49a3d22e7cfbaaf498119513f088ace90a358ec03003b",
+  "threads": 2,
+  "original_code_cell_count": 13,
+  "original_cells_unchanged": true,
+  "tutorial_compatibility_patches": [],
+  "executed_code_sha256": "d185486a84696327f0e311e2549cac166c38634b7094e84b545cb6b29522a519",
+  "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\03_embryonic",
+  "status": "passed",
+  "resource_observations": {
+    "kernel_tree_peak_rss_bytes": 2676019200,
+    "system_min_available_bytes": 447111168,
+    "sampling_interval_seconds": 0.25
+  },
+  "elapsed_seconds": 110.31176239997149,
+  "executed_original_code_cells": 13,
+  "figures": 8
+}

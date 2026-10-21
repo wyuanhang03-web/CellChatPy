@@ -1,0 +1,198 @@
+{
+  "reference_label": "reference",
+  "candidate_label": "development",
+  "exact_array_equality_definition": "numpy.array_equal on finite values (legacy bitwise_equal field name); PNG equality uses SHA-256 byte hashes",
+  "absolute_tolerance": 1e-12,
+  "relative_tolerance": 1e-12,
+  "requested_tutorials": [
+    "CellChat_analysis_of_multiple_spatial_transcriptomics_datasets"
+  ],
+  "tutorials": [
+    {
+      "name": "CellChat_analysis_of_multiple_spatial_transcriptomics_datasets",
+      "directory": "05_multi_spatial",
+      "comparisons": [
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\05_multi_spatial\\evidence\\final_cellchat.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\05_multi_spatial\\evidence\\final_cellchat.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                422,
+                25,
+                25
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                422,
+                25,
+                25
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            },
+            {
+              "key": "count",
+              "shape": [
+                25,
+                25
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "weight",
+              "shape": [
+                25,
+                25
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 528750,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        },
+        {
+          "reference": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\05_multi_spatial\\evidence\\inference_0.npz",
+          "candidate": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\05_multi_spatial\\evidence\\inference_0.npz",
+          "arrays": [
+            {
+              "key": "prob",
+              "shape": [
+                422,
+                25,
+                25
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true
+            },
+            {
+              "key": "pval",
+              "shape": [
+                422,
+                25,
+                25
+              ],
+              "finite": true,
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "passed": true,
+              "significance_005_equal": true
+            }
+          ],
+          "keys_equal": true,
+          "labels_equal": true,
+          "numeric_element_count": 527500,
+          "has_numerical_content": true,
+          "scope": "numeric_arrays_and_labels",
+          "passed": true
+        }
+      ],
+      "reference_status": "passed",
+      "candidate_status": "passed",
+      "reference_package_python_source_sha256": null,
+      "candidate_package_python_source_sha256": "8b4db0a0fb311b6a7f92412ea6a1a1570c3697fe1fcd606ab58ccee5f2794d1d",
+      "original_source_equal": true,
+      "reference_seconds": 468.8972491999739,
+      "candidate_seconds": 415.2202983000316,
+      "reference_figures": 12,
+      "candidate_figures": 12,
+      "figure_paths_equal": true,
+      "figure_comparisons": [
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/00_database_category.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/00_spatial_annotations.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/01_circle_count.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/01_circle_weight.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/02_heatmap_count.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/02_heatmap_weight.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/03_EGF_circle.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/03_EGF_spatial_overview.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/04_EGF_signaling_roles.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/05_EGF_contribution.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/06_spatial_AREG_EGFR.png",
+          "exists": true,
+          "sha256_equal": true
+        },
+        {
+          "figure": "tutorial/figures_multiple_spatial_transcriptomics/06_spatial_EGF_features.png",
+          "exists": true,
+          "sha256_equal": true
+        }
+      ],
+      "all_figure_files_identical": true,
+      "evidence_names_equal": true,
+      "passed": true,
+      "nonempty_numerical_snapshots": 2,
+      "core_comparison_scope": "Group network prob/pval/count/weight and labels when present; empty snapshots contain metadata only",
+      "saved_object_audit_required_for_full_suite": false,
+      "saved_object_audit": {
+        "status": "not_available_original_export_disabled"
+      }
+    }
+  ],
+  "complete_suite": false,
+  "requested_scope_complete": true,
+  "passed": true
+}

@@ -1,0 +1,17 @@
+{
+  "groups": [
+    "FIB-A",
+    "FIB-B",
+    "FIB-P",
+    "DC",
+    "Pericyte",
+    "MYL",
+    "Immune",
+    "ENDO",
+    "Muscle",
+    "MELA",
+    "Basal-P",
+    "Basal",
+    "Spinious"
+  ]
+}

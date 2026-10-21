@@ -1,0 +1,14 @@
+{
+  "name": "CellChat_analysis_of_multiple_spatial_transcriptomics_datasets",
+  "label": "reference",
+  "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream",
+  "source_sha256": "6edbed657346775ac6a44fb9960b2b11beb4d47ae11254a72ccf8bcaf213b7df",
+  "threads": 2,
+  "original_code_cell_count": 16,
+  "original_cells_unchanged": true,
+  "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\05_multi_spatial",
+  "status": "passed",
+  "elapsed_seconds": 468.8972491999739,
+  "executed_original_code_cells": 16,
+  "figures": 12
+}

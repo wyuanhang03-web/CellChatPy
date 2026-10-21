@@ -1,0 +1,144 @@
+{
+  "status": "passed",
+  "completed": [
+    {
+      "name": "CellChat_analysis_of_spatial_transcriptomics_data",
+      "label": "reference",
+      "returncode": 0,
+      "wall_seconds": 0.690037599997595
+    },
+    {
+      "name": "CellChat_analysis_of_spatial_transcriptomics_data",
+      "label": "development",
+      "returncode": 0,
+      "wall_seconds": 0.2952443999820389
+    },
+    {
+      "name": "CellChat_analysis_of_multiple_spatial_transcriptomics_datasets",
+      "label": "reference",
+      "returncode": 0,
+      "wall_seconds": 0.3391620999900624
+    },
+    {
+      "name": "CellChat_analysis_of_multiple_spatial_transcriptomics_datasets",
+      "label": "development",
+      "returncode": 0,
+      "wall_seconds": 0.31919200002448633
+    },
+    {
+      "name": "CellChat_analysis_of_spatial_multiomics_data",
+      "label": "reference",
+      "returncode": 0,
+      "wall_seconds": 0.3425901000155136
+    },
+    {
+      "name": "CellChat_analysis_of_spatial_multiomics_data",
+      "label": "development",
+      "returncode": 0,
+      "wall_seconds": 0.3320947000174783
+    },
+    {
+      "name": "SpatialCellChat_analysis_of_spatial_transcriptomics_data",
+      "label": "reference",
+      "returncode": 0,
+      "wall_seconds": 0.3828432000009343
+    },
+    {
+      "name": "SpatialCellChat_analysis_of_spatial_transcriptomics_data",
+      "label": "development",
+      "returncode": 0,
+      "wall_seconds": 0.4366059000021778
+    },
+    {
+      "name": "CellChat_humanSkin_LS",
+      "label": "reference",
+      "returncode": 0,
+      "wall_seconds": 0.34543380001559854
+    },
+    {
+      "name": "CellChat_humanSkin_LS",
+      "label": "development",
+      "returncode": 0,
+      "wall_seconds": 0.3323046999867074
+    },
+    {
+      "name": "CellChat_comparison_analysis_NL_LS",
+      "label": "reference",
+      "returncode": 0,
+      "wall_seconds": 0.36292470002081245
+    },
+    {
+      "name": "CellChat_comparison_analysis_NL_LS",
+      "label": "development",
+      "returncode": 0,
+      "wall_seconds": 0.30615359998773783
+    },
+    {
+      "name": "Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions",
+      "label": "reference",
+      "returncode": 0,
+      "wall_seconds": 1.17926790000638
+    },
+    {
+      "name": "Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions",
+      "label": "development",
+      "returncode": 0,
+      "wall_seconds": 1.172176500025671
+    }
+  ],
+  "pair_comparisons": [
+    {
+      "name": "CellChat_analysis_of_spatial_transcriptomics_data",
+      "returncode": 0,
+      "report": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\validation\\tutorial_comparison_04_visium.json"
+    },
+    {
+      "name": "CellChat_analysis_of_multiple_spatial_transcriptomics_datasets",
+      "returncode": 0,
+      "report": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\validation\\tutorial_comparison_05_multi_spatial.json"
+    },
+    {
+      "name": "CellChat_analysis_of_spatial_multiomics_data",
+      "returncode": 0,
+      "report": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\validation\\tutorial_comparison_06_multiomics.json"
+    },
+    {
+      "name": "SpatialCellChat_analysis_of_spatial_transcriptomics_data",
+      "returncode": 0,
+      "report": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\validation\\tutorial_comparison_07_psoriasis.json",
+      "saved_object_audit_required": true
+    },
+    {
+      "name": "CellChat_humanSkin_LS",
+      "returncode": 0,
+      "report": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\validation\\tutorial_comparison_01_human_skin.json",
+      "saved_object_audit_required": true
+    },
+    {
+      "name": "CellChat_comparison_analysis_NL_LS",
+      "returncode": 0,
+      "report": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\validation\\tutorial_comparison_02_nl_ls.json",
+      "saved_object_audit_required": true
+    },
+    {
+      "name": "Comparison_analysis_of_multiple_datasets_with_different_cellular_compositions",
+      "returncode": 0,
+      "report": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\validation\\tutorial_comparison_03_embryonic.json",
+      "saved_object_audit_required": true
+    }
+  ],
+  "supplementary_audit": {
+    "status": "passed",
+    "returncode": 0,
+    "requested": [
+      "07_psoriasis",
+      "01_human_skin",
+      "02_nl_ls",
+      "03_embryonic"
+    ],
+    "wall_seconds": 828.0664638000308
+  },
+  "previous_driver_status": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\attempts\\paired_progress_20261020T170556132266Z.json",
+  "previous_driver_status_reason": "Earlier driver completed the original cells before mandatory saved-object supplemental auditing was added; its final comparison was pending that supplement.",
+  "comparison_returncode": 0
+}

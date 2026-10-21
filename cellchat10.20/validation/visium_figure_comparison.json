@@ -1,0 +1,57 @@
+[
+  {
+    "figure": "00_database_category.png",
+    "exists": true,
+    "sha256_equal": true
+  },
+  {
+    "figure": "00_spatial_annotations.png",
+    "exists": true,
+    "sha256_equal": true
+  },
+  {
+    "figure": "01_circle_count.png",
+    "exists": true,
+    "sha256_equal": true
+  },
+  {
+    "figure": "01_circle_weight.png",
+    "exists": true,
+    "sha256_equal": true
+  },
+  {
+    "figure": "02_heatmap_count.png",
+    "exists": true,
+    "sha256_equal": true
+  },
+  {
+    "figure": "02_heatmap_weight.png",
+    "exists": true,
+    "sha256_equal": true
+  },
+  {
+    "figure": "03_circle_IGF.png",
+    "exists": true,
+    "sha256_equal": true
+  },
+  {
+    "figure": "03_spatial_IGF.png",
+    "exists": true,
+    "sha256_equal": true
+  },
+  {
+    "figure": "04_role_network_IGF.png",
+    "exists": true,
+    "sha256_equal": true
+  },
+  {
+    "figure": "05_spatial_expression_IGF.png",
+    "exists": true,
+    "sha256_equal": true
+  },
+  {
+    "figure": "05_spatial_expression_Igf1_Igf1r.png",
+    "exists": true,
+    "sha256_equal": true
+  }
+]

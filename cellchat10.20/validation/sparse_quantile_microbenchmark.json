@@ -1,0 +1,33 @@
+{
+  "scope": "group triMean primitive only; synthetic expression; not end-to-end",
+  "parameters": {
+    "cells": 20000,
+    "genes": 128,
+    "groups": 12,
+    "density": 0.35,
+    "permutations": 5
+  },
+  "nnz": 896000,
+  "backend": "numba",
+  "plan_setup_seconds": 0.09821310004917905,
+  "first_call_seconds_including_compile_or_cache_load": 0.046763100021053106,
+  "reference_seconds_per_grouping": [
+    0.6519184000208043,
+    0.584334300016053,
+    0.6200051999767311,
+    0.7055915999808349,
+    0.5917744000325911,
+    0.6063176000025123
+  ],
+  "warm_plan_seconds_per_grouping": [
+    0.012416100013069808,
+    0.0131182000041008,
+    0.013876500015612692,
+    0.01431669999146834,
+    0.013469400000758469,
+    0.01180089998524636
+  ],
+  "median_primitive_speedup": 46.12386224236543,
+  "exact_array_equal_for_every_grouping": true,
+  "baseline_densification_included": false
+}

@@ -1,0 +1,180 @@
+{
+  "scope": "synthetic group-level inference ablation; not a real biological dataset",
+  "timing_mode": "one warm process; one untimed warmup per variant; rotated variant order; three timed repeats",
+  "excluded_from_timing": [
+    "package import",
+    "object generation",
+    "object copy",
+    "array comparison"
+  ],
+  "parameters": {
+    "dataset": "synthetic",
+    "cells": 5000,
+    "genes": 256,
+    "groups": 10,
+    "density": 0.05,
+    "pairs": 100
+  },
+  "inference_parameters": {
+    "type_method": "triMean",
+    "n_boot": 20,
+    "seed_use": 1,
+    "population_size": false,
+    "engine": "streaming",
+    "gene_batch_size": 64,
+    "lr_batch_size": 64
+  },
+  "dataset": {
+    "kind": "synthetic_independent_counts",
+    "cells": 5000,
+    "genes": 256,
+    "nnz": 51565,
+    "groups": 10,
+    "pairs": 100,
+    "candidate_selection": "database order; complete ligand/receptor expression availability; no DE screening"
+  },
+  "source_sha256": {
+    "modeling.py": "b70a4e4c70f7490eb72d06e98398fc1ef2d0ae17e0892da897291386231ac6d0",
+    "_streaming.py": "b5b4e9364218683b781dea7b0eedd25b999a954f322ba8a725405422afec8df8",
+    "_sparse_quantiles.py": "7e9fc4df63cba2bb1065e574a2010aa9e0ad72299732c1b902c9e1554e96aa31",
+    "network_storage.py": "5f677cd7da54bd11107726ed4e9d11db04307cdcd75d37e537f418094c78b18f"
+  },
+  "warmup_seconds_excluded": {
+    "all_enabled": 0.2017799000022933,
+    "no_pruning": 0.14460659999167547,
+    "no_sparse_plan": 0.9410908000427298
+  },
+  "run_order": [
+    {
+      "repeat": 1,
+      "variant": "all_enabled"
+    },
+    {
+      "repeat": 1,
+      "variant": "no_pruning"
+    },
+    {
+      "repeat": 1,
+      "variant": "no_sparse_plan"
+    },
+    {
+      "repeat": 2,
+      "variant": "no_pruning"
+    },
+    {
+      "repeat": 2,
+      "variant": "no_sparse_plan"
+    },
+    {
+      "repeat": 2,
+      "variant": "all_enabled"
+    },
+    {
+      "repeat": 3,
+      "variant": "no_sparse_plan"
+    },
+    {
+      "repeat": 3,
+      "variant": "all_enabled"
+    },
+    {
+      "repeat": 3,
+      "variant": "no_pruning"
+    }
+  ],
+  "results": {
+    "all_enabled": {
+      "seconds": [
+        0.1490963000105694,
+        0.15705400001024827,
+        0.1549156000255607
+      ],
+      "exact_prob": [
+        true,
+        true,
+        true
+      ],
+      "exact_pval": [
+        true,
+        true,
+        true
+      ],
+      "evaluated_genes": [
+        59,
+        59,
+        59
+      ],
+      "median_seconds": 0.1549156000255607,
+      "median_time_relative_to_all_enabled": 1.0
+    },
+    "no_pruning": {
+      "seconds": [
+        0.14118740003323182,
+        0.12478410004405305,
+        0.1320061000296846
+      ],
+      "exact_prob": [
+        true,
+        true,
+        true
+      ],
+      "exact_pval": [
+        true,
+        true,
+        true
+      ],
+      "evaluated_genes": [
+        256,
+        256,
+        256
+      ],
+      "median_seconds": 0.1320061000296846,
+      "median_time_relative_to_all_enabled": 0.8521162491569856
+    },
+    "no_sparse_plan": {
+      "seconds": [
+        0.9724331999896094,
+        0.9004104000050575,
+        1.0001657999819145
+      ],
+      "exact_prob": [
+        true,
+        true,
+        true
+      ],
+      "exact_pval": [
+        true,
+        true,
+        true
+      ],
+      "evaluated_genes": [
+        59,
+        59,
+        59
+      ],
+      "median_seconds": 0.9724331999896094,
+      "median_time_relative_to_all_enabled": 6.277180605627582
+    }
+  },
+  "machine": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "logical_cpus": 20,
+    "python": "3.11.13 | packaged by Anaconda, Inc. | (main, Jun  5 2025, 13:03:15) [MSC v.1929 64 bit (AMD64)]",
+    "numpy": "2.2.6",
+    "scipy": "1.16.3",
+    "ram_bytes": 16869548032,
+    "available_ram_bytes_at_capture": 3788001280,
+    "executable": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\.venv\\Scripts\\python.exe",
+    "package_versions": {
+      "numpy": "2.2.6",
+      "scipy": "1.16.2",
+      "pandas": "2.2.3",
+      "anndata": "0.10.9",
+      "numba": "0.62.1",
+      "scikit-learn": "1.7.2",
+      "psutil": "7.0.0"
+    }
+  },
+  "interpretation": "Ablations remove one execution optimization at a time; effects need not be additive. Sparse fallback remains batched and vectorized. These ratios are not the independent fresh-process upstream benchmark."
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "call_index": 0,
+    "elapsed_seconds": 1.3155759000219405,
+    "kwargs": {
+      "type_method": "'triMean'"
+    },
+    "shape": [
+      2552,
+      17328
+    ],
+    "groups": 12
+  },
+  {
+    "call_index": 1,
+    "elapsed_seconds": 2.0429097000160255,
+    "kwargs": {
+      "type_method": "'triMean'"
+    },
+    "shape": [
+      5011,
+      17328
+    ],
+    "groups": 12
+  }
+]

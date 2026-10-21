@@ -1,0 +1,22 @@
+{
+  "name": "SpatialCellChat_analysis_of_spatial_transcriptomics_data",
+  "label": "reference",
+  "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\upstream",
+  "package_python_source_sha256": "0e3c690c580ae29df9de9503a58b5222f1cca9d23123523d071ed7bc37b0d4ed",
+  "source_sha256": "949a2484d96c37c8b42c2251a30684fc5454eaa4ac105c53b3e96fbf113b66dc",
+  "threads": 2,
+  "original_code_cell_count": 16,
+  "original_cells_unchanged": true,
+  "tutorial_compatibility_patches": [],
+  "executed_code_sha256": "84b7c394302c085830af438353bada7de31cda2536cf994041890c92e9e9fb8b",
+  "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\reference\\07_psoriasis",
+  "status": "passed",
+  "resource_observations": {
+    "kernel_tree_peak_rss_bytes": 1137696768,
+    "system_min_available_bytes": 3003617280,
+    "sampling_interval_seconds": 0.25
+  },
+  "elapsed_seconds": 118.83178469998529,
+  "executed_original_code_cells": 16,
+  "figures": 20
+}

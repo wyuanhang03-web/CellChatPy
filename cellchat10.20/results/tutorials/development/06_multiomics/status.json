@@ -1,0 +1,22 @@
+{
+  "name": "CellChat_analysis_of_spatial_multiomics_data",
+  "label": "development",
+  "package_root": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\development",
+  "package_python_source_sha256": "8b4db0a0fb311b6a7f92412ea6a1a1570c3697fe1fcd606ab58ccee5f2794d1d",
+  "source_sha256": "bd87ead6fac24316df0d0483b4f9c2582eec152244c35d57173cd32e55c5f997",
+  "threads": 2,
+  "original_code_cell_count": 13,
+  "original_cells_unchanged": true,
+  "tutorial_compatibility_patches": [],
+  "executed_code_sha256": "515a2adf4b025b8f885f4f0326293065048f500499bf937bee9065f95fe1e0f2",
+  "output_directory": "E:\\Jin\\cellchat.python_new\\cellchat10.20\\results\\tutorials\\development\\06_multiomics",
+  "status": "passed",
+  "resource_observations": {
+    "kernel_tree_peak_rss_bytes": 1238446080,
+    "system_min_available_bytes": 2953900032,
+    "sampling_interval_seconds": 0.25
+  },
+  "elapsed_seconds": 41.51850599999307,
+  "executed_original_code_cells": 13,
+  "figures": 7
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "name": "CellChat_analysis_of_spatial_transcriptomics_data",
+    "original_cell_index": 15,
+    "old": "significant_prob[lr_pval > 0.05] = 0.0",
+    "new": "significant_prob[lr_pval >= 0.05] = 0.0",
+    "original_cell_sha256": "55ce889885328c8f8d34c3295fed9d7c8ea8c46517258e4ba5180587d0b91269",
+    "adapted_cell_sha256": "0a37e911970ca28dbd29f063c2704769138069321bc915a81904ba6444218425",
+    "reason": "The unchanged upstream aggregate_network uses strict pval < thresh (modeling.py:897-898); the tutorial manual assertion incorrectly retained pval == 0.05. This fixes only its independent check, never inference/filter parameters.",
+    "applied_to_both_engines": true
+  }
+]
